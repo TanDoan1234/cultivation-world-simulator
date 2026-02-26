@@ -30,16 +30,16 @@ from src.classes.relation.relations import update_second_degree_relations
 class Simulator:
     def __init__(self, world: World):
         self.world = world
-        self.awakening_rate = CONFIG.game.npc_awakening_rate_per_month  # 从配置文件读取NPC每月觉醒率（凡人晋升修士）
+        self.awakening_rate = CONFIG.game.npc_awakening_rate_per_month  # Đọc tỉ lệ giác thức NPC mỗi tháng từ config (thường dân → tu sĩ)
 
     def _phase_update_perception_and_knowledge(self, living_avatars: list[Avatar]):
         """
-        感知更新阶段：
-        1. 基于感知范围更新 known_regions
-        2. 自动占据无主洞府（如果自己没有洞府）
+        Giai đoạn cập nhật nhận thức:
+        1. Cập nhật known_regions dựa trên phạm vi quan sát
+        2. Tự động chiếm đóng động phủ vô chủ (nếu bản thân chưa có động phủ)
         """
         events = []
-        # 1. 缓存当前有洞府的角色ID
+        # 1. Cache danh sách ID các nhân vật đã có động phủ
         avatars_with_home = set()
         # ...
         cultivate_regions = [
@@ -51,43 +51,43 @@ class Simulator:
             if r.host_avatar:
                 avatars_with_home.add(r.host_avatar.id)
 
-        # 2. 遍历所有存活角色
+        # 2. Duyệt qua toàn bộ nhân vật còn sống
         for avatar in living_avatars:
             # ...
-            # 计算感知半径（曼哈顿距离）
+            # Tính bán kính quan sát (khoảng cách Manhattan)
             radius = get_avatar_observation_radius(avatar)
             
             # ...
-            # 获取范围内的有效坐标
+            # Lấy tọa độ hợp lệ trong phạm vi quan sát
             start_x = max(0, avatar.pos_x - radius)
             end_x = min(self.world.map.width - 1, avatar.pos_x + radius)
             start_y = max(0, avatar.pos_y - radius)
             end_y = min(self.world.map.height - 1, avatar.pos_y + radius)
 
-            # 收集感知到的区域
+            # Thu thập các khu vực quan sát được
             observed_regions = set()
             for x in range(start_x, end_x + 1):
                 for y in range(start_y, end_y + 1):
-                    # 距离判定：曼哈顿距离
+                    # Kiểm tra khoảng cách: dùng khoảng cách Manhattan
                     if abs(x - avatar.pos_x) + abs(y - avatar.pos_y) <= radius:
                         tile = self.world.map.get_tile(x, y)
                         if tile.region:
                             observed_regions.add(tile.region)
 
-            # 更新认知与自动占据
+            # Cập nhật nhận thức và tự động chiếm đóng
             for region in observed_regions:
-                # 更新 known_regions
+                # Cập nhật known_regions (danh sách khu vực đã biết)
                 avatar.known_regions.add(region.id)
                 
-                # 自动占据逻辑
-                # 只有当：是修炼区域 + 无主 + 自己无洞府 时触发
+                # Logic tự động chiếm đóng động phủ
+                # Chỉ kích hoạt khi: là khu tu luyện + không có chủ + bản thân chưa có động phủ
                 if isinstance(region, CultivateRegion):
                     if region.host_avatar is None:
                         if avatar.id not in avatars_with_home:
-                            # 占据
+                            # Chiếm đóng
                             avatar.occupy_region(region)
                             avatars_with_home.add(avatar.id)
-                            # 记录事件
+                            # Ghi lại sự kiện
                             event = Event(
                                 self.world.month_stamp,
                                 t("{avatar_name} passed by {region_name}, found it ownerless, and occupied it.", 
@@ -99,8 +99,9 @@ class Simulator:
 
     async def _phase_decide_actions(self, living_avatars: list[Avatar]):
         """
-        决策阶段：仅对需要新计划的角色调用 AI（当前无动作且无计划），
-        将 AI 的决策结果加载为角色的计划链。
+        Giai đoạn ra quyết định: chỉ gọi AI cho các nhân vật cần kế hoạch mới
+        (hiện không có hành động và không có kế hoạch),
+        nạp kết quả quyết định của AI thành chuỗi kế hoạch của nhân vật.
         """
         avatars_to_decide = []
         for avatar in living_avatars:
@@ -112,12 +113,14 @@ class Simulator:
         decide_results = await ai.decide(self.world, avatars_to_decide)
         for avatar, result in decide_results.items():
             action_name_params_pairs, avatar_thinking, short_term_objective, _event = result
-            # 仅入队计划，不在此处添加开始事件，避免与提交阶段重复
+            # Chỉ đưa vào hàng đợi kế hoạch, không thêm sự kiện bắt đầu ở đây
+            # để tránh trùng lặp với giai đoạn commit
             avatar.load_decide_result_chain(action_name_params_pairs, avatar_thinking, short_term_objective)
 
     def _phase_commit_next_plans(self, living_avatars: list[Avatar]):
         """
-        提交阶段：为空闲角色提交计划中的下一个可执行动作，返回开始事件集合。
+        Giai đoạn commit: cho các nhân vật rảnh rỗi commit hành động tiếp theo
+        trong kế hoạch, trả về tập hợp sự kiện bắt đầu.
         """
         events = []
         for avatar in living_avatars:
@@ -129,12 +132,13 @@ class Simulator:
 
     async def _phase_execute_actions(self, living_avatars: list[Avatar]):
         """
-        执行阶段：推进当前动作，支持同月链式抢占即时结算，返回期间产生的事件。
+        Giai đoạn thực thi: tiến hành hành động hiện tại, hỗ trợ kết toán
+        chuỗi chiếm quyền trong cùng tháng, trả về các sự kiện phát sinh.
         """
         events = []
         MAX_LOCAL_ROUNDS = CONFIG.game.max_action_rounds_per_turn
         
-        # Round 1: 全员执行一次
+        # Round 1: Toàn bộ nhân vật thực thi một lần
         avatars_needing_retry = set()
         for avatar in living_avatars:
             try:
@@ -142,18 +146,21 @@ class Simulator:
                 if new_events:
                     events.extend(new_events)
                 
-                # 检查是否有新动作产生（抢占/连招），如果有则加入下一轮
-                # 注意：tick_action 内部已处理标记清除逻辑，仅当动作发生切换时才会保留 True
+                # Kiểm tra xem có hành động mới phát sinh không (chiếm quyền/combo),
+                # nếu có thì đưa vào round tiếp theo.
+                # Lưu ý: tick_action đã xử lý logic xóa cờ bên trong,
+                # chỉ giữ True khi thực sự có chuyển đổi hành động
                 if getattr(avatar, "_new_action_set_this_step", False):
                     avatars_needing_retry.add(avatar)
             except Exception as e:
-                # 记录详细错误日志
+                # Ghi log lỗi chi tiết
                 get_logger().logger.error(f"Avatar {avatar.name}({avatar.id}) tick_action failed: {e}", exc_info=True)
-                # 确保不会进入重试逻辑
+                # Đảm bảo không vào logic retry
                 if hasattr(avatar, "_new_action_set_this_step"):
                      avatar._new_action_set_this_step = False
 
-        # Round 2+: 仅执行有新动作的角色，避免无辜角色重复执行
+        # Round 2+: Chỉ thực thi các nhân vật có hành động mới,
+        # tránh các nhân vật vô can bị thực thi lại
         round_count = 1
         while avatars_needing_retry and round_count < MAX_LOCAL_ROUNDS:
             current_avatars = list(avatars_needing_retry)
@@ -165,7 +172,7 @@ class Simulator:
                     if new_events:
                         events.extend(new_events)
                     
-                    # 再次检查
+                    # Kiểm tra lại
                     if getattr(avatar, "_new_action_set_this_step", False):
                         avatars_needing_retry.add(avatar)
                 except Exception as e:
@@ -179,11 +186,13 @@ class Simulator:
 
     def _phase_resolve_death(self, living_avatars: list[Avatar]):
         """
-        结算死亡：
-        - 战斗死亡已在 Action 中结算
-        - 此时剩下的 avatars 都是存活的，只需检查非战斗因素（如老死、被动掉血）
-        
-        注意：如果发现死亡，会从传入的 living_avatars 列表中移除，避免后续阶段继续处理。
+        Kết toán tử vong:
+        - Tử vong do chiến đấu đã được xử lý bên trong Action
+        - Lúc này các avatar còn lại đều đang sống, chỉ cần kiểm tra
+          nguyên nhân phi chiến đấu (ví dụ: lão tử, mất máu bị động)
+
+        Lưu ý: Nếu phát hiện tử vong, sẽ xóa khỏi danh sách living_avatars
+        được truyền vào, tránh các giai đoạn sau tiếp tục xử lý.
         """
         events = []
         dead_avatars = []
@@ -192,11 +201,11 @@ class Simulator:
             is_dead = False
             death_reason: DeathReason | None = None
             
-            # 优先判定重伤（可能是被动效果导致）
+            # Ưu tiên kiểm tra trọng thương trước (có thể do hiệu ứng bị động gây ra)
             if avatar.hp.cur <= 0:
                 is_dead = True
                 death_reason = DeathReason(DeathType.SERIOUS_INJURY)
-            # 其次判定寿元
+            # Sau đó kiểm tra thọ nguyên
             elif avatar.death_by_old_age():
                 is_dead = True
                 death_reason = DeathReason(DeathType.OLD_AGE)
@@ -207,7 +216,8 @@ class Simulator:
                 handle_death(self.world, avatar, death_reason)
                 dead_avatars.append(avatar)
         
-        # 从当前引用的列表中移除，确保后续 Phase 不再处理
+        # Xóa khỏi danh sách tham chiếu hiện tại,
+        # đảm bảo các Phase sau không xử lý nhân vật đã chết
         for dead in dead_avatars:
             if dead in living_avatars:
                 living_avatars.remove(dead)
@@ -216,21 +226,22 @@ class Simulator:
 
     def _phase_update_age_and_birth(self, living_avatars: list[Avatar]):
         """
-        更新存活角色年龄，并以一定概率生成新修士，返回期间产生的事件集合。
+        Cập nhật tuổi tác của các nhân vật còn sống, đồng thời với xác suất
+        nhất định tạo ra tu sĩ mới, trả về tập hợp sự kiện phát sinh.
         """
         events = []
         for avatar in living_avatars:
             avatar.update_age(self.world.month_stamp)
             
-        # 1. 凡人管理：清理老死凡人
+        # 1. Quản lý thường dân: dọn dẹp thường dân già chết
         self.world.mortal_manager.cleanup_dead_mortals(self.world.month_stamp)
         
-        # 2. 凡人觉醒 (血脉 + 野生)
+        # 2. Giác thức thường dân (huyết mạch + tự nhiên)
         awakening_events = process_awakening(self.world)
         if awakening_events:
             events.extend(awakening_events)
             
-        # 3. 道侣生子
+        # 3. Đạo lữ sinh con
         birth_events = process_births(self.world)
         if birth_events:
             events.extend(birth_events)
@@ -239,19 +250,19 @@ class Simulator:
 
     async def _phase_passive_effects(self, living_avatars: list[Avatar]):
         """
-        被动结算阶段：
-        - 处理丹药过期
-        - 更新时间效果（如HP回复）
-        - 触发奇遇（非动作）
+        Giai đoạn kết toán bị động:
+        - Xử lý đan dược hết hạn
+        - Cập nhật hiệu ứng theo thời gian (ví dụ: hồi HP)
+        - Kích hoạt kỳ ngộ (không phải từ hành động)
         """
         events = []
         for avatar in living_avatars:
-            # 1. 处理丹药过期
+            # 1. Xử lý đan dược hết hạn
             avatar.process_elixir_expiration(int(self.world.month_stamp))
-            # 2. 更新被动效果 (如HP回复)
+            # 2. Cập nhật hiệu ứng bị động (ví dụ: hồi HP theo thời gian)
             avatar.update_time_effect()
         
-        # 使用 gather 并行触发奇遇和霉运
+        # Dùng gather để kích hoạt kỳ ngộ và vận hạn song song (async concurrent)
         tasks_fortune = [try_trigger_fortune(avatar) for avatar in living_avatars]
         tasks_misfortune = [try_trigger_misfortune(avatar) for avatar in living_avatars]
         results = await asyncio.gather(*(tasks_fortune + tasks_misfortune))
@@ -262,9 +273,9 @@ class Simulator:
     
     async def _phase_nickname_generation(self, living_avatars: list[Avatar]):
         """
-        绰号生成阶段
+        Giai đoạn sinh biệt hiệu (nickname)
         """
-        # 并发执行
+        # Thực thi đồng thời (concurrent)
         tasks = [process_avatar_nickname(avatar) for avatar in living_avatars]
         results = await asyncio.gather(*tasks)
         
@@ -273,10 +284,10 @@ class Simulator:
     
     async def _phase_long_term_objective_thinking(self, living_avatars: list[Avatar]):
         """
-        长期目标思考阶段
-        检查角色是否需要生成/更新长期目标
+        Giai đoạn suy nghĩ mục tiêu dài hạn.
+        Kiểm tra xem nhân vật có cần sinh mới / cập nhật mục tiêu dài hạn không.
         """
-        # 并发执行
+        # Thực thi đồng thời (concurrent)
         tasks = [process_avatar_long_term_objective(avatar) for avatar in living_avatars]
         results = await asyncio.gather(*tasks)
         
@@ -285,10 +296,11 @@ class Simulator:
     
     async def _phase_process_gatherings(self):
         """
-        Gathering 结算阶段：
-        检查并执行注册的多人聚集事件（如拍卖会、大比等）。
+        Giai đoạn kết toán Gathering:
+        Kiểm tra và thực thi các sự kiện tập hợp nhiều người đã đăng ký
+        (ví dụ: phiên đấu giá, tỷ võ đại hội...).
         """
-        # 第一年不触发聚集事件，给予发育缓冲
+        # Năm đầu tiên không kích hoạt sự kiện tập hợp, cho thời gian phát triển ban đầu
         if self.world.month_stamp.get_year() <= self.world.start_year:
             return []
 
@@ -296,22 +308,22 @@ class Simulator:
     
     def _phase_update_celestial_phenomenon(self):
         """
-        更新天地灵机：
-        - 检查当前天象是否到期
-        - 如果到期，则随机选择新天象
-        - 生成世界事件记录天象变化
-        
-        天象变化时机：
-        - 初始年份（如100年）1月立即开始第一个天象
-        - 每N年（当前天象指定的持续时间）变化一次
+        Cập nhật thiên địa linh cơ (Celestial Phenomenon):
+        - Kiểm tra thiên tượng hiện tại có hết hạn chưa
+        - Nếu hết hạn → chọn ngẫu nhiên thiên tượng mới
+        - Sinh sự kiện thế giới ghi lại sự thay đổi thiên tượng
+
+        Thời điểm thay đổi thiên tượng:
+        - Năm khởi tạo (ví dụ năm 100): tháng 1 bắt đầu thiên tượng đầu tiên ngay
+        - Cứ sau N năm (thời gian tồn tại của thiên tượng hiện tại) thì thay đổi một lần
         """
         events = []
         current_year = self.world.month_stamp.get_year()
         current_month = self.world.month_stamp.get_month()
         
-        # 检查是否需要初始化或更新天象
-        # 1. 如果没有天象 (初始化)
-        # 2. 如果有天象且到期 (每年一月检查)
+        # Kiểm tra xem có cần khởi tạo hoặc cập nhật thiên tượng không:
+        # 1. Nếu chưa có thiên tượng nào (khởi tạo lần đầu)
+        # 2. Nếu đã có và đến hạn (kiểm tra vào tháng 1 mỗi năm)
         should_update = False
         is_init = False
         
@@ -348,7 +360,7 @@ class Simulator:
 
     def _phase_update_region_prosperity(self):
         """
-        每月城市繁荣度自然恢复
+        Phục hồi tự nhiên độ phồn vinh thành phố mỗi tháng
         """
         for region in self.world.map.regions.values():
             if isinstance(region, CityRegion):
@@ -356,7 +368,7 @@ class Simulator:
 
     def _phase_log_events(self, events):
         """
-        将事件写入日志。
+        Ghi các sự kiện vào log.
         """
         logger = get_logger().logger
         for event in events:
@@ -364,14 +376,15 @@ class Simulator:
 
     def _phase_process_interactions(self, events: list[Event]):
         """
-        处理事件中的交互逻辑：
-        遍历所有事件，如果事件涉及多个角色，自动更新这些角色之间的交互计数。
+        Xử lý logic tương tác trong các sự kiện:
+        Duyệt tất cả sự kiện, nếu sự kiện liên quan đến nhiều nhân vật,
+        tự động cập nhật bộ đếm tương tác giữa các nhân vật đó.
         """
         for event in events:
             if not event.related_avatars or len(event.related_avatars) < 2:
                 continue
             
-            # 只有当事件涉及 >=2 个角色时才视为交互
+            # Chỉ tính là tương tác khi sự kiện liên quan đến >= 2 nhân vật
             for aid in event.related_avatars:
                 avatar = self.world.avatar_manager.get_avatar(aid)
                 if avatar:
@@ -379,7 +392,8 @@ class Simulator:
 
     def _phase_handle_interactions(self, events: list[Event], processed_ids: set[str]):
         """
-        从事件列表中提取尚未处理过的交互事件，并更新交互计数。
+        Trích xuất các sự kiện tương tác chưa được xử lý từ danh sách sự kiện
+        và cập nhật bộ đếm tương tác.
         """
         new_interactions = []
         for e in events:
@@ -393,10 +407,11 @@ class Simulator:
 
     async def _phase_evolve_relations(self, living_avatars: list[Avatar]):
         """
-        关系演化阶段：检查并处理满足条件的角色关系变化
+        Giai đoạn tiến hóa quan hệ: kiểm tra và xử lý các thay đổi
+        quan hệ nhân vật thỏa mãn điều kiện.
         """
         pairs_to_resolve = []
-        processed_pairs = set() # (id1, id2) id1 < id2
+        processed_pairs = set() # (id1, id2) với id1 < id2
         
         for avatar in living_avatars:
             target_ids = list(avatar.relation_interaction_states.keys())
@@ -408,10 +423,10 @@ class Simulator:
                 if target is None or target.is_dead:
                     continue
 
-                # 判定是否触发
+                # Kiểm tra xem có đủ điều kiện kích hoạt không
                 threshold = CONFIG.social.relation_check_threshold
                 if state["count"] >= threshold:
-                    # 确保唯一性
+                    # Đảm bảo tính duy nhất của cặp
                     id1, id2 = sorted([str(avatar.id), str(target.id)])
                     pair_key = (id1, id2)
                     
@@ -419,19 +434,19 @@ class Simulator:
                         processed_pairs.add(pair_key)
                         pairs_to_resolve.append((avatar, target))
                         
-                        # 重置双方的计数器，防止重复触发
-                        # 1. 重置 A 侧
+                        # Reset bộ đếm của cả hai bên để tránh kích hoạt lại
+                        # 1. Reset bên A
                         state["count"] = 0
                         state["checked_times"] += 1
                         
-                        # 2. 重置 B 侧
+                        # 2. Reset bên B
                         t_state = target.relation_interaction_states[str(avatar.id)]
                         t_state["count"] = 0
                         t_state["checked_times"] += 1
         
         events = []
         if pairs_to_resolve:
-            # 批量并发处理，并直接收集返回的事件
+            # Xử lý đồng thời theo batch và thu thập sự kiện trả về
             relation_events = await RelationResolver.run_batch(pairs_to_resolve)
             if relation_events:
                 events.extend(relation_events)
@@ -440,98 +455,99 @@ class Simulator:
 
     async def step(self):
         """
-        前进一个时间步（一个月）：
-        1.  感知与认知更新（及自动占据洞府）
-        2.  长期目标思考
-        3.  Gathering 多人聚集结算
-        4.  决策阶段 (AI 选择动作)
-        5.  提交阶段 (开始执行动作)
-        6.  执行阶段 (动作 Tick)
-        7.  处理初步交互计数 (用于后续关系演化)
-        8.  关系演化阶段
-        9.  结算死亡
-        10. 年龄与新生
-        11. 被动结算 (丹药、时间效果、奇遇)
-        12. 绰号生成
-        13. 天地灵机更新
-        14. 城市繁荣度更新
-        15. 处理剩余交互计数 (如奇遇产生的交互)
-        16. (每年1月) 更新计算关系 (二阶关系)
-        17. (每年1月) 清理由于时间久远而被遗忘的死者
-        18. 归档与时间推进
+        Tiến một bước thời gian (một tháng):
+        1.  Cập nhật cảm quan & vùng đã biết (và tự động chiếm động phủ)
+        2.  Suy nghĩ mục tiêu dài hạn
+        3.  Kết toán Gathering (sự kiện tập hợp nhiều người)
+        4.  Giai đoạn ra quyết định (AI chọn hành động)
+        5.  Giai đoạn commit (bắt đầu thực hiện hành động)
+        6.  Giai đoạn thực thi (tick hành động)
+        7.  Xử lý bộ đếm tương tác ban đầu (cho tiến hóa quan hệ sau)
+        8.  Giai đoạn tiến hóa quan hệ
+        9.  Kết toán tử vong
+        10. Tuổi tác và sinh mới
+        11. Kết toán bị động (đan dược, hiệu ứng thời gian, kỳ ngộ)
+        12. Sinh biệt hiệu
+        13. Cập nhật thiên địa linh cơ
+        14. Cập nhật độ phồn vinh thành phố
+        15. Xử lý bộ đếm tương tác còn lại (ví dụ: từ kỳ ngộ)
+        16. (Tháng 1 mỗi năm) Cập nhật tính toán quan hệ (quan hệ bậc hai)
+        17. (Tháng 1 mỗi năm) Dọn dẹp người chết lâu năm đã bị lãng quên
+        18. Lưu trữ và tiến thời gian
         """
-        # 0. 缓存本月存活角色列表 (在后续阶段中复用，并在死亡阶段维护)
+        # 0. Cache danh sách nhân vật còn sống trong tháng này
+        #    (tái sử dụng trong các giai đoạn sau, được duy trì tại giai đoạn tử vong)
         living_avatars = self.world.avatar_manager.get_living_avatars()
 
         events: list[Event] = []
         processed_event_ids: set[str] = set()
 
-        # 1. 感知与认知更新
+        # 1. Cập nhật cảm quan & vùng đã biết
         events.extend(self._phase_update_perception_and_knowledge(living_avatars))
 
-        # 2. 长期目标思考
+        # 2. Suy nghĩ mục tiêu dài hạn
         events.extend(await self._phase_long_term_objective_thinking(living_avatars))
 
-        # 3. Gathering 结算
+        # 3. Kết toán Gathering
         events.extend(await self._phase_process_gatherings())
 
-        # 4. 决策阶段
+        # 4. Giai đoạn ra quyết định
         await self._phase_decide_actions(living_avatars)
 
-        # 5. 提交阶段
+        # 5. Giai đoạn commit
         events.extend(self._phase_commit_next_plans(living_avatars))
 
-        # 6. 执行阶段
+        # 6. Giai đoạn thực thi
         events.extend(await self._phase_execute_actions(living_avatars))
 
-        # 7. 处理初步交互计数
+        # 7. Xử lý bộ đếm tương tác ban đầu
         self._phase_handle_interactions(events, processed_event_ids)
 
-        # 8. 关系演化
+        # 8. Tiến hóa quan hệ
         events.extend(await self._phase_evolve_relations(living_avatars))
 
-        # 9. 结算死亡 (注意：此处会修改 living_avatars 列表)
+        # 9. Kết toán tử vong (Lưu ý: sẽ chỉnh sửa danh sách living_avatars)
         events.extend(self._phase_resolve_death(living_avatars))
 
-        # 10. 年龄与新生
+        # 10. Tuổi tác và sinh mới
         events.extend(self._phase_update_age_and_birth(living_avatars))
 
-        # 11. 被动结算
+        # 11. Kết toán bị động
         events.extend(await self._phase_passive_effects(living_avatars))
 
-        # 12. 绰号生成
+        # 12. Sinh biệt hiệu
         events.extend(await self._phase_nickname_generation(living_avatars))
 
-        # 13. 更新天地灵机
+        # 13. Cập nhật thiên địa linh cơ
         events.extend(self._phase_update_celestial_phenomenon())
 
-        # 14. 更新城市繁荣度
+        # 14. Cập nhật độ phồn vinh thành phố
         self._phase_update_region_prosperity()
 
-        # 15. 处理剩余阶段的交互计数
+        # 15. Xử lý bộ đếm tương tác còn lại từ các giai đoạn sau
         self._phase_handle_interactions(events, processed_event_ids)
 
-        # 16. (每年1月) 更新计算关系 (二阶关系)
+        # 16. (Tháng 1 mỗi năm) Cập nhật tính toán quan hệ (quan hệ bậc hai)
         self._phase_update_calculated_relations(living_avatars)
         
-        # 17. (每年1月) 清理由于时间久远而被遗忘的死者
+        # 17. (Tháng 1 mỗi năm) Dọn dẹp người chết lâu năm đã bị lãng quên
         if self.world.month_stamp.get_month() == Month.JANUARY:
             cleaned_count = self.world.avatar_manager.cleanup_long_dead_avatars(
                 self.world.month_stamp, 
                 CONFIG.game.long_dead_cleanup_years
             )
             if cleaned_count > 0:
-                # 记录日志，但不产生游戏内事件
+                # Ghi log, nhưng không tạo sự kiện trong game
                 get_logger().logger.info(f"Cleaned up {cleaned_count} long-dead avatars.")
 
-        # 18. 归档与时间推进
+        # 18. Lưu trữ và tiến thời gian
         return self._finalize_step(events)
 
     def _phase_update_calculated_relations(self, living_avatars: list[Avatar]):
         """
-        每年 1 月刷新全服角色的二阶关系缓存
+        Làm mới cache quan hệ bậc hai của toàn bộ nhân vật vào tháng 1 mỗi năm
         """
-        # 仅在 1 月执行
+        # Chỉ thực thi vào tháng 1
         if self.world.month_stamp.get_month() != Month.JANUARY:
             return
 
@@ -540,29 +556,30 @@ class Simulator:
 
     def _finalize_step(self, events: list[Event]) -> list[Event]:
         """
-        本轮步进的最终归档：去重、入库、打日志、推进时间。
+        Lưu trữ cuối cùng cho bước tiến này:
+        loại trùng, ghi vào DB, ghi log, tiến thời gian.
         """
-        # 0. 为启用追踪的 Avatar 记录每月快照
+        # 0. Ghi snapshot hàng tháng cho Avatar đang bật theo dõi metrics
         for avatar in self.world.avatar_manager.avatars.values():
             if avatar.enable_metrics_tracking:
                 avatar.record_metrics()
 
-        # 1. 基于 ID 去重（防止同一个事件对象被多次添加）
+        # 1. Loại trùng theo ID (tránh cùng 1 object event bị thêm nhiều lần)
         unique_events: dict[str, Event] = {}
         for e in events:
             if e.id not in unique_events:
                 unique_events[e.id] = e
         final_events = list(unique_events.values())
 
-        # 2. 统一写入事件管理器
+        # 2. Ghi thống nhất vào event manager
         if self.world.event_manager:
             for e in final_events:
                 self.world.event_manager.add_event(e)
         
-        # 3. 记录日志
+        # 3. Ghi log
         self._phase_log_events(final_events)
 
-        # 4. 时间推进
+        # 4. Tiến thời gian
         self.world.month_stamp = self.world.month_stamp + 1
         
         return final_events

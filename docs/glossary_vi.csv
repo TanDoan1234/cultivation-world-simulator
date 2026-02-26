@@ -1,0 +1,248 @@
+# Từ Điển Thuật Ngữ Tiên Hiệp — Cultivation World Simulator
+# Định dạng: Trung Giản Thể | Trung Phồn Thể | Tiếng Anh | Tiếng Việt | Danh mục | Ghi chú
+
+chinese,chinese_tw,english,vietnamese,category,notes
+
+# ─── CẢNH GIỚI TU LUYỆN ───────────────────────────────────────────────────────
+练气,練氣,Qi Refinement,Luyện Khí,realm,Cảnh giới đầu tiên
+筑基,築基,Foundation Establishment,Trúc Cơ,realm,Xây dựng nền tảng
+金丹,金丹,Core Formation,Kim Đan,realm,Kết thành Kim Đan
+元婴,元嬰,Nascent Soul,Nguyên Anh,realm,Nguyên thần ra đời
+化神,化神,Soul Formation,Hóa Thần,realm,Hóa thành thần linh
+炼虚,煉虛,Void Refining,Luyện Hư,realm,
+合体,合體,Void Merging,Hợp Thể,realm,
+大乘,大乘,Mahayana,Đại Thừa,realm,
+渡劫,渡劫,Tribulation Crossing,Độ Kiếp,realm,Vượt thiên kiếp
+前期,前期,Early Stage,Sơ Kỳ,stage,
+中期,中期,Middle Stage,Trung Kỳ,stage,
+后期,後期,Late Stage,Hậu Kỳ,stage,
+大圆满,大圓滿,Peak Stage,Đại Viên Mãn,stage,Đỉnh cao cảnh giới
+
+# ─── ĐỘ QUÝ HIẾM ──────────────────────────────────────────────────────────────
+普通,普通,Normal,Bình Thường,rarity,
+稀有,稀有,Rare,Hiếm,rarity,
+超稀有,超稀有,Super Rare,Cực Hiếm,rarity,
+传说,傳說,Legendary,Truyền Thuyết,rarity,
+
+# ─── NGŨ HÀNH / LINH CĂN ──────────────────────────────────────────────────────
+金,金,Metal,Kim,element,
+木,木,Wood,Mộc,element,
+水,水,Water,Thủy,element,
+火,火,Fire,Hỏa,element,
+土,土,Earth,Thổ,element,
+冰,冰,Ice,Băng,element,Ngũ hành mở rộng
+风,風,Wind,Phong,element,Ngũ hành mở rộng
+暗,暗,Dark,Ám,element,Ngũ hành mở rộng
+雷,雷,Thunder,Lôi,element,
+邪,邪,Evil,Tà,element,
+金灵根,金靈根,Metal Spiritual Root,Kim Linh Căn,root,
+木灵根,木靈根,Wood Spiritual Root,Mộc Linh Căn,root,
+水灵根,水靈根,Water Spiritual Root,Thủy Linh Căn,root,
+火灵根,火靈根,Fire Spiritual Root,Hỏa Linh Căn,root,
+土灵根,土靈根,Earth Spiritual Root,Thổ Linh Căn,root,
+天灵根,天靈根,Heavenly Spiritual Root,Thiên Linh Căn,root,Hiếm nhất — đủ ngũ hành
+雷灵根,雷靈根,Thunder Spiritual Root,Lôi Linh Căn,root,
+冰灵根,冰靈根,Ice Spiritual Root,Băng Linh Căn,root,
+风灵根,風靈根,Wind Spiritual Root,Phong Linh Căn,root,
+暗灵根,暗靈根,Dark Spiritual Root,Ám Linh Căn,root,
+
+# ─── CHÍNH TÀ / ALIGNMENT ─────────────────────────────────────────────────────
+正,正,Righteous,Chính Đạo,alignment,Chính phái
+中立,中立,Neutral,Trung Lập,alignment,
+邪,邪,Evil,Tà Đạo,alignment,Ma đạo / bàng môn
+
+# ─── CẤP BẬC TÔNG MÔN ─────────────────────────────────────────────────────────
+掌门,掌門,Sect Master,Chưởng Môn,sect_rank,
+长老,長老,Elder,Trưởng Lão,sect_rank,
+内门弟子,內門弟子,Inner Disciple,Nội Môn Đệ Tử,sect_rank,
+外门弟子,外門弟子,Outer Disciple,Ngoại Môn Đệ Tử,sect_rank,
+弟子,弟子,Disciple,Đệ Tử,sect_rank,
+供奉,供奉,Grand Elder,Cung Phụng,sect_rank,Trưởng lão danh dự
+宗门,宗門,Sect,Tông Môn,org,
+散修,散修,Rogue Cultivator,Tán Tu,org,Tu sĩ không gia nhập tông
+
+# ─── VẬT PHẨM CƠ BẢN ─────────────────────────────────────────────────────────
+灵石,靈石,Spirit Stone,Linh Thạch,item,Tiền tệ trong game
+丹药,丹藥,Elixir / Pill,Đan Dược,item,Thuốc tu luyện
+法宝,法寶,Artifact,Pháp Bảo,item,Bảo vật pháp thuật
+兵器,兵器,Weapon,Vũ Khí / Binh Khí,item,
+功法,功法,Cultivation Technique,Công Pháp,item,
+辅助装备,輔助裝備,Auxiliary Equipment,Pháp Khí Phụ Trợ,item,Trang bị phụ
+灵药,靈藥,Spirit Medicine,Linh Dược,item,Dạng thảo dược
+材料,材料,Material,Nguyên Liệu,item,
+灵草,靈草,Spirit Herb,Linh Thảo,item,
+
+# ─── ĐĐAN DƯỢC ────────────────────────────────────────────────────────────────
+破境丹,破境丹,Breakthrough Pill,Phá Cảnh Đan,elixir,Vượt qua điểm nghẽn
+延寿丹,延壽丹,Longevity Pill,Diên Thọ Đan,elixir,Kéo dài thọ nguyên
+燃血丹,燃血丹,Blood Burning Pill,Nhiên Huyết Đan,elixir,Tạm thời tăng chiến lực
+疗伤丹,療傷丹,Healing Pill,Liệu Thương Đan,elixir,Hồi phục HP
+回春丹,回春丹,Rejuvenation Pill,Hồi Xuân Đan,elixir,Hồi phục theo thời gian
+
+# ─── KHU VỰC & ĐỊA HÌNH ──────────────────────────────────────────────────────
+洞府,洞府,Cave Dwelling,Động Phủ,location,Nơi tu luyện riêng của tu sĩ
+秘境,祕境,Secret Realm,Bí Cảnh,location,Khu vực ẩn có báu vật
+遗迹,遺蹟,Ruins,Di Tích,location,
+城市,城市,City,Thành Thị,location,
+
+# ─── HÀNH ĐỘNG (ACTION) ───────────────────────────────────────────────────────
+吐纳,吐納,Respire,Hấp Thụ Linh Khí / Thổ Nạp,action,Tu luyện cơ bản
+突破,突破,Breakthrough,Đột Phá,action,Tiến cảnh giới
+疗伤,療傷,Self Heal,Tự Liệu Thương,action,Tự hồi phục
+采集,採集,Harvest,Thu Hoạch,action,Hái linh thảo
+狩猎,狩獵,Hunt,Săn Thú,action,
+挖矿,挖礦,Mine,Khai Khoáng,action,
+炼丹,煉丹,Refine Elixir,Luyện Đan,action,
+铸造,鑄造,Forge,Đúc/Luyện Khí,action,Rèn vũ khí
+温养兵器,溫養兵器,Nurture Weapon,Ôn Dưỡng Binh Khí,action,Tôi luyện vũ khí
+购买,購買,Buy,Mua,action,
+出售,出售,Sell,Bán,action,
+消遣,消遣,Play,Tiêu Khiển / Thư Giãn,action,
+御兽,御獸,Tame Beast,Thuần Thú,action,
+移动,移動,Move,Di Chuyển,action,
+帮助凡人,幫助凡人,Aid Mortals,Giúp Đỡ Thường Dân,action,Chính đạo
+搜刮凡人,搜刮凡人,Plunder Mortals,Cướp Đoạt Thường Dân,action,Tà đạo
+吞噬凡人,吞噬凡人,Devour Mortals,Đồng Hóa Thường Dân,action,Cực tà
+攀谈,攀談,Converse,Đàm Thoại,action_mutual,
+切磋,切磋,Spar,Cắt Luyện / Tỷ Thí,action_mutual,Luyện đấu thân thiện
+攻击,攻擊,Attack,Tấn Công,action_mutual,
+暗杀,暗殺,Assassinate,Ám Sát,action_mutual,
+逃离,逃離,Escape,Bỏ Trốn / Đào Thoát,action_mutual,
+双修,雙修,Dual Cultivation,Song Tu,action_mutual,Luyện cùng đạo lữ
+传道,傳道,Impart,Truyền Thụ,action_mutual,Dạy công pháp
+赠送,贈送,Gift,Tặng Quà,action_mutual,
+驱赶,驅趕,Drive Away,Xua Đuổi,action_mutual,
+闭关,閉關,Retreat / Seclusion,Bế Quan,action,Cô lập tu luyện — hiệu quả cao nhất
+冥想,冥想,Meditate,Thiền Định,action,
+锻体,鍛體,Temper Body,Đoạn Thể / Tôi Luyện Thể Xác,action,
+
+# ─── SỰ KIỆN TẬP HỢP (GATHERING EVENTS) ─────────────────────────────────────
+拍卖会,拍賣會,Auction,Phiên Đấu Giá,gathering,Đấu giá vật phẩm cao cấp
+大比,大比,Tournament / Grand Competition,Tỷ Võ Đại Hội / Đại Hội Tỷ Võ,gathering,Thi đấu lớn
+隐秘领域,隱秘領域,Hidden Domain,Ẩn Mật Lĩnh Vực / Ẩn Domain,gathering,Khám phá dungeon
+宗门教学,宗門教學,Sect Teaching,Tông Môn Thụ Nghệ,gathering,Trưởng lão dạy đệ tử
+
+# ─── SỰ KIỆN (KỲ NGỘ / VẬN HẠN / THIÊN KIẾP) ────────────────────────────────
+奇遇,奇遇,Fortune / Lucky Encounter,Kỳ Ngộ,event,Sự kiện may mắn ngẫu nhiên
+霉运,黴運,Misfortune / Bad Luck,Vận Hạn,event,Sự kiện xui xẻo (nhẹ) — KHÔNG phải "tai họa"
+天灾,天災,Natural Disaster,Thiên Tai,event,Thảm họa thiên nhiên (nặng hơn 霉运)
+心魔,心魔,Heart Demon Tribulation,Tâm Ma,tribulation,Ma chướng nội tâm
+雷劫,雷劫,Thunder Tribulation,Lôi Kiếp / Thiên Lôi Kiếp,tribulation,Sấm sét từ trời
+天劫,天劫,Heavenly Tribulation,Thiên Kiếp,tribulation,Tổng hợp — dùng khi nói chung
+情劫,情劫,Emotion Tribulation,Tình Kiếp,tribulation,Kiếp nạn tình cảm
+魔劫,魔劫,Demonic Tribulation,Ma Kiếp,tribulation,Ma chướng bên ngoài
+顿悟,頓悟,Sudden Enlightenment,Đốn Ngộ,event,Giác ngộ tức thì
+感悟,感悟,Insight / Comprehension,Cảm Ngộ,event,
+
+# ─── THIÊN TƯỢNG (CELESTIAL PHENOMENON) ──────────────────────────────────────
+天象,天象,Celestial Phenomenon,Thiên Tượng,world,Hiện tượng trời đất
+天地灵机,天地靈機,Heaven-Earth Spiritual Energy,Thiên Địa Linh Cơ,world,Linh khí vũ trụ tổng thể
+灵气,靈氣,Spiritual Energy / Qi,Linh Khí,world,Năng lượng tu luyện
+灵气复苏,靈氣復甦,Spiritual Energy Revival,Linh Khí Phục Tô,celestial,SSR — hiếm nhất
+紫气东来,紫氣東來,Purple Qi from the East,Tử Khí Đông Lai,celestial,R
+五行逆乱,五行逆亂,Five Elements in Chaos,Ngũ Hành Đảo Loạn,celestial,SR
+天道均衡,天道均衡,Heavenly Dao Balance,Thiên Đạo Quân Bình,celestial,SR
+劫数将至,劫數將至,Tribulation Approaches,Kiếp Số Sắp Đến,celestial,SR
+血月当空,血月當空,Blood Moon Rises,Huyết Nguyệt Đương Không,celestial,SR
+
+# ─── QUAN HỆ (RELATIONS) ─────────────────────────────────────────────────────
+道侣,道侶,Dao Companion,Đạo Lữ,relation,Bạn tu / Vợ chồng tu sĩ
+师傅,師傅,Master,Sư Phụ,relation,Người dạy tu luyện
+徒弟,徒弟,Disciple,Đồ Đệ,relation,Người được truyền thụ
+师兄,師兄,Senior Martial Brother,Sư Huynh,relation,
+师姐,師姐,Senior Martial Sister,Sư Tỷ,relation,
+师弟,師弟,Junior Martial Brother,Sư Đệ,relation,
+师妹,師妹,Junior Martial Sister,Sư Muội,relation,
+朋友,朋友,Friend,Bằng Hữu / Bạn,relation,
+仇人,仇人,Enemy,Cừu Địch / Kẻ Thù,relation,
+父亲,父親,Father,Phụ Thân / Cha,relation,
+母亲,母親,Mother,Mẫu Thân / Mẹ,relation,
+儿子,兒子,Son,Con Trai,relation,
+女儿,女兒,Daughter,Con Gái,relation,
+
+# ─── NHÂN VẬT & ĐẶC TRƯNG ────────────────────────────────────────────────────
+凡人,凡人,Mortal,Thường Dân,type,Người không tu luyện
+修士,修士,Cultivator,Tu Sĩ,type,Người tu luyện
+修仙者,修仙者,Immortal Cultivator,Tu Tiên Giả,type,
+天道,天道,Heavenly Dao,Thiên Đạo,type,Ý chí vũ trụ — vai người chơi
+绰号,綽號,Nickname / Moniker,Biệt Hiệu / Hỗn Hiệu,attr,
+觉醒,覺醒,Awakening,Giác Thức,event,Thường dân kết thành tu sĩ
+寿元,壽元,Lifespan,Thọ Nguyên,attr,Tuổi thọ tối đa
+年龄,年齡,Age,Tuổi Tác,attr,
+性别,性別,Gender,Giới Tính,attr,
+灵根,靈根,Spiritual Root,Linh Căn,attr,Thiên phú tu luyện
+境界,境界,Realm,Cảnh Giới,attr,
+修为,修為,Cultivation Base,Tu Vi,attr,Mức độ tu luyện tích lũy
+气运,氣運,Fortune / Destiny,Khí Vận,attr,Vận mệnh thiên định
+血脉,血脈,Bloodline,Huyết Mạch,attr,Dòng dõi đặc biệt
+灵魂,靈魂,Soul,Linh Hồn,attr,
+肉身,肉身,Physical Body,Nhục Thân,attr,
+元神,元神,Primordial Spirit,Nguyên Thần,attr,
+气海,氣海,Qi Ocean,Khí Hải,attr,Nơi chứa linh khí
+丹田,丹田,Dantian,Đan Điền,attr,
+心境,心境,Mental State,Tâm Cảnh,attr,
+情绪,情緒,Emotion,Cảm Xúc / Tình Tự,attr,
+
+# ─── NHÂN CÁCH / PERSONA ──────────────────────────────────────────────────────
+理性,理性,Rational,Lý Trí,persona,
+冒险,冒險,Adventurous,Mạo Hiểm,persona,
+贪财,貪財,Greedy,Tham Tài,persona,
+惜命,惜命,Life-Cherishing,Tích Mệnh / Sợ Chết,persona,
+友爱,友愛,Friendly,Thân Thiện,persona,
+复仇,復仇,Vengeful,Thù Hận / Hiếu Chiến,persona,
+孤僻,孤僻,Reclusive,Cô Tịch / Ẩn Dật,persona,
+好斗,好鬥,Combative,Hiếu Chiến,persona,
+霸道,霸道,Domineering,Bá Đạo,persona,
+心机深沉,心機深沉,Scheming,Tâm Cơ Thâm Trầm,persona,
+气运之子,氣運之子,Child of Destiny,Khí Vận Chi Tử / Thiên Mệnh Chi Tử,persona_legendary,Con trời
+穿越者,穿越者,Transmigrator,Xuyên Việt Giả,persona_legendary,Từ thế giới hiện đại
+重生者,重生者,Reborn,Trùng Sinh Giả,persona_legendary,
+大器晚成,大器晚成,Late Bloomer,Đại Khí Vãn Thành,persona,
+
+# ─── HIỆU ỨNG / EFFECT ────────────────────────────────────────────────────────
+突破成功率,突破成功率,Breakthrough Success Rate,Tỷ Lệ Đột Phá,effect,
+奇遇概率,奇遇概率,Fortune Probability,Xác Suất Kỳ Ngộ,effect,
+霉运概率,黴運概率,Misfortune Probability,Xác Suất Vận Hạn,effect,KHÔNG phải "tai họa"
+修炼经验,修煉經驗,Cultivation Experience,Kinh Nghiệm Tu Luyện,effect,
+感知范围,感知範圍,Observation Radius,Phạm Vi Cảm Ứng,effect,Bán kính quan sát
+最大寿元,最大壽元,Max Lifespan,Thọ Nguyên Tối Đa,effect,
+战力点数,戰力點數,Combat Power,Chiến Lực,effect,
+境界压制,境界壓制,Realm Suppression,Cảnh Giới Áp Chế,effect,
+
+# ─── LOẠI VŨ KHÍ ─────────────────────────────────────────────────────────────
+剑,劍,Sword,Kiếm,weapon_type,
+刀,刀,Saber / Blade,Đao,weapon_type,
+枪,槍,Spear,Thương / Thổ,weapon_type,
+棍,棍,Staff,Côn,weapon_type,
+扇,扇,Fan,Phiến,weapon_type,
+鞭,鞭,Whip,Tiên,weapon_type,
+琴,琴,Zither,Cầm,weapon_type,Nhạc khí vũ khí
+笛,笛,Flute,Tiêu / Địch,weapon_type,
+暗器,暗器,Hidden Weapon,Ám Khí,weapon_type,
+
+# ─── CÁC THUẬT NGỮ KỸ THUẬT (CODE DOMAIN) ────────────────────────────────────
+月份,月份,Month,Tháng,time,
+年,年,Year,Năm,time,
+时间戳,時間戳,Timestamp,Dấu Thời Gian,time,
+事件,事件,Event,Sự Kiện,system,
+存活,存活,Living / Alive,Còn Sống,system,
+死亡,死亡,Death,Tử Vong,system,
+老死,老死,Died of Old Age,Lão Tử / Già Chết,death,Thọ nguyên cạn kiệt
+战死,戰死,Died in Battle,Chiến Tử,death,
+重伤不治,重傷不治,Died from Severe Injuries,Trọng Thương Bất Trị,death,
+觉醒,覺醒,Awakening,Giác Thức,event,Thường dân → Tu sĩ
+生育,生育,Birth / Childbirth,Sinh Con / Sinh Mới,event,Đạo lữ có con
+关系演化,關係演化,Relation Evolution,Tiến Hóa Quan Hệ,system,
+互动计数,互動計數,Interaction Count,Đếm Tương Tác,system,
+二阶关系,二階關係,Second-Degree Relation,Quan Hệ Bậc Hai,system,Bạn của bạn
+长期目标,長期目標,Long-term Objective,Mục Tiêu Dài Hạn,system,
+短期目标,短期目標,Short-term Objective,Mục Tiêu Ngắn Hạn,system,
+思考,思考,Thinking / Reasoning,Suy Nghĩ / Luận Giải,system,Quá trình LLM nội tâm
+决策,決策,Decision,Ra Quyết Định,system,
+互动,互動,Interaction,Tương Tác,system,
+繁荣度,繁榮度,Prosperity,Độ Phồn Vinh,system,Chỉ số thành phố
+城市,城市,City,Thành Thị / Thành Phố,location,
+洞府,洞府,Cave Dwelling / Cultivation Abode,Động Phủ,location,Nơi tu luyện riêng
+地区,地區,Region,Khu Vực,location,
+地图,地圖,Map,Bản Đồ,location,
+繁荣,繁榮,Prosperous,Phồn Thịnh,attr,

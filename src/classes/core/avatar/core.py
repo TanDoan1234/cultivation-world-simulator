@@ -1,7 +1,7 @@
 """
-Avatar 核心类
+Lớp cốt lõi Avatar (Nhân vật)
 
-精简后的 Avatar 类，通过 Mixin 组合完整功能。
+Lớp Avatar đã được tinh giản, kết hợp các chức năng hoàn chỉnh thông qua Mixin.
 """
 import random
 from collections import defaultdict
@@ -46,7 +46,7 @@ from src.classes.avatar_metrics import AvatarMetrics
 from src.classes.mortal import Mortal
 from src.classes.gender import Gender
 
-# Mixin 导入
+# Import các Mixin
 from src.classes.effect import EffectsMixin
 from src.classes.core.avatar.inventory_mixin import InventoryMixin
 from src.classes.core.avatar.action_mixin import ActionMixin
@@ -63,8 +63,8 @@ class Avatar(
     ActionMixin,
 ):
     """
-    NPC的类。
-    包含了这个角色的一切信息。
+    Lớp dành cho NPC (Nhân vật).
+    Chứa toàn bộ thông tin về nhân vật đó.
     """
     world: World
     name: str
@@ -90,7 +90,7 @@ class Avatar(
     materials: dict[Material, int] = field(default_factory=dict)
     hp: HP = field(default_factory=lambda: HP(0, 0))
     relations: dict["Avatar", Relation] = field(default_factory=dict)
-    # 缓存的二阶关系 (由 Simulator 定期计算)
+    # Cache quan hệ bậc hai (được tính toán định kỳ bởi Simulator để tối ưu tính toán Giao tế)
     computed_relations: dict["Avatar", Relation] = field(default_factory=dict)
     alignment: Alignment | None = None
     sect: Sect | None = None
@@ -105,7 +105,7 @@ class Avatar(
     custom_pic_id: Optional[int] = None
     
     elixirs: List[ConsumedElixir] = field(default_factory=list)
-    # 临时效果列表: [{"source": str, "effects": dict, "start_month": int, "duration": int}]
+    # Danh sách hiệu ứng tạm thời: [{"source": str, "effects": dict, "start_month": int, "duration": int}]
     temporary_effects: List[dict] = field(default_factory=list)
 
     is_dead: bool = False
@@ -114,62 +114,63 @@ class Avatar(
     _new_action_set_this_step: bool = False
     _action_cd_last_months: dict[str, int] = field(default_factory=dict)
     
+    # Danh sách các khu vực đã thông hiểu (Known Regions)
     known_regions: set[int] = field(default_factory=set)
 
-    # 状态追踪（可选）
+    # Lưu trữ lịch sử Căn cơ (Metrics history) qua từng tháng
     metrics_history: List[AvatarMetrics] = field(default_factory=list)
     enable_metrics_tracking: bool = False
-    max_metrics_history: int = 1200  # 最多 100 年
+    max_metrics_history: int = 1200  # Tối đa 100 năm
 
-    # 关系交互计数器: key=target_id, value={"count": 0, "checked_times": 0}
+    # Bộ đếm tương tác quan hệ: key=target_id, value={"count": 0, "checked_times": 0}
     relation_interaction_states: dict[str, dict[str, int]] = field(default_factory=lambda: defaultdict(lambda: {"count": 0, "checked_times": 0}))
 
-    # [新增] 子女列表
+    # [Bổ sung] Danh sách con cái (Thường dân)
     children: List["Mortal"] = field(default_factory=list)
 
-    # [新增] 出身地ID
+    # [Bổ sung] ID khu vực sinh ra
     born_region_id: Optional[int] = None
 
-    # [新增] 关系开始时间缓存
-    # Key: 对方Avatar ID, Value: 开始时的 MonthStamp (int)
+    # [Bổ sung] Cache thời gian bắt đầu quan hệ
+    # Key: ID Avatar đối phương, Value: MonthStamp lúc bắt đầu (int)
     relation_start_dates: dict[str, int] = field(default_factory=dict)
 
-    # 拥有的洞府列表（不参与序列化，通过 load_game 重建）
+    # Danh sách các động phủ (vùng tu luyện) sở hữu (không tham gia tuần tự hóa, được tái thiết qua load_game)
     owned_regions: List["CultivateRegion"] = field(default_factory=list, init=False)
 
     def occupy_region(self, region: "CultivateRegion") -> None:
         """
-        占据一个洞府，处理双向绑定和旧主清理。
+        Chiếm giữ một động phủ, xử lý liên kết hai chiều và dọn dẹp chủ cũ.
         """
-        # 如果已经是我的，无需操作
+        # Nếu đã là của mình thì không cần thao tác
         if region.host_avatar == self:
             if region not in self.owned_regions:
                 self.owned_regions.append(region)
             return
 
-        # 如果有旧主，先让旧主释放
+        # Nếu có chủ cũ, yêu cầu chủ cũ giải phóng
         if region.host_avatar is not None:
             region.host_avatar.release_region(region)
 
-        # 建立新关系
+        # Thiết lập quan hệ mới
         region.host_avatar = self
         if region not in self.owned_regions:
             self.owned_regions.append(region)
 
     def release_region(self, region: "CultivateRegion") -> None:
         """
-        放弃一个洞府的所有权。
+        Từ bỏ quyền sở hữu một động phủ.
         """
         if region in self.owned_regions:
             self.owned_regions.remove(region)
         
-        # 只有当 region 的主人确实是自己时才置空（防止误伤新主人）
+        # Chỉ xóa chủ khi chủ của region thực sự là bản thân (tránh xóa nhầm chủ mới)
         if region.host_avatar == self:
             region.host_avatar = None
 
     def add_breakthrough_rate(self, rate: float, duration: int = 1) -> None:
         """
-        增加突破成功率（临时效果）
+        Tăng tỷ lệ đột phá thành công (hiệu ứng tạm thời)
         """
         self.temporary_effects.append({
             "source": "play_benefit",
@@ -179,41 +180,41 @@ class Avatar(
         })
         self.recalc_effects()
 
-    # ========== 宗门相关 ==========
+    # ========== Liên quan đến Đan dược / Tông môn ==========
 
     def consume_elixir(self, elixir: Elixir) -> bool:
         """
-        服用丹药
-        :return: 是否成功服用
+        Phục dụng đan dược
+        :return: Có phục dụng thành công hay không
         """
-        # 1. 境界校验：只能服用境界等于或者小于当前境界的丹药
+        # 1. Kiểm tra cảnh giới: Chỉ có thể phục dụng đan dược có cảnh giới bằng hoặc thấp hơn hiện tại
         if elixir.realm > self.cultivation_progress.realm:
             return False
             
-        # 2. 重复服用校验：若已服用过同种且未失效的丹药，则无效
-        # 因为延寿丹药都是无限持久的，所以所有延寿丹药都只能服用一次。
+        # 2. Kiểm tra phục dụng lặp lại: Nếu đã phục dụng loại đan dược cùng loại chưa hết hiệu lực thì không có tác dụng
+        # Vì đan dược diên thọ là vĩnh viễn, nên mỗi loại đan dược diên thọ chỉ có thể phục dụng một lần.
         for consumed in self.elixirs:
             if consumed.elixir.id == elixir.id:
                 if not consumed.is_completely_expired(int(self.world.month_stamp)):
                     return False
 
-        # 3. 记录服用状态
+        # 3. Ghi lại trạng thái phục dụng
         self.elixirs.append(ConsumedElixir(elixir, int(self.world.month_stamp)))
         
-        # 4. 立即触发属性重算（因为可能有立即生效的数值变化，或者MaxHP/Lifespan改变）
+        # 4. Kích hoạt tính toán lại thuộc tính ngay lập tức (vì có thể có thay đổi chỉ số tức thì, hoặc thay đổi MaxHP/Thọ nguyên)
         self.recalc_effects()
         
         return True
     
     def process_elixir_expiration(self, current_month: int) -> None:
         """
-        处理丹药过期：
-        1. 移除已完全过期的丹药
-        2. 如果有移除，触发属性重算
+        Xử lý đan dược hết hạn:
+        1. Loại bỏ các đan dược đã hết hạn hoàn toàn
+        2. Nếu có loại bỏ, kích hoạt tính toán lại thuộc tính
         """
         need_recalc = False
         
-        # 处理丹药
+        # Xử lý đan dược
         if self.elixirs:
             original_count = len(self.elixirs)
             self.elixirs = [
@@ -223,7 +224,7 @@ class Avatar(
             if len(self.elixirs) < original_count:
                 need_recalc = True
 
-        # 处理临时效果
+        # Xử lý hiệu ứng tạm thời
         if self.temporary_effects:
             original_temp_count = len(self.temporary_effects)
             self.temporary_effects = [
@@ -233,12 +234,12 @@ class Avatar(
             if len(self.temporary_effects) < original_temp_count:
                 need_recalc = True
         
-        # 如果有过期，重算属性
+        # Nếu có hết hạn, tính toán lại thuộc tính
         if need_recalc:
             self.recalc_effects()
 
     def join_sect(self, sect: Sect, rank: "SectRank") -> None:
-        """加入宗门"""
+        """Gia nhập tông môn"""
         if self.is_dead:
             return
         if self.sect:
@@ -248,14 +249,14 @@ class Avatar(
         sect.add_member(self)
         
     def leave_sect(self) -> None:
-        """退出宗门"""
+        """Rời khỏi tông môn"""
         if self.sect:
             self.sect.remove_member(self)
             self.sect = None
             self.sect_rank = None
 
     def get_sect_str(self) -> str:
-        """获取宗门显示名：有宗门则返回"宗门名+职位"，否则返回"散修"。"""
+        """Lấy tên hiển thị tông môn: Nếu có tông môn trả về "Tên tông môn + Chức vụ", nếu không trả về "Tán tu"."""
         from src.i18n import t
         if self.sect is None:
             return t("Rogue Cultivator")
@@ -266,17 +267,17 @@ class Avatar(
         return t("{sect} {rank}", sect=self.sect.name, rank=rank_name)
 
     def get_sect_rank_name(self) -> str:
-        """获取宗门职位的显示名称"""
+        """Lấy tên hiển thị của chức vụ trong tông môn"""
         from src.i18n import t
         if self.sect is None or self.sect_rank is None:
             return t("Rogue Cultivator")
         from src.classes.sect_ranks import get_rank_display_name
         return get_rank_display_name(self.sect_rank, self.sect)
 
-    # ========== 死亡相关 ==========
+    # ========== Liên quan đến Tử vong ==========
 
     def set_dead(self, reason: str, time: MonthStamp) -> None:
-        """设置角色死亡状态。"""
+        """Thiết lập trạng thái tử vong cho nhân vật."""
         if self.is_dead:
             return
             
@@ -293,8 +294,8 @@ class Avatar(
         self.thinking = ""
         self.short_term_objective = ""
         
-        # 释放所有拥有的洞府
-        # 复制列表进行遍历，因为 release_region 会修改列表
+        # Giải phóng toàn bộ động phủ sở hữu
+        # Sao chép danh sách để duyệt vì release_region sẽ sửa đổi danh sách gốc
         for region in list(self.owned_regions):
             self.release_region(region)
 
@@ -302,20 +303,20 @@ class Avatar(
             self.sect.remove_member(self)
 
     def death_by_old_age(self) -> bool:
-        """检查是否老死"""
+        """Kiểm tra xem có chết vì lão hóa (hết thọ nguyên) không"""
         return self.age.death_by_old_age(self.cultivation_progress.realm)
 
-    # ========== 状态追踪 ==========
+    # ========== Theo dõi trạng thái (Metrics) ==========
 
     def record_metrics(self, tags: Optional[List[str]] = None) -> Optional[AvatarMetrics]:
         """
-        记录当前状态快照。
+        Ghi lại bản sao Căn cơ (Metrics) hiện tại.
 
         Args:
-            tags: 可选的事件标记
+            tags: Các nhãn sự kiện tùy chọn
 
         Returns:
-            创建的快照，如果追踪未启用则返回 None
+            Bản ghi trạng thái đã tạo, hoặc None nếu tính năng theo dõi chưa được bật
         """
         if not self.enable_metrics_tracking:
             return None
@@ -335,14 +336,14 @@ class Avatar(
 
         self.metrics_history.append(metrics)
 
-        # 自动清理旧记录
+        # Tự động dọn dẹp bản ghi cũ
         if len(self.metrics_history) > self.max_metrics_history:
             self.metrics_history = self.metrics_history[-self.max_metrics_history:]
 
         return metrics
 
     def get_metrics_summary(self) -> dict:
-        """获取状态追踪摘要"""
+        """Lấy tóm tắt biến động Căn cơ"""
         if not self.metrics_history:
             return {"enabled": self.enable_metrics_tracking, "count": 0}
 
@@ -357,14 +358,14 @@ class Avatar(
             ),
         }
 
-    # ========== 年龄与修为 ==========
+    # ========== Tuổi tác và Tu vi ==========
 
     def update_age(self, current_month_stamp: MonthStamp):
-        """更新年龄"""
+        """Cập nhật tuổi tác"""
         self.age.update_age(current_month_stamp, self.birth_month_stamp)
 
     def update_cultivation(self, new_level: int):
-        """更新修仙进度，并在境界提升时更新寿命和宗门职位"""
+        """Cập nhật tiến độ tu tiên, cập nhật thọ nguyên và chức vụ tông môn khi tăng cảnh giới"""
         old_realm = self.cultivation_progress.realm
         self.cultivation_progress.level = new_level
         self.cultivation_progress.realm = self.cultivation_progress.get_realm(new_level)
@@ -375,10 +376,10 @@ class Avatar(
             from src.classes.sect_ranks import check_and_promote_sect_rank
             check_and_promote_sect_rank(self, old_realm, self.cultivation_progress.realm)
 
-    # ========== 区域与位置 ==========
+    # ========== Khu vực và Vị trí ==========
 
     def _init_known_regions(self):
-        """初始化已知区域：当前位置 + 宗门驻地"""
+        """Khởi tạo các khu vực đã biết: Vị trí hiện tại + Trụ sở tông môn"""
         if self.tile and self.tile.region:
             self.known_regions.add(self.tile.region.id)
         
@@ -388,72 +389,72 @@ class Avatar(
                     self.known_regions.add(r.id)
                     break
 
-    # ========== 关系相关 ==========
+    # ========== Liên quan đến Quan hệ ==========
 
     def set_relation(self, other: "Avatar", relation: Relation) -> None:
-        """设置与另一个角色的关系。"""
+        """Thiết lập quan hệ với một nhân vật khác."""
         from src.classes.relation.relations import set_relation
         set_relation(self, other, relation)
 
-    # ========== 语义化关系操作 (Semantic Relation Operations) ==========
+    # ========== Các thao tác quan hệ ngữ nghĩa (Semantic Relation Operations) ==========
 
     def acknowledge_master(self, teacher: "Avatar") -> None:
         """
-        [我] 拜 [teacher] 为师。
-        语义：确立对方是我的 MASTER (老师)。
+        [Bản thân] bái [teacher] làm sư phụ.
+        Ngữ nghĩa: Xác lập đối phương là MASTER (Sư phụ) của tôi.
         """
         self.set_relation(teacher, Relation.IS_MASTER_OF)
 
     def accept_disciple(self, student: "Avatar") -> None:
         """
-        [我] 收 [student] 为徒。
-        语义：确立对方是我的 DISCIPLE (徒弟)。
+        [Bản thân] nhận [student] làm đồ đệ.
+        Ngữ nghĩa: Xác lập đối phương là DISCIPLE (Đồ đệ) của tôi.
         """
         self.set_relation(student, Relation.IS_DISCIPLE_OF)
 
     def acknowledge_parent(self, parent: "Avatar") -> None:
         """
-        [我] 认 [parent] 为父/母。
-        语义：确立对方是我的 PARENT (父母)。
+        [Bản thân] nhận [parent] làm phụ mẫu (cha/mẹ).
+        Ngữ nghĩa: Xác lập đối phương là PARENT (Cha mẹ) của tôi.
         """
         self.set_relation(parent, Relation.IS_PARENT_OF)
         
     def acknowledge_child(self, child: "Avatar") -> None:
         """
-        [我] 认 [child] 为子/女。
-        语义：确立对方是我的 CHILD (子女)。
+        [Bản thân] nhận [child] làm tử nữ (con cái).
+        Ngữ nghĩa: Xác lập đối phương là CHILD (Con cái) của tôi.
         """
         self.set_relation(child, Relation.IS_CHILD_OF)
 
     def become_lovers_with(self, other: "Avatar") -> None:
         """
-        [我] 与 [other] 结为道侣。
+        [Bản thân] cùng [other] kết thành đạo lữ.
         """
         self.set_relation(other, Relation.IS_LOVER_OF)
 
     def make_friend_with(self, other: "Avatar") -> None:
         """
-        [我] 与 [other] 结为好友。
+        [Bản thân] cùng [other] kết thành hảo hữu (bạn bè).
         """
         self.set_relation(other, Relation.IS_FRIEND_OF)
 
     def make_enemy_of(self, other: "Avatar") -> None:
         """
-        [我] 将 [other] 视为仇敌。
+        [Bản thân] xem [other] là cừu địch (kẻ thù).
         """
         self.set_relation(other, Relation.IS_ENEMY_OF)
 
     def get_relation(self, other: "Avatar") -> Optional[Relation]:
-        """获取与另一个角色的关系。"""
+        """Lấy quan hệ với một nhân vật khác."""
         from src.classes.relation.relations import get_relation
         return get_relation(self, other)
 
     def clear_relation(self, other: "Avatar") -> None:
-        """清除与另一个角色的关系。"""
+        """Xóa bỏ quan hệ với một nhân vật khác."""
         from src.classes.relation.relations import clear_relation
         clear_relation(self, other)
 
-    # ========== 信息展示（委托） ==========
+    # ========== Hiển thị thông tin (Ủy thác) ==========
 
     def get_info(self, detailed: bool = False) -> dict:
         from src.classes.core.avatar.info_presenter import get_avatar_info
@@ -477,36 +478,36 @@ class Avatar(
         return get_other_avatar_info(self, other_avatar)
 
     def get_desc(self, detailed: bool = False) -> str:
-        """获取角色的文本描述（包含效果明细）"""
+        """Lấy mô tả văn bản của nhân vật (bao gồm chi tiết hiệu ứng)"""
         from src.classes.core.avatar.info_presenter import get_avatar_desc
         return get_avatar_desc(self, detailed=detailed)
 
-    # ========== 魔法方法 ==========
+    # ========== Các phương thức Magic ==========
 
     @property
     def orthodoxy(self) -> "Orthodoxy | None":
-        """获取角色的道统（有宗门则随宗门，无宗门则为散修）"""
+        """Lấy đạo thống của nhân vật (Nếu có tông môn thì theo tông môn, nếu không thì là tán tu)"""
         from src.classes.core.orthodoxy import get_orthodoxy
         
-        # 优先返回宗门的道统
+        # Ưu tiên trả về đạo thống của tông môn
         if self.sect:
             return get_orthodoxy(self.sect.orthodoxy_id)
             
-        # 散修返回默认道统
+        # Tán tu trả về đạo thống mặc định
         return get_orthodoxy("sanxiu")
 
     @property
     def current_action_name(self) -> str:
-        """获取当前动作名称，默认返回'思考'"""
+        """Lấy tên hành động hiện tại, mặc định trả về 'Đang suy nghĩ'"""
         if self.current_action and self.current_action.action:
             action = self.current_action.action
-            # 使用 get_action_name() 获取翻译后的动作名称
+            # Sử dụng get_action_name() để lấy tên hành động đã dịch
             return action.get_action_name()
         from src.i18n import t
         return t("action_thinking")
 
     def __post_init__(self):
-        """在Avatar创建后自动初始化tile和HP"""
+        """Tự động khởi tạo tile và HP sau khi Avatar được tạo"""
         self.tile = self.world.map.get_tile(self.pos_x, self.pos_y)
         
         max_hp = HP_MAX_BY_REALM.get(self.cultivation_progress.realm, 100)
@@ -532,7 +533,7 @@ class Avatar(
 
     def __hash__(self) -> int:
         if not hasattr(self, 'id'):
-            # 防御性编程：如果id尚未初始化（例如deepcopy过程中），使用对象内存地址
+            # Lập trình phòng thủ: Nếu ID chưa được khởi tạo (ví dụ trong quá trình deepcopy), sử dụng địa chỉ vùng nhớ đối tượng
             return super().__hash__()
         return hash(self.id)
 

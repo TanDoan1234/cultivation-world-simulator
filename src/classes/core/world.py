@@ -24,38 +24,38 @@ class World():
     map: Map
     month_stamp: MonthStamp
     avatar_manager: AvatarManager = field(default_factory=AvatarManager)
-    # 凡人管理器
+    # Quản lý thường dân
     mortal_manager: MortalManager = field(default_factory=MortalManager)
-    # 全局事件管理器
+    # Quản lý sự kiện toàn cục
     event_manager: EventManager = field(default_factory=EventManager)
-    # 当前天地灵机（世界级buff/debuff）
+    # Thiên địa linh cơ hiện tại (buff/debuff cấp thế giới)
     current_phenomenon: Optional["CelestialPhenomenon"] = None
-    # 天地灵机开始年份（用于计算持续时间）
+    # Năm bắt đầu thiên địa linh cơ (dùng để tính toán thời gian duy trì)
     phenomenon_start_year: int = 0
-    # 出世物品流通管理器
+    # Quản lý lưu thông vật phẩm xuất thế
     circulation: CirculationManager = field(default_factory=CirculationManager)
-    # Gathering 管理器
+    # Quản lý Gathering
     gathering_manager: GatheringManager = field(default_factory=GatheringManager)
-    # 世界历史
+    # Lịch sử thế giới
     history: "History" = field(default_factory=lambda: History())
-    # 世界开始年份
+    # Năm bắt đầu của thế giới
     start_year: int = 0
 
     def get_info(self, detailed: bool = False, avatar: Optional["Avatar"] = None) -> dict:
         """
-        返回世界信息（dict），其中包含地图信息（dict）。
-        如果指定了 avatar，将传给 map.get_info 用于过滤区域和计算距离。
+        Trả về thông tin thế giới (dict), bao gồm thông tin bản đồ (dict).
+        Nếu chỉ định avatar, sẽ truyền cho map.get_info để lọc khu vực và tính toán khoảng cách.
         """
         static_info = self.static_info
         map_info = self.map.get_info(detailed=detailed, avatar=avatar)
         world_info = {**map_info, **static_info}
 
         if self.current_phenomenon:
-            # 使用翻译 Key
+            # Sử dụng translation Key
             key = t("Current World Phenomenon")
-            # 格式化内容，注意这里我们假设 name 和 desc 已经是当前语言的（它们是对象属性，加载时确定）
-            # 但如果需要在 Prompt 中有特定的格式（如中文用【】，英文不用），也可以引入 key
-            # 为了简单起见，我们把格式也放入翻译
+            # Định dạng nội dung, lưu ý ở đây giả định name và desc đã theo ngôn ngữ hiện tại (là thuộc tính đối tượng, xác định khi load)
+            # Nhưng nếu cần định dạng cụ thể trong Prompt (như tiếng Trung dùng 【】, tiếng Anh không dùng), cũng có thể đưa vào key
+            # Để đơn giản, chúng ta đưa cả định dạng vào bản dịch
             # "phenomenon_format": "【{name}】{desc}" (ZH) vs "{name}: {desc}" (EN)
             value = t("phenomenon_format", name=self.current_phenomenon.name, desc=self.current_phenomenon.desc)
             world_info[key] = value
@@ -69,17 +69,17 @@ class World():
         return self.avatar_manager.get_observable_avatars(avatar)
 
     def set_history(self, history_text: str):
-        """设置世界历史文本"""
+        """Thiết lập văn bản lịch sử thế giới"""
         self.history.text = history_text
         
     def record_modification(self, category: str, id_str: str, changes: dict):
         """
-        记录历史修改差分
+        Ghi lại các thay đổi (diff) lịch sử
         
         Args:
-            category: 修改类别 (sects, regions, techniques, weapons, auxiliaries)
-            id_str: 对象 ID 字符串
-            changes: 修改的属性字典
+            category: Danh mục sửa đổi (sects, regions, techniques, weapons, auxiliaries)
+            id_str: Chuỗi ID của đối tượng
+            changes: Dictionary các thuộc tính đã sửa đổi
         """
         if category not in self.history.modifications:
             self.history.modifications[category] = {}
@@ -87,7 +87,7 @@ class World():
         if id_str not in self.history.modifications[category]:
             self.history.modifications[category][id_str] = {}
             
-        # 累加修改（后来的覆盖前面的）
+        # Cộng dồn sửa đổi (cái sau ghi đè cái trước)
         self.history.modifications[category][id_str].update(changes)
 
     @property
@@ -114,16 +114,16 @@ class World():
         start_year: int = 0,
     ) -> "World":
         """
-        工厂方法：创建使用 SQLite 持久化事件的 World 实例。
+        Factory method: Tạo thực thể World sử dụng SQLite để lưu trữ sự kiện bền vững.
 
         Args:
-            map: 地图对象。
-            month_stamp: 时间戳。
-            events_db_path: 事件数据库文件路径。
-            start_year: 世界开始年份。
+            map: Đối tượng bản đồ.
+            month_stamp: Dấu thời gian.
+            events_db_path: Đường dẫn tệp cơ sở dữ liệu sự kiện.
+            start_year: Năm bắt đầu của thế giới.
 
         Returns:
-            配置好的 World 实例。
+            Thực thể World đã cấu hình xong.
         """
         event_manager = EventManager.create_with_db(events_db_path)
         return cls(
