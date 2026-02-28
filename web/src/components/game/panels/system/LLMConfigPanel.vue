@@ -1,152 +1,169 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
-import { llmApi } from '../../../../api'
-import type { LLMConfigDTO } from '../../../../types/api'
-import { useMessage } from 'naive-ui'
-import { useI18n } from 'vue-i18n'
+import { ref, onMounted, computed } from "vue";
+import { llmApi } from "../../../../api";
+import type { LLMConfigDTO } from "../../../../types/api";
+import { useMessage } from "naive-ui";
+import { useI18n } from "vue-i18n";
 
-const { t } = useI18n()
-const message = useMessage()
-const loading = ref(false)
-const testing = ref(false)
-const showHelpModal = ref(false)
+const { t } = useI18n();
+const message = useMessage();
+const loading = ref(false);
+const testing = ref(false);
+const showHelpModal = ref(false);
 
 const config = ref<LLMConfigDTO>({
-  base_url: '',
-  api_key: '',
-  model_name: '',
-  fast_model_name: '',
-  mode: 'default',
-  max_concurrent_requests: 10
-})
+  base_url: "",
+  api_key: "",
+  model_name: "",
+  fast_model_name: "",
+  mode: "default",
+  max_concurrent_requests: 10,
+});
 
 const modeOptions = computed(() => [
-  { label: t('llm.modes.default'), value: 'default', desc: t('llm.modes.default_desc') },
-  { label: t('llm.modes.normal'), value: 'normal', desc: t('llm.modes.normal_desc') },
-  { label: t('llm.modes.fast'), value: 'fast', desc: t('llm.modes.fast_desc') }
-])
+  {
+    label: t("llm.modes.default"),
+    value: "default",
+    desc: t("llm.modes.default_desc"),
+  },
+  {
+    label: t("llm.modes.normal"),
+    value: "normal",
+    desc: t("llm.modes.normal_desc"),
+  },
+  { label: t("llm.modes.fast"), value: "fast", desc: t("llm.modes.fast_desc") },
+]);
 
 const presets = computed(() => [
   {
-    name: t('llm.presets.openai'),
-    base_url: 'https://api.openai.com/v1',
-    model_name: 'gpt-4o',
-    fast_model_name: 'gpt-4o-mini'
+    name: t("llm.presets.openai"),
+    base_url: "https://api.openai.com/v1",
+    model_name: "gpt-4o",
+    fast_model_name: "gpt-4o-mini",
   },
   {
-    name: t('llm.presets.qwen'),
-    base_url: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
-    model_name: 'qwen-plus',
-    fast_model_name: 'qwen-flash'
+    name: t("llm.presets.qwen"),
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    model_name: "qwen-plus",
+    fast_model_name: "qwen-flash",
   },
   {
-    name: t('llm.presets.deepseek'),
-    base_url: 'https://api.deepseek.com',
-    model_name: 'deepseek-chat',
-    fast_model_name: 'deepseek-chat'
+    name: t("llm.presets.deepseek"),
+    base_url: "https://api.deepseek.com",
+    model_name: "deepseek-chat",
+    fast_model_name: "deepseek-chat",
   },
   {
-    name: t('llm.presets.siliconflow'),
-    base_url: 'https://api.siliconflow.cn/v1',
-    model_name: 'Qwen/Qwen2.5-72B-Instruct',
-    fast_model_name: 'Qwen/Qwen2.5-7B-Instruct'
+    name: t("llm.presets.siliconflow"),
+    base_url: "https://api.siliconflow.cn/v1",
+    model_name: "Qwen/Qwen2.5-72B-Instruct",
+    fast_model_name: "Qwen/Qwen2.5-7B-Instruct",
   },
   {
-    name: t('llm.presets.openrouter'),
-    base_url: 'https://openrouter.ai/api/v1',
-    model_name: 'anthropic/claude-3.5-sonnet',
-    fast_model_name: 'google/gemini-3-flash'
+    name: t("llm.presets.openrouter"),
+    base_url: "https://openrouter.ai/api/v1",
+    model_name: "anthropic/claude-3.5-sonnet",
+    fast_model_name: "google/gemini-3-flash",
   },
   {
-    name: t('llm.presets.gemini'),
+    name: t("llm.presets.gemini"),
     // Note: The `/openai` suffix is required to use Google's OpenAI-compatible API.
     // Our backend (src/utils/llm/client.py) uses OpenAI-compatible format with
     // Bearer token auth and /chat/completions endpoint, so we need this suffix
     // to make Google API accept OpenAI-style requests instead of native Gemini format.
-    base_url: 'https://generativelanguage.googleapis.com/v1beta/openai/',
-    model_name: 'gemini-3-pro-preview',
-    fast_model_name: 'gemini-3-flash-preview'
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai/",
+    model_name: "gemini-3-pro-preview",
+    fast_model_name: "gemini-3-flash-preview",
   },
   {
-    name: t('llm.presets.ollama'),
-    base_url: 'http://localhost:11434/v1',
-    model_name: 'qwen2.5:7b',
-    fast_model_name: 'qwen2.5:7b',
-    isLocal: true
-  }
-])
+    name: t("llm.presets.ollama"),
+    base_url: "http://localhost:11434/v1",
+    model_name: "qwen2.5:7b",
+    fast_model_name: "qwen2.5:7b",
+    isLocal: true,
+  },
+]);
 
 async function fetchConfig() {
-  loading.value = true
+  loading.value = true;
   try {
-    const res = await llmApi.fetchConfig()
+    const res = await llmApi.fetchConfig();
     // 确保 API Key 在前端展示为空，增加安全性提示
-    config.value = { ...res, api_key: '' }
+    config.value = { ...res, api_key: "" };
   } catch (e) {
-    message.error(t('llm.fetch_failed'))
+    message.error(t("llm.fetch_failed"));
   } finally {
-    loading.value = false
+    loading.value = false;
   }
 }
 
 function applyPreset(preset: any) {
-  config.value.base_url = preset.base_url
-  config.value.model_name = preset.model_name
-  config.value.fast_model_name = preset.fast_model_name
+  config.value.base_url = preset.base_url;
+  config.value.model_name = preset.model_name;
+  config.value.fast_model_name = preset.fast_model_name;
   // Ollama doesn't require a real API key, auto-fill a placeholder.
-  if ('isLocal' in preset && preset.isLocal) {
-    config.value.api_key = 'ollama'
-    message.info(t('llm.preset_applied', { name: preset.name, extra: t('llm.preset_extra_local') }))
+  if ("isLocal" in preset && preset.isLocal) {
+    config.value.api_key = "ollama";
+    message.info(
+      t("llm.preset_applied", {
+        name: preset.name,
+        extra: t("llm.preset_extra_local"),
+      }),
+    );
   } else {
-    config.value.api_key = ''
-    message.info(t('llm.preset_applied', { name: preset.name, extra: t('llm.preset_extra_key') }))
+    config.value.api_key = "";
+    message.info(
+      t("llm.preset_applied", {
+        name: preset.name,
+        extra: t("llm.preset_extra_key"),
+      }),
+    );
   }
 }
 
 const emit = defineEmits<{
-  (e: 'config-saved'): void
-}>()
+  (e: "config-saved"): void;
+}>();
 
 async function handleTestAndSave() {
   if (!config.value.base_url) {
-    message.warning(t('llm.base_url_required'))
-    return
+    message.warning(t("llm.base_url_required"));
+    return;
   }
 
-  testing.value = true
+  testing.value = true;
   try {
     // 1. 测试连接
-    await llmApi.testConnection(config.value)
-    message.success(t('llm.test_success'))
-    
+    await llmApi.testConnection(config.value);
+    message.success(t("llm.test_success"));
+
     // 2. 保存配置
-    await llmApi.saveConfig(config.value)
-    message.success(t('llm.save_success'))
-    emit('config-saved')
+    await llmApi.saveConfig(config.value);
+    message.success(t("llm.save_success"));
+    emit("config-saved");
   } catch (e: any) {
-    const errorMsg = e.response?.data?.detail || e.message
-    message.error(t('llm.test_save_failed', { error: errorMsg }))
+    const errorMsg = e.response?.data?.detail || e.message;
+    message.error(t("llm.test_save_failed", { error: errorMsg }));
   } finally {
-    testing.value = false
+    testing.value = false;
   }
 }
 
 onMounted(() => {
-  fetchConfig()
-})
+  fetchConfig();
+});
 </script>
 
 <template>
   <div class="llm-panel">
-    <div v-if="loading" class="loading">{{ t('llm.loading') }}</div>
+    <div v-if="loading" class="loading">{{ t("llm.loading") }}</div>
     <div v-else class="config-form">
-      
       <!-- 预设按钮 -->
       <div class="section">
-        <div class="section-title">{{ t('llm.sections.quick_fill') }}</div>
+        <div class="section-title">{{ t("llm.sections.quick_fill") }}</div>
         <div class="preset-buttons">
-          <button 
-            v-for="preset in presets" 
+          <button
+            v-for="preset in presets"
             :key="preset.name"
             class="preset-btn"
             @click="applyPreset(preset)"
@@ -158,37 +175,39 @@ onMounted(() => {
 
       <!-- 核心配置 -->
       <div class="section">
-        <div class="section-title">{{ t('llm.sections.api_config') }}</div>
-        
+        <div class="section-title">{{ t("llm.sections.api_config") }}</div>
+
         <div class="form-item">
           <div class="label-row">
-            <label>{{ t('llm.labels.api_key') }}</label>
-            <button class="help-btn" @click="showHelpModal = true">{{ t('llm.labels.what_is_api') }}</button>
+            <label>{{ t("llm.labels.api_key") }}</label>
+            <button class="help-btn" @click="showHelpModal = true">
+              {{ t("llm.labels.what_is_api") }}
+            </button>
           </div>
-          <input 
-            v-model="config.api_key" 
-            type="password" 
+          <input
+            v-model="config.api_key"
+            type="password"
             :placeholder="t('llm.placeholders.api_key')"
             class="input-field"
           />
         </div>
 
         <div class="form-item">
-          <label>{{ t('llm.labels.base_url') }}</label>
-          <input 
-            v-model="config.base_url" 
-            type="text" 
+          <label>{{ t("llm.labels.base_url") }}</label>
+          <input
+            v-model="config.base_url"
+            type="text"
             :placeholder="t('llm.placeholders.base_url')"
             class="input-field"
           />
         </div>
 
         <div class="form-item">
-          <label>{{ t('llm.labels.max_concurrent_requests') }}</label>
-          <div class="desc">{{ t('llm.descs.max_concurrent_requests') }}</div>
-          <input 
-            v-model.number="config.max_concurrent_requests" 
-            type="number" 
+          <label>{{ t("llm.labels.max_concurrent_requests") }}</label>
+          <div class="desc">{{ t("llm.descs.max_concurrent_requests") }}</div>
+          <input
+            v-model.number="config.max_concurrent_requests"
+            type="number"
             min="1"
             max="50"
             :placeholder="t('llm.placeholders.max_concurrent_requests')"
@@ -199,25 +218,25 @@ onMounted(() => {
 
       <!-- 模型配置 -->
       <div class="section">
-        <div class="section-title">{{ t('llm.sections.model_selection') }}</div>
-        
+        <div class="section-title">{{ t("llm.sections.model_selection") }}</div>
+
         <div class="form-item">
-          <label>{{ t('llm.labels.normal_model') }}</label>
-          <div class="desc">{{ t('llm.descs.normal_model') }}</div>
-          <input 
-            v-model="config.model_name" 
-            type="text" 
+          <label>{{ t("llm.labels.normal_model") }}</label>
+          <div class="desc">{{ t("llm.descs.normal_model") }}</div>
+          <input
+            v-model="config.model_name"
+            type="text"
             :placeholder="t('llm.placeholders.normal_model')"
             class="input-field"
           />
         </div>
 
         <div class="form-item">
-          <label>{{ t('llm.labels.fast_model') }}</label>
-          <div class="desc">{{ t('llm.descs.fast_model') }}</div>
-          <input 
-            v-model="config.fast_model_name" 
-            type="text" 
+          <label>{{ t("llm.labels.fast_model") }}</label>
+          <div class="desc">{{ t("llm.descs.fast_model") }}</div>
+          <input
+            v-model="config.fast_model_name"
+            type="text"
             :placeholder="t('llm.placeholders.fast_model')"
             class="input-field"
           />
@@ -226,17 +245,17 @@ onMounted(() => {
 
       <!-- 模式选择 -->
       <div class="section">
-        <div class="section-title">{{ t('llm.sections.run_mode') }}</div>
+        <div class="section-title">{{ t("llm.sections.run_mode") }}</div>
         <div class="mode-options horizontal">
-          <label 
-            v-for="opt in modeOptions" 
+          <label
+            v-for="opt in modeOptions"
             :key="opt.value"
             class="mode-radio"
             :class="{ active: config.mode === opt.value }"
           >
-            <input 
-              type="radio" 
-              v-model="config.mode" 
+            <input
+              type="radio"
+              v-model="config.mode"
               :value="opt.value"
               class="hidden-radio"
             />
@@ -250,89 +269,116 @@ onMounted(() => {
 
       <!-- 底部操作 -->
       <div class="action-bar">
-        <button 
-          class="save-btn" 
-          :disabled="testing"
-          @click="handleTestAndSave"
-        >
-          {{ testing ? t('llm.actions.testing') : t('llm.actions.test_and_save') }}
+        <button class="save-btn" :disabled="testing" @click="handleTestAndSave">
+          {{
+            testing ? t("llm.actions.testing") : t("llm.actions.test_and_save")
+          }}
         </button>
       </div>
-
     </div>
 
     <!-- 帮助弹窗 -->
-    <div v-if="showHelpModal" class="modal-overlay" @click.self="showHelpModal = false">
+    <div
+      v-if="showHelpModal"
+      class="modal-overlay"
+      @click.self="showHelpModal = false"
+    >
       <div class="modal-content">
         <div class="modal-header">
-          <h3>{{ t('llm.help.title') }}</h3>
+          <h3>{{ t("llm.help.title") }}</h3>
           <button class="close-btn" @click="showHelpModal = false">×</button>
         </div>
-        
+
         <div class="modal-body">
           <div class="help-section">
-            <h4>{{ t('llm.help.q1_title') }}</h4>
+            <h4>{{ t("llm.help.q1_title") }}</h4>
             <p>
-              {{ t('llm.help.q1_content') }}
+              {{ t("llm.help.q1_content") }}
             </p>
           </div>
 
           <div class="help-section">
-            <h4>{{ t('llm.help.q2_title') }}</h4>
+            <h4>{{ t("llm.help.q2_title") }}</h4>
             <div class="model-cards">
               <div class="card">
                 <h5>Qwen-Plus / Fast</h5>
-                <p>{{ t('llm.help.q2_qwen') }}</p>
+                <p>{{ t("llm.help.q2_qwen") }}</p>
               </div>
               <div class="card">
                 <h5>DeepSeek V3</h5>
-                <p>{{ t('llm.help.q2_deepseek') }}</p>
+                <p>{{ t("llm.help.q2_deepseek") }}</p>
               </div>
               <div class="card">
                 <h5>Gemini 3 Pro / Fast</h5>
-                <p>{{ t('llm.help.q2_gemini') }}</p>
+                <p>{{ t("llm.help.q2_gemini") }}</p>
               </div>
             </div>
           </div>
 
           <div class="help-section">
-            <h4>{{ t('llm.help.q3_title') }}</h4>
-            <p>{{ t('llm.help.q3_content') }}</p>
+            <h4>{{ t("llm.help.q3_title") }}</h4>
+            <p>{{ t("llm.help.q3_content") }}</p>
             <div class="format-note">
-              <p>{{ t('llm.help.q3_format_note') }}</p>
+              <p>{{ t("llm.help.q3_format_note") }}</p>
             </div>
             <div class="code-block">
-              <p>{{ t('llm.help.q3_base_url') }}</p>
-              <p>{{ t('llm.help.q3_api_key') }}</p>
-              <p>{{ t('llm.help.q3_model_name') }}</p>
+              <p>{{ t("llm.help.q3_base_url") }}</p>
+              <p>{{ t("llm.help.q3_api_key") }}</p>
+              <p>{{ t("llm.help.q3_model_name") }}</p>
             </div>
           </div>
 
           <div class="help-section">
-            <h4>{{ t('llm.help.q4_title') }}</h4>
+            <h4>{{ t("llm.help.q4_title") }}</h4>
             <ul class="link-list">
-               <li><a href="https://platform.openai.com/" target="_blank">{{ t('llm.help_links.openai') }}</a></li>
-               <li><a href="https://bailian.console.aliyun.com/" target="_blank">{{ t('llm.help_links.qwen') }}</a></li>
-               <li><a href="https://platform.deepseek.com/" target="_blank">{{ t('llm.help_links.deepseek') }}</a></li>
-               <li><a href="https://openrouter.ai/" target="_blank">{{ t('llm.help_links.openrouter') }}</a></li>
-               <li><a href="https://cloud.siliconflow.cn/" target="_blank">{{ t('llm.help_links.siliconflow') }}</a></li>
-               <li><a href="https://aistudio.google.com/" target="_blank">{{ t('llm.help_links.gemini') }}</a></li>
+              <li>
+                <a href="https://platform.openai.com/" target="_blank">{{
+                  t("llm.help_links.openai")
+                }}</a>
+              </li>
+              <li>
+                <a href="https://bailian.console.aliyun.com/" target="_blank">{{
+                  t("llm.help_links.qwen")
+                }}</a>
+              </li>
+              <li>
+                <a href="https://platform.deepseek.com/" target="_blank">{{
+                  t("llm.help_links.deepseek")
+                }}</a>
+              </li>
+              <li>
+                <a href="https://openrouter.ai/" target="_blank">{{
+                  t("llm.help_links.openrouter")
+                }}</a>
+              </li>
+              <li>
+                <a href="https://cloud.siliconflow.cn/" target="_blank">{{
+                  t("llm.help_links.siliconflow")
+                }}</a>
+              </li>
+              <li>
+                <a href="https://aistudio.google.com/" target="_blank">{{
+                  t("llm.help_links.gemini")
+                }}</a>
+              </li>
             </ul>
           </div>
 
           <div class="help-section">
-            <h4>{{ t('llm.help.q5_title') }}</h4>
+            <h4>{{ t("llm.help.q5_title") }}</h4>
             <p>
-              {{ t('llm.help.q5_p1') }}
+              {{ t("llm.help.q5_p1") }}
             </p>
             <p>
-              {{ t('llm.help.q5_p2') }}
+              {{ t("llm.help.q5_p2") }}
             </p>
           </div>
         </div>
 
         <div class="modal-footer">
-          <button class="confirm-btn" @click="showHelpModal = false">{{ t('llm.help.confirm') }}</button>
+          <button class="confirm-btn" @click="showHelpModal = false">
+            {{ t("llm.help.confirm") }}
+          </button>
         </div>
       </div>
     </div>
@@ -523,7 +569,7 @@ onMounted(() => {
   max-height: 90vh;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1.5em 3em rgba(0,0,0,0.7);
+  box-shadow: 0 1.5em 3em rgba(0, 0, 0, 0.7);
   overflow: hidden;
   font-size: 1rem; /* 重置 modal 内部字体，避免过大，或者保留继承 */
 }

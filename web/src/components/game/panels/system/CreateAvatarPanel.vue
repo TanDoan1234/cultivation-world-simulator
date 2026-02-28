@@ -1,29 +1,44 @@
 <script setup lang="ts">
-import { ref, computed, watch, onMounted } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { RelationType } from '@/constants/relations'
-import { avatarApi, type GameDataDTO, type CreateAvatarParams, type SimpleAvatarDTO } from '../../../../api'
-import { useWorldStore } from '../../../../stores/world'
-import { useMessage, NInput, NSelect, NSlider, NRadioGroup, NRadioButton, NForm, NFormItem, NButton } from 'naive-ui'
+import { ref, computed, watch, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
+import { RelationType } from "@/constants/relations";
+import {
+  avatarApi,
+  type GameDataDTO,
+  type CreateAvatarParams,
+  type SimpleAvatarDTO,
+} from "../../../../api";
+import { useWorldStore } from "../../../../stores/world";
+import {
+  useMessage,
+  NInput,
+  NSelect,
+  NSlider,
+  NRadioGroup,
+  NRadioButton,
+  NForm,
+  NFormItem,
+  NButton,
+} from "naive-ui";
 
 const emit = defineEmits<{
-  (e: 'created'): void
-}>()
+  (e: "created"): void;
+}>();
 
-const { t } = useI18n()
-const worldStore = useWorldStore()
-const message = useMessage()
-const loading = ref(false)
+const { t } = useI18n();
+const worldStore = useWorldStore();
+const message = useMessage();
+const loading = ref(false);
 
 // --- State ---
-const gameData = ref<GameDataDTO | null>(null)
-const avatarMeta = ref<{ males: number[]; females: number[] } | null>(null)
-const avatarList = ref<SimpleAvatarDTO[]>([]) // For relation selection
+const gameData = ref<GameDataDTO | null>(null);
+const avatarMeta = ref<{ males: number[]; females: number[] } | null>(null);
+const avatarList = ref<SimpleAvatarDTO[]>([]); // For relation selection
 
 const createForm = ref<CreateAvatarParams>({
-  surname: '',
-  given_name: '',
-  gender: '男',
+  surname: "",
+  given_name: "",
+  gender: "MALE",
   age: 16,
   level: undefined,
   sect_id: undefined,
@@ -34,142 +49,180 @@ const createForm = ref<CreateAvatarParams>({
   auxiliary_id: undefined,
   alignment: undefined,
   appearance: 7,
-  relations: []
-})
+  relations: [],
+});
 
-const relationOptions = [
-  { label: '父母', value: RelationType.TO_ME_IS_PARENT },
-  { label: '子女', value: RelationType.TO_ME_IS_CHILD },
-  { label: '兄弟姐妹', value: RelationType.TO_ME_IS_SIBLING },
-  { label: '师傅', value: RelationType.TO_ME_IS_MASTER },
-  { label: '徒弟', value: RelationType.TO_ME_IS_DISCIPLE },
-  { label: '道侣', value: RelationType.TO_ME_IS_LOVER },
-  { label: '朋友', value: RelationType.TO_ME_IS_FRIEND },
-  { label: '仇人', value: RelationType.TO_ME_IS_ENEMY }
-]
+const relationOptions = computed(() => [
+  {
+    label: t("game.info_panel.avatar.relations_list.parent"),
+    value: RelationType.TO_ME_IS_PARENT,
+  },
+  {
+    label: t("game.info_panel.avatar.relations_list.child"),
+    value: RelationType.TO_ME_IS_CHILD,
+  },
+  {
+    label: t("game.info_panel.avatar.relations_list.sibling"),
+    value: RelationType.TO_ME_IS_SIBLING,
+  },
+  {
+    label: t("game.info_panel.avatar.relations_list.master"),
+    value: RelationType.TO_ME_IS_MASTER,
+  },
+  {
+    label: t("game.info_panel.avatar.relations_list.apprentice"),
+    value: RelationType.TO_ME_IS_DISCIPLE,
+  },
+  {
+    label: t("game.info_panel.avatar.relations_list.lovers"),
+    value: RelationType.TO_ME_IS_LOVER,
+  },
+  {
+    label: t("game.info_panel.avatar.relations_list.friend"),
+    value: RelationType.TO_ME_IS_FRIEND,
+  },
+  {
+    label: t("game.info_panel.avatar.relations_list.enemy"),
+    value: RelationType.TO_ME_IS_ENEMY,
+  },
+]);
 
 // --- Computed Options ---
 const sectOptions = computed(() => {
-  if (!gameData.value) return []
-  return gameData.value.sects.map(s => ({ label: s.name, value: s.id }))
-})
+  if (!gameData.value) return [];
+  return gameData.value.sects.map((s) => ({ label: s.name, value: s.id }));
+});
 
 const personaOptions = computed(() => {
-  if (!gameData.value) return []
-  return gameData.value.personas.map(p => ({ label: p.name + ` (${p.desc})`, value: p.id }))
-})
+  if (!gameData.value) return [];
+  return gameData.value.personas.map((p) => ({
+    label: p.name + ` (${p.desc})`,
+    value: p.id,
+  }));
+});
 
 const realmOptions = computed(() => {
-  if (!gameData.value) return []
+  if (!gameData.value) return [];
   return gameData.value.realms.map((r, idx) => ({
     label: t(`realms.${r}`),
-    value: idx * 30 + 1
-  }))
-})
+    value: idx * 30 + 1,
+  }));
+});
 
 const techniqueOptions = computed(() => {
-  if (!gameData.value) return []
-  return gameData.value.techniques.map(item => ({
-    label: `${item.name}（${t('attributes.' + item.attribute)}·${t('technique_grades.' + item.grade)}）`,
-    value: item.id
-  }))
-})
+  if (!gameData.value) return [];
+  return gameData.value.techniques.map((item) => ({
+    label: `${item.name}（${t("attributes." + item.attribute)}·${t("technique_grades." + item.grade)}）`,
+    value: item.id,
+  }));
+});
 
 const weaponOptions = computed(() => {
-  if (!gameData.value) return []
-  return gameData.value.weapons.map(w => ({
-    label: `${w.name}（${t('game.info_panel.popup.types.' + w.type)}·${t('realms.' + w.grade)}）`,
-    value: w.id
-  }))
-})
+  if (!gameData.value) return [];
+  return gameData.value.weapons.map((w) => ({
+    label: `${w.name}（${t("game.info_panel.popup.types." + w.type)}·${t("realms." + w.grade)}）`,
+    value: w.id,
+  }));
+});
 
 const auxiliaryOptions = computed(() => {
-  if (!gameData.value) return []
-  return gameData.value.auxiliaries.map(a => ({
-    label: `${a.name}（${t('realms.' + a.grade)}）`,
-    value: a.id
-  }))
-})
+  if (!gameData.value) return [];
+  return gameData.value.auxiliaries.map((a) => ({
+    label: `${a.name}（${t("realms." + a.grade)}）`,
+    value: a.id,
+  }));
+});
 
 const alignmentOptions = computed(() => {
-  if (!gameData.value) return []
-  return gameData.value.alignments.map(a => ({
+  if (!gameData.value) return [];
+  return gameData.value.alignments.map((a) => ({
     label: a.label,
-    value: a.value
-  }))
-})
+    value: a.value,
+  }));
+});
 
 const availableAvatars = computed(() => {
-  if (!avatarMeta.value) return []
-  const key = createForm.value.gender === '女' ? 'females' : 'males'
-  return avatarMeta.value[key] || []
-})
+  if (!avatarMeta.value) return [];
+  const key = createForm.value.gender === "FEMALE" ? "females" : "males";
+  return avatarMeta.value[key] || [];
+});
 
 const currentAvatarUrl = computed(() => {
-  if (!createForm.value.pic_id) return ''
-  const dir = createForm.value.gender === '女' ? 'females' : 'males'
-  return `/assets/${dir}/${createForm.value.pic_id}.png`
-})
+  if (!createForm.value.pic_id) return "";
+  const dir = createForm.value.gender === "FEMALE" ? "females" : "males";
+  return `/assets/${dir}/${createForm.value.pic_id}.png`;
+});
 
 const avatarOptions = computed(() => {
-  return avatarList.value.map(a => ({
+  return avatarList.value.map((a) => ({
     label: `[${a.sect_name}] ${a.name}`,
-    value: a.id
-  }))
-})
+    value: a.id,
+  }));
+});
 
 // --- Methods ---
 async function fetchData() {
-  loading.value = true
+  loading.value = true;
   try {
     if (!gameData.value) {
-      gameData.value = await avatarApi.fetchGameData()
+      gameData.value = await avatarApi.fetchGameData();
     }
     if (!avatarMeta.value) {
-      avatarMeta.value = await avatarApi.fetchAvatarMeta()
+      avatarMeta.value = await avatarApi.fetchAvatarMeta();
     }
     // 获取角色列表用于关系选择
-    const res = await avatarApi.fetchAvatarList()
-    avatarList.value = res.avatars
+    const res = await avatarApi.fetchAvatarList();
+    avatarList.value = res.avatars;
   } catch (e) {
-    message.error('获取游戏数据失败')
+    message.error(t("game_start.create_avatar.messages.fetch_failed"));
   } finally {
-    loading.value = false
+    loading.value = false;
   }
 }
 
 function addRelation() {
   if (!createForm.value.relations) {
-    createForm.value.relations = []
+    createForm.value.relations = [];
   }
-  createForm.value.relations.push({ target_id: '', relation: RelationType.TO_ME_IS_FRIEND })
+  createForm.value.relations.push({
+    target_id: "",
+    relation: RelationType.TO_ME_IS_FRIEND,
+  });
 }
 
 function removeRelation(index: number) {
-  createForm.value.relations?.splice(index, 1)
+  createForm.value.relations?.splice(index, 1);
 }
 
 async function handleCreateAvatar() {
   if (!createForm.value.level && realmOptions.value.length > 0) {
-    createForm.value.level = realmOptions.value[0].value as number
+    createForm.value.level = realmOptions.value[0].value as number;
   }
 
-  loading.value = true
+  loading.value = true;
   try {
-    const payload = { ...createForm.value }
+    const payload = { ...createForm.value };
+    // Convert gender for backend if needed (Backend expects '男'/'女' or 'MALE'/'FEMALE'?)
+    // Checking CreateAvatarParams in api-docs or common patterns...
+    // Usually backend for this starter project used '男'/'女' based on initial code.
+    // Let's stick to what it was: '男'/'女' but internal enum is better.
+    // I'll check what it was before: gender: '男'
+    const backendPayload: any = { ...payload };
+    backendPayload.gender = payload.gender === "FEMALE" ? "女" : "男";
+
     if (!payload.alignment) {
-      payload.alignment = 'NEUTRAL'
+      backendPayload.alignment = "NEUTRAL";
     }
-    
-    await avatarApi.createAvatar(payload)
-    message.success('角色创建成功')
-    await worldStore.fetchState?.()
-    
+
+    await avatarApi.createAvatar(backendPayload);
+    message.success(t("game_start.create_avatar.messages.create_success"));
+    await worldStore.fetchState?.();
+
     // Reset form
     createForm.value = {
-      surname: '',
-      given_name: '',
-      gender: '男',
+      surname: "",
+      given_name: "",
+      gender: "MALE",
       age: 16,
       level: realmOptions.value[0]?.value,
       sect_id: undefined,
@@ -180,129 +233,242 @@ async function handleCreateAvatar() {
       auxiliary_id: undefined,
       alignment: undefined,
       appearance: 7,
-      relations: []
-    }
-    
-    emit('created')
+      relations: [],
+    };
+
+    emit("created");
   } catch (e) {
-    message.error('创建失败: ' + String(e))
+    message.error(
+      t("game_start.create_avatar.messages.create_failed", {
+        error: String(e),
+      }),
+    );
   } finally {
-    loading.value = false
+    loading.value = false;
   }
 }
 
-watch(() => createForm.value.gender, () => {
-  createForm.value.pic_id = undefined
-})
+watch(
+  () => createForm.value.gender,
+  () => {
+    createForm.value.pic_id = undefined;
+  },
+);
 
-watch(() => realmOptions.value, (options) => {
-  if (!createForm.value.level && options.length > 0) {
-    createForm.value.level = options[0].value as number
-  }
-}, { immediate: true })
+watch(
+  () => realmOptions.value,
+  (options) => {
+    if (!createForm.value.level && options.length > 0) {
+      createForm.value.level = options[0].value as number;
+    }
+  },
+  { immediate: true },
+);
 
 onMounted(() => {
-  fetchData()
-})
+  fetchData();
+});
 </script>
 
 <template>
   <div class="create-panel">
-    <div v-if="loading && !gameData" class="loading">加载数据中...</div>
+    <div v-if="loading && !gameData" class="loading">
+      {{ t("game_start.create_avatar.loading_data") }}
+    </div>
     <div v-else class="create-layout">
       <div class="form-column">
         <n-form label-placement="left" label-width="80">
-          <n-form-item label="姓名">
+          <n-form-item :label="t('game_start.create_avatar.labels.name')">
             <div class="name-inputs">
-              <n-input v-model:value="createForm.surname" placeholder="姓" style="width: 6em" />
-              <n-input v-model:value="createForm.given_name" placeholder="名" style="flex: 1" />
+              <n-input
+                v-model:value="createForm.surname"
+                :placeholder="t('game_start.create_avatar.labels.surname')"
+                style="width: 6em"
+              />
+              <n-input
+                v-model:value="createForm.given_name"
+                :placeholder="t('game_start.create_avatar.labels.given_name')"
+                style="flex: 1"
+              />
             </div>
           </n-form-item>
-          <n-form-item label="性别">
+          <n-form-item :label="t('game_start.create_avatar.labels.gender')">
             <n-radio-group v-model:value="createForm.gender">
-              <n-radio-button value="男" label="男" />
-              <n-radio-button value="女" label="女" />
+              <n-radio-button
+                value="MALE"
+                :label="t('game_start.create_avatar.labels.male')"
+              />
+              <n-radio-button
+                value="FEMALE"
+                :label="t('game_start.create_avatar.labels.female')"
+              />
             </n-radio-group>
           </n-form-item>
-          <n-form-item label="年龄">
-            <n-slider v-model:value="createForm.age" :min="16" :max="100" :step="1" />
-            <span style="margin-left: 0.8em; width: 4em">{{ createForm.age }}岁</span>
+          <n-form-item :label="t('game_start.create_avatar.labels.age')">
+            <n-slider
+              v-model:value="createForm.age"
+              :min="16"
+              :max="100"
+              :step="1"
+            />
+            <span style="margin-left: 0.8em; width: 4em"
+              >{{ createForm.age
+              }}{{ t("game_start.create_avatar.labels.age_unit") }}</span
+            >
           </n-form-item>
-          <n-form-item label="初始境界">
-              <n-select v-model:value="createForm.level" :options="realmOptions" placeholder="选择初始境界" />
+          <n-form-item :label="t('game_start.create_avatar.labels.realm')">
+            <n-select
+              v-model:value="createForm.level"
+              :options="realmOptions"
+              :placeholder="t('game_start.create_avatar.labels.realm')"
+            />
           </n-form-item>
-          <n-form-item label="所属宗门">
-            <n-select v-model:value="createForm.sect_id" :options="sectOptions" placeholder="选择宗门 (留空为散修)" clearable />
+          <n-form-item :label="t('game_start.create_avatar.labels.sect')">
+            <n-select
+              v-model:value="createForm.sect_id"
+              :options="sectOptions"
+              :placeholder="
+                t('game_start.create_avatar.labels.sect_rogue_desc')
+              "
+              clearable
+            />
           </n-form-item>
-          <n-form-item label="初始个性">
-            <n-select v-model:value="createForm.persona_ids" multiple :options="personaOptions" placeholder="选择个性" clearable max-tag-count="responsive" />
+          <n-form-item :label="t('game_start.create_avatar.labels.persona')">
+            <n-select
+              v-model:value="createForm.persona_ids"
+              multiple
+              :options="personaOptions"
+              :placeholder="t('game_start.create_avatar.labels.persona')"
+              clearable
+              max-tag-count="responsive"
+            />
           </n-form-item>
-          <n-form-item label="阵营">
-            <n-select v-model:value="createForm.alignment" :options="alignmentOptions" :placeholder="t('ui.create_alignment_placeholder')" clearable />
+          <n-form-item :label="t('game_start.create_avatar.labels.alignment')">
+            <n-select
+              v-model:value="createForm.alignment"
+              :options="alignmentOptions"
+              :placeholder="t('ui.create_alignment_placeholder')"
+              clearable
+            />
           </n-form-item>
-          <n-form-item label="颜值">
+          <n-form-item :label="t('game_start.create_avatar.labels.appearance')">
             <div class="appearance-slider">
-              <n-slider 
-                v-model:value="createForm.appearance" 
-                :min="1" 
-                :max="10" 
+              <n-slider
+                v-model:value="createForm.appearance"
+                :min="1"
+                :max="10"
                 :step="1"
-                style="flex: 1; min-width: 0;"
+                style="flex: 1; min-width: 0"
               />
               <span>{{ createForm.appearance || 1 }}</span>
             </div>
           </n-form-item>
-          <n-form-item label="功法">
-            <n-select v-model:value="createForm.technique_id" :options="techniqueOptions" placeholder="选择功法 (可留空)" clearable />
+          <n-form-item :label="t('game_start.create_avatar.labels.technique')">
+            <n-select
+              v-model:value="createForm.technique_id"
+              :options="techniqueOptions"
+              :placeholder="t('game_start.create_avatar.labels.technique_desc')"
+              clearable
+            />
           </n-form-item>
-          <n-form-item label="兵器">
-            <n-select v-model:value="createForm.weapon_id" :options="weaponOptions" placeholder="选择兵器 (可留空)" clearable />
+          <n-form-item :label="t('game_start.create_avatar.labels.weapon')">
+            <n-select
+              v-model:value="createForm.weapon_id"
+              :options="weaponOptions"
+              :placeholder="t('game_start.create_avatar.labels.weapon_desc')"
+              clearable
+            />
           </n-form-item>
-          <n-form-item label="辅助装备">
-            <n-select v-model:value="createForm.auxiliary_id" :options="auxiliaryOptions" placeholder="选择辅助装备 (可留空)" clearable />
+          <n-form-item :label="t('game_start.create_avatar.labels.auxiliary')">
+            <n-select
+              v-model:value="createForm.auxiliary_id"
+              :options="auxiliaryOptions"
+              :placeholder="t('game_start.create_avatar.labels.auxiliary_desc')"
+              clearable
+            />
           </n-form-item>
-          <n-form-item label="人际关系">
+          <n-form-item :label="t('game_start.create_avatar.labels.relations')">
             <div class="relations-container">
-              <div v-for="(rel, index) in createForm.relations" :key="index" class="relation-row">
-                <n-select 
-                  v-model:value="rel.target_id" 
-                  :options="avatarOptions" 
-                  placeholder="选择角色" 
-                  filterable 
+              <div
+                v-for="(rel, index) in createForm.relations"
+                :key="index"
+                class="relation-row"
+              >
+                <n-select
+                  v-model:value="rel.target_id"
+                  :options="avatarOptions"
+                  :placeholder="
+                    t('game_start.create_avatar.labels.relation_target')
+                  "
+                  filterable
                   style="width: 12em"
                 />
-                <n-select 
-                  v-model:value="rel.relation" 
-                  :options="relationOptions" 
-                  placeholder="关系" 
+                <n-select
+                  v-model:value="rel.relation"
+                  :options="relationOptions"
+                  :placeholder="
+                    t('game_start.create_avatar.labels.relation_type')
+                  "
                   style="width: 8em"
                 />
-                <n-button @click="removeRelation(index)" circle size="small" type="error">-</n-button>
+                <n-button
+                  @click="removeRelation(index)"
+                  circle
+                  size="small"
+                  type="error"
+                  >-</n-button
+                >
               </div>
-              <n-button @click="addRelation" size="small" dashed style="width: 100%">+ 添加关系</n-button>
+              <n-button
+                @click="addRelation"
+                size="small"
+                dashed
+                style="width: 100%"
+                >+
+                {{
+                  t("game_start.create_avatar.labels.add_relation")
+                }}</n-button
+              >
             </div>
           </n-form-item>
           <div class="actions">
-            <n-button type="primary" @click="handleCreateAvatar" block :loading="loading">创建角色</n-button>
+            <n-button
+              type="primary"
+              @click="handleCreateAvatar"
+              block
+              :loading="loading"
+              >{{ t("game_start.create_avatar.actions.create") }}</n-button
+            >
           </div>
         </n-form>
       </div>
       <div class="avatar-column">
         <div class="avatar-preview">
-          <img v-if="currentAvatarUrl" :src="currentAvatarUrl" alt="Avatar Preview" />
-          <div v-else class="no-avatar">请选择头像</div>
+          <img
+            v-if="currentAvatarUrl"
+            :src="currentAvatarUrl"
+            alt="Avatar Preview"
+          />
+          <div v-else class="no-avatar">
+            {{ t("game_start.create_avatar.labels.no_avatar") }}
+          </div>
         </div>
         <div class="avatar-grid">
-          <div 
-            v-for="id in availableAvatars" 
+          <div
+            v-for="id in availableAvatars"
             :key="id"
             class="avatar-option"
             :class="{ selected: createForm.pic_id === id }"
             @click="createForm.pic_id = id"
           >
-            <img :src="`/assets/${createForm.gender === '女' ? 'females' : 'males'}/${id}.png`" loading="lazy" />
+            <img
+              :src="`/assets/${createForm.gender === 'FEMALE' ? 'females' : 'males'}/${id}.png`"
+              loading="lazy"
+            />
           </div>
-          <div v-if="availableAvatars.length === 0" class="no-avatars">暂无可用头像</div>
+          <div v-if="availableAvatars.length === 0" class="no-avatars">
+            {{ t("game_start.create_avatar.labels.no_avatars_available") }}
+          </div>
         </div>
       </div>
     </div>
@@ -395,7 +561,9 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.2s, transform 0.2s;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
 }
 
 .avatar-option:hover {

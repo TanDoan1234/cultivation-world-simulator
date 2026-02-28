@@ -18,6 +18,7 @@
     "language": "Ngôn Ngữ",
     "chinese": "Tiếng Trung Giản Thể",
     "english": "Tiếng Anh",
+    "vietnamese": "Tiếng Việt",
     "back": "Quay Lại",
     "confirm": "Xác Nhận",
     "cancel": "Hủy",
@@ -84,11 +85,13 @@
     "labels": {
       "api_key": "API Key",
       "base_url": "Base URL",
+      "max_concurrent_requests": "Số yêu cầu đồng thời tối đa",
       "normal_model": "Model Thường (Normal)",
       "fast_model": "Model Nhanh (Fast)",
       "what_is_api": "API là gì / Lấy ở đâu?"
     },
     "descs": {
+      "max_concurrent_requests": "Số lượng yêu cầu API gửi đi cùng lúc. Giảm xuống nếu bạn gặp lỗi Rate Limit (429).",
       "normal_model": "Sử dụng cho logic phức tạp, tạo cốt truyện, v.v.",
       "fast_model": "Sử dụng cho các đánh giá đơn giản, tương tác thường xuyên, v.v."
     },
@@ -96,7 +99,8 @@
       "api_key": "Nhập API Key tại đây (thường bắt đầu bằng sk-)",
       "base_url": "https://api.example.com/v1",
       "normal_model": "ví dụ: gpt-4, claude-3-opus, qwen-plus",
-      "fast_model": "ví dụ: gpt-3.5-turbo, qwen-flash"
+      "fast_model": "ví dụ: gpt-3.5-turbo, qwen-flash",
+      "max_concurrent_requests": "Mặc định là 10"
     },
     "modes": {
       "default": "Cân Bằng (Mặc định)",
@@ -172,6 +176,62 @@
       "load_failed": "Lỗi lấy cấu hình ban đầu",
       "start_success": "Đã lưu thiết lập, đang khởi tạo thế giới...",
       "start_failed": "Lỗi khi bắt đầu game"
+    },
+    "create_avatar": {
+      "title": "Tạo Nhân Vật",
+      "loading_data": "Đang tải dữ liệu...",
+      "labels": {
+        "name": "Họ Tên",
+        "surname": "Họ",
+        "given_name": "Tên",
+        "gender": "Giới Tính",
+        "male": "Nam",
+        "female": "Nữ",
+        "age": "Tuổi",
+        "age_unit": "tuổi",
+        "realm": "Cảnh Giới",
+        "sect": "Tông Môn",
+        "sect_rogue": "Tán Tú",
+        "sect_rogue_desc": "Chọn Tông Môn (Bỏ trống để làm Tán Tu)",
+        "persona": "Tính Cách",
+        "alignment": "Căn Tính",
+        "appearance": "Dung Mạo",
+        "technique": "Công Pháp",
+        "technique_desc": "Chọn Công Pháp (Có thể bỏ trống)",
+        "weapon": "Binh Khí",
+        "weapon_desc": "Chọn Binh Khí (Có thể bỏ trống)",
+        "auxiliary": "Pháp Bảo",
+        "auxiliary_desc": "Chọn Pháp Bảo (Có thể bỏ trống)",
+        "relations": "Quan Hệ Nhân Quả",
+        "relation_target": "Chọn Nhân Vật",
+        "relation_type": "Quan Hệ",
+        "add_relation": "Thêm Quan Hệ",
+        "no_avatar": "Vui lòng chọn Hình đại diện",
+        "no_avatars_available": "Không có hình đại diện phù hợp"
+      },
+      "actions": {
+        "create": "Khởi Tạo Nhân Vật"
+      },
+      "messages": {
+        "fetch_failed": "Lỗi lấy dữ liệu khởi tạo",
+        "create_success": "Khởi tạo nhân vật thành công",
+        "create_failed": "Khởi tạo thất bại: {error}"
+      }
+    },
+    "delete_avatar": {
+      "labels": {
+        "search_placeholder": "Tìm kiếm nhân vật...",
+        "loading": "Đang tải...",
+        "empty": "Không tìm thấy nhân vật",
+        "age_unit": "tuổi",
+        "delete_btn": "Xóa"
+      },
+      "messages": {
+        "fetch_failed": "Không thể lấy danh sách nhân vật",
+        "delete_confirm": "Bạn có chắc chắn muốn xóa nhân vật {name}? Hành động này không thể hoàn tác.",
+        "delete_success": "Đã xóa nhân vật thành công",
+        "delete_failed": "Xóa thất bại"
+      }
     }
   },
   "splash": {
@@ -335,6 +395,16 @@
         "father_short": "Phụ thân",
         "mother_short": "Mẫu thân",
         "mortal_realm": "Phàm Nhân",
+        "relations_list": {
+          "parent": "Phụ mẫu",
+          "child": "Tử nữ",
+          "sibling": "Huynh đệ tỷ muội",
+          "master": "Sư phụ",
+          "apprentice": "Đồ đệ",
+          "lovers": "Đạo lữ",
+          "friend": "Bằng hữu",
+          "enemy": "Kẻ thù"
+        },
         "modals": {
           "set_long_term": "Đặt Thiên Cơ (Mục tiêu dài hạn)",
           "placeholder": "Ví dụ: Đi về phía đông tu luyện kiếm pháp...",

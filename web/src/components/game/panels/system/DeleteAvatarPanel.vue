@@ -1,80 +1,100 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { avatarApi, type SimpleAvatarDTO } from '../../../../api'
-import { useWorldStore } from '../../../../stores/world'
-import { useMessage, NInput, NButton } from 'naive-ui'
+import { ref, computed, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
+import { avatarApi, type SimpleAvatarDTO } from "../../../../api";
+import { useWorldStore } from "../../../../stores/world";
+import { useMessage, NInput, NButton } from "naive-ui";
 
-const worldStore = useWorldStore()
-const message = useMessage()
-const { t } = useI18n()
-const loading = ref(false)
+const worldStore = useWorldStore();
+const message = useMessage();
+const { t } = useI18n();
+const loading = ref(false);
 
 // --- State ---
-const avatarList = ref<SimpleAvatarDTO[]>([])
-const avatarSearch = ref('')
+const avatarList = ref<SimpleAvatarDTO[]>([]);
+const avatarSearch = ref("");
 
 const filteredAvatars = computed(() => {
-  if (!avatarSearch.value) return avatarList.value
-  return avatarList.value.filter(a => a.name.includes(avatarSearch.value))
-})
+  if (!avatarSearch.value) return avatarList.value;
+  return avatarList.value.filter((a) => a.name.includes(avatarSearch.value));
+});
 
 // --- Methods ---
 async function fetchAvatarList() {
-  loading.value = true
+  loading.value = true;
   try {
-    const res = await avatarApi.fetchAvatarList()
-    avatarList.value = res.avatars
+    const res = await avatarApi.fetchAvatarList();
+    avatarList.value = res.avatars;
   } catch (e) {
-    message.error('获取角色列表失败')
+    message.error(t("game_start.delete_avatar.messages.fetch_failed"));
   } finally {
-    loading.value = false
+    loading.value = false;
   }
 }
 
 async function handleDeleteAvatar(id: string, name: string) {
-  if (!confirm(`确定要删除角色 ${name} 吗？此操作不可恢复。`)) return
-  
-  loading.value = true
+  if (!confirm(t("game_start.delete_avatar.messages.delete_confirm", { name })))
+    return;
+
+  loading.value = true;
   try {
-    await avatarApi.deleteAvatar(id)
-    message.success('删除成功')
+    await avatarApi.deleteAvatar(id);
+    message.success(t("game_start.delete_avatar.messages.delete_success"));
     await Promise.all([
       fetchAvatarList(),
-      worldStore.fetchState ? worldStore.fetchState() : Promise.resolve()
-    ])
+      worldStore.fetchState ? worldStore.fetchState() : Promise.resolve(),
+    ]);
   } catch (e) {
-    message.error('删除失败')
+    message.error(t("game_start.delete_avatar.messages.delete_failed"));
   } finally {
-    loading.value = false
+    loading.value = false;
   }
 }
 
 onMounted(() => {
-  fetchAvatarList()
-})
+  fetchAvatarList();
+});
 </script>
 
 <template>
   <div class="delete-panel">
     <div class="search-bar">
-      <n-input v-model:value="avatarSearch" placeholder="搜索角色名..." />
+      <n-input
+        v-model:value="avatarSearch"
+        :placeholder="t('game_start.delete_avatar.labels.search_placeholder')"
+      />
     </div>
     <div class="avatar-list">
-      <div v-if="loading" class="loading">加载中...</div>
-      <div v-else-if="filteredAvatars.length === 0" class="empty">未找到角色</div>
-      <div 
-        v-for="avatar in filteredAvatars" 
+      <div v-if="loading" class="loading">
+        {{ t("game_start.delete_avatar.labels.loading") }}
+      </div>
+      <div v-else-if="filteredAvatars.length === 0" class="empty">
+        {{ t("game_start.delete_avatar.labels.empty") }}
+      </div>
+      <div
+        v-for="avatar in filteredAvatars"
         :key="avatar.id"
         class="avatar-item"
       >
-         <div class="avatar-info">
-           <div class="name">{{ avatar.name }}</div>
-           <div class="details">
-              {{ avatar.gender }} | {{ avatar.age }}岁 | {{ t('realms.' + avatar.realm) }} | {{ avatar.sect_name }}
-           </div>
-         </div>
-         <n-button type="error" size="small" @click="handleDeleteAvatar(avatar.id, avatar.name)">删除</n-button>
+        <div class="avatar-info">
+          <div class="name">{{ avatar.name }}</div>
+          <div class="details">
+            {{
+              avatar.gender === "男"
+                ? t("game_start.create_avatar.labels.male")
+                : t("game_start.create_avatar.labels.female")
+            }}
+            | {{ avatar.age
+            }}{{ t("game_start.delete_avatar.labels.age_unit") }} |
+            {{ t("realms." + avatar.realm) }} | {{ avatar.sect_name }}
+          </div>
+        </div>
+        <n-button
+          type="error"
+          size="small"
+          @click="handleDeleteAvatar(avatar.id, avatar.name)"
+          >{{ t("game_start.delete_avatar.labels.delete_btn") }}</n-button
+        >
       </div>
     </div>
   </div>
@@ -91,7 +111,7 @@ onMounted(() => {
 }
 
 .search-bar {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .loading {
@@ -131,8 +151,8 @@ onMounted(() => {
 }
 
 .avatar-info .details {
-    color: #888;
-    font-size: 0.85em;
-    margin-top: 0.3em;
+  color: #888;
+  font-size: 0.85em;
+  margin-top: 0.3em;
 }
 </style>

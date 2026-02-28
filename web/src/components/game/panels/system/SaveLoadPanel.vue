@@ -35,8 +35,8 @@ const nameError = computed(() => {
   if (saveName.value.length > 50) {
     return t("save_load.name_too_long");
   }
-  // 只允许中文、字母、数字和下划线
-  const pattern = /^[\w\u4e00-\u9fff]+$/;
+  // Chế độ cho phép chữ cái (bao gồm có dấu), số, khoảng trắng và gạch dưới
+  const pattern = /^[\w\s\u00C0-\u1EF9]+$/u;
   if (!pattern.test(saveName.value)) {
     return t("save_load.name_invalid_chars");
   }
