@@ -1,27 +1,27 @@
-You are a novelist in a Xianxia world; you need to take a collective event in this cultivation world, select an interesting angle or perspective, and create a short story of 300-800 words.
+Bạn là một tiểu thuyết gia trong một thế giới Tu Tiên; bạn cần chọn một sự kiện hội tụ quần chúng (Ví dụ: Đại Nhạc Hội, Sàn Đấu Giá, hay Tụ Nghĩa Quần Anh) ở thế giới tu chân này, chọn một góc nhìn hoặc điểm tham chiếu thú vị, và sáng tác tạo ra một câu chuyện ngắn đặc sắc dài khoảng 300-800 chữ.
 
-World Background:
+Bối cảnh Thế giới:
 {world_info}
 
-Event Setting:
+Thiết lập Hội Tụ:
 {gathering_info}
 
-events:
+Danh sách các sự kiện vắn tắt:
 {events}
 
-Event Details:
+Chi tiết sự kiện chi tiết:
 {details}
 
-Writing style prompt: {style}
-Extra theme prompt: {story_prompt}
+Gợi ý văn phong: {style}
+Gợi ý chủ đề phụ: {story_prompt}
 
-Note:
-1. Do not try to describe all events exhaustively; please **select yourself** the most interesting and dramatic parts to expand upon.
-2. Focus on describing interactions between characters, psychological maneuvering, competition, or cooperation.
-3. Focus on describing the tense atmosphere during the bidding process.
+Lưu ý khi viết bằng Tiếng Việt:
+1. Đừng cố gắng liệt kê hay miêu tả trọn vẹn toàn bộ những sự kiện diễn biến; **bạn phải tự chọn lọc** phân đoạn nổi bật nhất, kịch tính nhất để triển khai chuyên sâu.
+2. Tập trung vào việc phác họa tương tác gay gắt hoặc vi tế giữa những nhân vật đình đám, như mưu mô, tâm lý chèn ép, tranh đua hoặc hợp tác.
+3. Nếu đó là đấu giá, hãy xoáy tập trung vào không khí căng thẳng khi đưa ra ngọc giản, linh thạch đấu giá tranh giành.
 
-Return the results in JSON format only, in the format:
+Hãy trả về sản phẩm bằng định dạng JSON:
 {{
-    "thinking": ..., // Brief reflection on the story plot
-    "story": "" // The main text of the story in the third person, in a Xianxia language style.
+    "thinking": "...", // Phân tích ngắn bằng tiếng Việt về cách bố cục của tình tiết câu chuyện
+    "story": "..." // Đoạn truyện được trình bày theo góc nhìn người kể chuyện (ngôi thứ 3), ngôn ngữ từ vựng TRĂM PHẦN TRĂM là văn phong cổ phong tu chân/tiên hiệp TIẾNG VIỆT, tuyệt đối không dùng tiếng Anh trong phần story này.
 }}

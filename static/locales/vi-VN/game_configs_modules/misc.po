@@ -1,53 +1,51 @@
 #
 msgid ""
 msgstr ""
-"Language: en_US\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 
 msgid "WORLD_INFO_INTRO_TITLE"
-msgstr "Introduction"
+msgstr "Dẫn Nhập"
 
 msgid "WORLD_INFO_REALM_TITLE"
-msgstr "Realm"
+msgstr "Cảnh Giới"
 
 msgid "WORLD_INFO_LIFESPAN_TITLE"
-msgstr "Lifespan"
+msgstr "Thọ Nguyên"
 
 msgid "WORLD_INFO_DEATH_TITLE"
-msgstr "Death"
+msgstr "Tử Vong"
 
 msgid "WORLD_INFO_REGION_TITLE"
-msgstr "Region"
+msgstr "Giới Vực"
 
 msgid "WORLD_INFO_CULTIVATION_TITLE"
-msgstr "Cultivation"
+msgstr "Tu Luyện"
 
 msgid "WORLD_INFO_ROOT_TITLE"
-msgstr "Spirit Root"
+msgstr "Linh Căn"
 
 msgid "WORLD_INFO_WORLD_QI_TITLE"
-msgstr "World Qi"
+msgstr "Thiên Địa Nguyên Khí"
 
 msgid "WORLD_INFO_SPIRIT_STONE_TITLE"
-msgstr "Spirit Stone"
+msgstr "Linh Thạch"
 
 msgid "WORLD_INFO_SECT_TITLE"
-msgstr "Sect"
+msgstr "Tông Môn"
 
 msgid "WORLD_INFO_BATTLE_TITLE"
-msgstr "Battle"
+msgstr "Chiến Sự"
 
 msgid "WORLD_INFO_ACTION_TITLE"
-msgstr "Action"
+msgstr "Hành Động"
 
 msgid "WORLD_INFO_EQUIPMENT_AND_ELIXIR_TITLE"
-msgstr "Equipment & Elixir"
+msgstr "Trang Bị & Đan Dược"
 
 msgid "WORLD_INFO_SHOPPING_TITLE"
-msgstr "Shopping"
+msgstr "Giao Dịch"
 
 msgid "WORLD_INFO_AUCTION_TITLE"
-msgstr "Auction"
+msgstr "Đấu Giá"
 
 msgid "WORLD_INFO_SECRET_REALM_TITLE"
-msgstr "Secret Realm"
+msgstr "Bí Cảnh"

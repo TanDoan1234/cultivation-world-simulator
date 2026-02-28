@@ -1,16 +1,14 @@
 #
 msgid ""
 msgstr ""
-"Language: en_US\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 
 #. hidden_domain.csv: 万木残界
 msgid "HIDDEN_DOMAIN_HIDDEN_DOMAIN_WOOD_NAME"
-msgstr "Remnant of Myriad Woods"
+msgstr "Vạn Mộc Tàn Di"
 
 #. hidden_domain.csv: 此乃上古丹宗“青帝苑”崩碎后遗落的一角碎...
 msgid "HIDDEN_DOMAIN_HIDDEN_DOMAIN_WOOD_DESC"
-msgstr ""
+msgstr "Toàn thư về Mộc chi Bí Cảnh"
 "A fragment of the ancient Azure Emperor's Garden that shattered eons ago, "
 "now perpetually shrouded in multicolored, toxic miasma. The broken laws "
 "within cause spirit plants to grow madly, with shapeshifting demon vines and"
@@ -22,11 +20,11 @@ msgstr ""
 
 #. hidden_domain.csv: 陨仙焚谷
 msgid "HIDDEN_DOMAIN_HIDDEN_DOMAIN_FIRE_NAME"
-msgstr "Valley of Fallen Immortals"
+msgstr "Đọa Tiên Cốc"
 
 #. hidden_domain.csv: 万年前人族大能与炎魔皇同归于尽之地，至今...
 msgid "HIDDEN_DOMAIN_HIDDEN_DOMAIN_FIRE_DESC"
-msgstr ""
+msgstr "Toàn thư về Hỏa chi Bí Cảnh"
 "The site where a human mighty figure perished together with the Flame Demon "
 "Emperor ten thousand years ago. To this day, the earth veins still spew "
 "unextinguishable Earthly Baleful Fire, dyeing the sky blood-red. Buried "
@@ -39,11 +37,11 @@ msgstr ""
 
 #. hidden_domain.csv: 九天虚空殿
 msgid "HIDDEN_DOMAIN_HIDDEN_DOMAIN_PALACE_NAME"
-msgstr "Nine Heavens Void Palace"
+msgstr "Cửu Thiên Hư Không Cung"
 
 #. hidden_domain.csv: 漂浮于九天罡风层之上的宏伟宫殿群，非有大...
 msgid "HIDDEN_DOMAIN_HIDDEN_DOMAIN_PALACE_DESC"
-msgstr ""
+msgstr "Toàn thư về Tiên Cung Bí Cảnh"
 "A magnificent complex of palaces floating above the Nine Heavens Wind Layer."
 " Only those with great perseverance can pass through the spatial rifts on "
 "the periphery that tear at the flesh. The interior is filled with ancient "

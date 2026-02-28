@@ -1,27 +1,27 @@
-You are a storyteller in a Xianxia world, responsible for giving nicknames to characters in the cultivation world.
+Bạn là một người kể chuyện trong thế giới Tu Tiên, chịu trách nhiệm đặt biệt danh (đạo hiệu/ngoại hiệu) cho các nhân vật trong giới tu chân.
 
-World Background:
+Bối cảnh Thế giới:
 {world_info}
 
-A nickname is an evaluation and title for a character in the cultivation world. Requirements:
-1. Fits the Xianxia worldview and style.
-2. Can come from various angles, such as the character's personality, behavior, deeds, relationships, weapons, appearance, techniques, sect, etc.
-3. Concise and powerful, catchy, and between 2 to 5 words.
-4. Cool, evocative, and diverse.
+Biệt danh là một sự đánh giá và danh xưng cho một nhân vật trong giới tu chân. Yêu cầu:
+1. Phải hoàn toàn phù hợp với thế giới quan và phong cách của tiểu thuyết Tiên Hiệp phương đông.
+2. Có thể xuất phát từ nhiều góc độ khác nhau, chẳng hạn như tính cách nhân vật, hành vi, chiến tích huy hoàng, tiếng ác vang xa, các mối quan hệ, pháp bảo/vũ khí sử dụng, ngoại hình, công pháp tu luyện, xuất thân tông môn, v.v.
+3. Ngắn gọn, súc tích, uy dũng, bắt tai và dễ nhớ. Độ dài từ 2 đến 7 từ (Bằng Tiếng Việt hoặc Hán Việt, ưu tiên Hán Việt). Ví dụ: "Huyết Ma", "Lãnh Nguyệt Kiếm Tôn", "Lạc Mộc Cuồng Sinh".
+4. Phải ngầu, đầy tính gợi hình và đa dạng phong phú. Không đụng hàng.
 
-Character Information:
+Thông tin chi tiết Nhân vật:
 {avatar_info}
 
-Based on the above information, give the character a suitable nickname for the cultivation world.
+Dựa trên các thông tin trên, hãy đặt cho nhân vật một biệt danh (nổi tiếng) phù hợp để những người khác xưng hô trong giới tu chân.
 
-Return in JSON format:
+Trả về dưới định dạng JSON:
 {{
-    "thinking": "Analyze the character's characteristics, major deeds, and personality traits; think about what nickname would best embody this character... but don't overthink it.",
-    "nickname": "Nickname",
-    "reason": "The reason why this nickname was formed in the cultivation world, within 30 words."
+    "thinking": "Phân tích các đặc điểm của nhân vật, những chiến tích chính và nét tính cách nổi bật; suy nghĩ xem biệt danh nào sẽ thể hiện rõ nhất bản sắc của nhân vật này... nhưng đừng suy diễn quá đà.",
+    "nickname": "Đạo_Hiệu",
+    "reason": "Giải thích ngắn gọn lý do vì sao người đời trong giới tu chân lại gọi với biệt danh này. Bắt buộc tóm tắt viết bằng tiếng Việt trong khoảng dưới 30 từ."
 }}
 
-Note:
-- "thinking" is your thought process; please provide a detailed analysis.
-- "nickname" should only return the nickname itself, without quotes or other symbols.
-- The nickname must fit the style of the Xianxia world.
+Lưu ý:
+- Từng thuộc tính như "thinking", "reason" phải được viết rành mạch bằng tiếng Việt.
+- Thuộc tính "nickname" chỉ được chứa từ ngữ của biệt danh, không chứa dấu ngoặc kép hoặc các ký hiệu dư thừa.
+- Biệt danh (Hán Việt/Việt) bắt buộc phải phản ánh đúng phong thái Tiên hiệp, Đạo môn hoặc Ma môn tuỳ vào tính cách nhân vật.

@@ -4,31 +4,31 @@ msgstr ""
 
 # Weapons
 msgid "effect_god_slaying_spear_desc"
-msgstr "Increases Battle Strength based on Spear Proficiency"
+msgstr "Gia tăng Chiến Lực dựa vào sự Tinh Thông Thương Pháp"
 
 msgid "condition_has_spirit_animal"
-msgstr "When possessing a Spirit Animal"
+msgstr "Khi sở hữu Linh Thú"
 
 msgid "condition_level_ge_30"
-msgstr "When Level >= 30"
+msgstr "Khi Đẳng Cấp đạt Tam Thập trở lên"
 
 # Personas
 msgid "condition_unarmed"
-msgstr "When unarmed"
+msgstr "Khi không mang binh khí"
 
 msgid "condition_realm_early"
-msgstr "At Qi Refinement or Foundation Establishment stage"
+msgstr "Tại cảnh giới Luyện Khí hoặc Trúc Cơ"
 
 msgid "condition_realm_late"
-msgstr "At Core Formation or Nascent Soul stage"
+msgstr "Tại cảnh giới Kết Đan hoặc Nguyên Anh"
 
 # Celestial Phenomenon
 msgid "condition_realm_high"
-msgstr "At Divinity Transformation stage or higher"
+msgstr "Tại cảnh giới Hóa Thần trở lên"
 
 msgid "condition_realm_low"
-msgstr "Below Divinity Transformation stage"
+msgstr "Dưới cảnh giới Hóa Thần"
 
 # Auxiliary
 msgid "effect_ten_thousand_souls_banner_desc"
-msgstr "Devour souls to plunder lifespan and items; Increases Battle Strength based on soul count"
+msgstr "Cắn nuốt hồn phách, cướp đoạt Thọ Nguyên cùng vật phẩm; Chiến Lực gia tăng dựa trên số lượng hồn phách"

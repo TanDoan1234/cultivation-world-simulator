@@ -1,47 +1,37 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cultivation-world-simulator 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 00:00+0000\n"
-"PO-Revision-Date: 2024-01-20 00:00+0000\n"
-"Last-Translator: \n"
-"Language-Team: English\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 # ============================================================================
 # Map & Region & Others (New)
 # ============================================================================
 msgid "Cultivate Region (can respire to increase cultivation)"
-msgstr "Cultivate Region (can respire to increase cultivation)"
+msgstr "Linh Vực Tu Luyện (Hấp thụ linh khí, tăng tiến tu vi)"
 
 msgid "Normal Region (can hunt, gather, mine)"
-msgstr "Normal Region (can hunt, gather, mine)"
+msgstr "Phàm Vực (Săn thú, hái lượm, khai khoáng)"
 
 msgid "City Region (can trade)"
-msgstr "City Region (can trade)"
+msgstr "Thành Trấn (Giao dịch)"
 
 msgid "Sect Headquarters (sect disciples heal faster here)"
-msgstr "Sect Headquarters (sect disciples heal faster here)"
+msgstr "Tông Môn Trụ Sở (Đệ tử tông môn tĩnh dưỡng khôi phục nhanh hơn tại đây)"
 
 msgid " (Distance: {months} months)"
-msgstr " (Distance: {months} months)"
+msgstr " (Cự ly: {months} tháng)"
 
 msgid "No special resources"
-msgstr "No special resources"
+msgstr "Không có tài nguyên đặc thù"
 
 msgid " (Resource Distribution: {species_info})"
-msgstr " (Resource Distribution: {species_info})"
+msgstr " (Phân bố Tài nguyên: {species_info})"
 
 msgid "Normal Region: {name} - {desc} | Resource Distribution: {species_info}"
-msgstr ""
+msgstr "Phàm Vực: {name} - {desc} | Phân bố Tài nguyên: {species_info}"
 "Normal Region: {name} - {desc} | Resource Distribution: {species_info}"
 
 msgid " ({essence_type} Essence: {essence_density})"
-msgstr " ({essence_type} Essence: {essence_density})"
+msgstr " ({essence_type} Bản Nguyên: {essence_density})"
 
 msgid ""
 "Cultivate Region: {name} ({essence_type} Essence: {essence_density}) - "
@@ -51,19 +41,19 @@ msgstr ""
 "{desc}"
 
 msgid " ({store_info})"
-msgstr " ({store_info})"
+msgstr "( {thông_tin_thương_phố} )"
 
 msgid " | {store_info}"
-msgstr " | {store_info}"
+msgstr "| {thông_tin_thương_phố}"
 
 msgid "City Region: {name} - {desc}{desc_part}"
-msgstr "City Region: {name} - {desc}{desc_part}"
+msgstr "Thành Vực: {name} - {diễn_giải}{phần_diễn_giải}"
 
 msgid "{value} Spirit Stones"
-msgstr "{value} Spirit Stones"
+msgstr "{value} Linh Thạch"
 
 msgid " ({desc})"
-msgstr " ({desc})"
+msgstr "( {diễn_giải} )"
 
 msgid ""
 "\n"
@@ -73,40 +63,40 @@ msgstr ""
 "Effect: {effect_desc}"
 
 msgid "{names} ({price} Spirit Stones)"
-msgstr "{names} ({price} Spirit Stones)"
+msgstr "{names} ( {giá} Linh Thạch )"
 
 msgid "Sell: "
-msgstr "Sell: "
+msgstr "Bán: "
 
 msgid "emotion_calm"
-msgstr "Calm"
+msgstr "Tâm Thái Thanh Tĩnh"
 
 msgid "emotion_happy"
-msgstr "Happy"
+msgstr "Tâm Hồn Khoái Lạc"
 
 msgid "emotion_angry"
-msgstr "Angry"
+msgstr "Phẫn Nộ Ngập Trời"
 
 msgid "emotion_sad"
-msgstr "Sad"
+msgstr "Tâm Hồn Ai Oán"
 
 msgid "emotion_fearful"
-msgstr "Fearful"
+msgstr "Kinh Hãi Vô Cùng"
 
 msgid "emotion_surprised"
-msgstr "Surprised"
+msgstr "Kinh Ngạc Thần Tình"
 
 msgid "emotion_anticipating"
-msgstr "Anticipating"
+msgstr "Hồi Hộp Mong Ngóng"
 
 msgid "emotion_disgusted"
-msgstr "Disgusted"
+msgstr "Chán Ghét Tận Xương Tủy"
 
 msgid "emotion_confused"
-msgstr "Confused"
+msgstr "Hoang Mang Mờ Mịt"
 
 msgid "emotion_tired"
-msgstr "Tired"
+msgstr "Kiệt Sức Rã Rời"
 
 msgid " (Owner: {owner}, {realm})"
-msgstr " (Owner: {owner}, {realm})"
+msgstr "( Chủ nhân: {owner}, {lĩnh_vực} )"

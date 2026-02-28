@@ -1,16 +1,14 @@
 #
 msgid ""
 msgstr ""
-"Language: en_US\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 
 #. sect.csv: SECT_1_NAME
 msgid "SECT_1_NAME"
-msgstr "High Heaven Sword Sect"
+msgstr "Cửu Thiên Kiếm Tông"
 
 #. sect.csv: SECT_1_DESC
 msgid "SECT_1_DESC"
-msgstr ""
+msgstr "Mô tả Tông môn 1"
 "The number one sect in the east of the Cultivation World, ruling with supreme "
 "sword path. The sect's ultimate technique is the 'Nine Heavens Thunder "
 "Sword Art'. [Sword Heart Clarity] As a sword cultivator, your combat power "
@@ -19,11 +17,11 @@ msgstr ""
 
 #. sect.csv: SECT_2_NAME
 msgid "SECT_2_NAME"
-msgstr "Ten Thousand Beasts Mountain"
+msgstr "Vạn Thú Sơn"
 
 #. sect.csv: SECT_2_DESC
 msgid "SECT_2_DESC"
-msgstr ""
+msgstr "Mô tả Tông môn 2"
 "Famous for taming fierce beasts, keeping various demonic beasts and monsters "
 "as combat power. [Master of Ten Thousand Beasts] You have a unique beast "
 "taming talent; capturing demonic beasts is easy for you, and you are good at "
@@ -31,11 +29,11 @@ msgstr ""
 
 #. sect.csv: SECT_3_NAME
 msgid "SECT_3_NAME"
-msgstr "Listening Tide Pavilion"
+msgstr "Thính Triều Các"
 
 #. sect.csv: SECT_3_DESC
 msgid "SECT_3_DESC"
-msgstr ""
+msgstr "Mô tả Tông môn 3"
 "Living on isolated islands overseas, strictly neutral. Possesses an ancient "
 "wonder 'Sea Viewing Jade Wall' to spy on heavenly secrets. [Knowing Destiny] "
 "You have extraordinary intuition, a broad vision, and are extremely likely to "
@@ -43,11 +41,11 @@ msgstr ""
 
 #. sect.csv: SECT_4_NAME
 msgid "SECT_4_NAME"
-msgstr "Nine Underworlds Dao"
+msgstr "Cửu U Đạo"
 
 #. sect.csv: SECT_4_DESC
 msgid "SECT_4_DESC"
-msgstr ""
+msgstr "Mô tả Tông môn 4"
 "Comprehending life and death, drawing power from the Yellow Springs (Underworld), "
 "with cold and fierce techniques. [Netherworld Ferry] You practice the way of "
 "Yellow Springs with a firm mind, and when breaking through bottlenecks, you "
@@ -55,11 +53,11 @@ msgstr ""
 
 #. sect.csv: SECT_5_NAME
 msgid "SECT_5_NAME"
-msgstr "Thousand Mechanisms Sect"
+msgstr "Thiên Cơ Tông"
 
 #. sect.csv: SECT_5_DESC
 msgid "SECT_5_DESC"
-msgstr ""
+msgstr "Mô tả Tông môn 5"
 "A major evil sect. Famous for mechanisms, puppets, and poison killing, always "
 "secretive in whereabouts. [Treacherous Assassination] You are proficient in "
 "stealth and assassination; for strong enemies, avoiding direct confrontation "
@@ -67,11 +65,11 @@ msgstr ""
 
 #. sect.csv: SECT_6_NAME
 msgid "SECT_6_NAME"
-msgstr "Drunken Dream Pavilion"
+msgstr "Túy Mộng Các"
 
 #. sect.csv: SECT_6_DESC
 msgid "SECT_6_DESC"
-msgstr ""
+msgstr "Mô tả Tông môn 6"
 "Entering the Dao through emotion, increasing cultivation through dual "
 "cultivation, good at manipulating people's hearts and long in power changes. "
 "[Red Dust Heart Refinement] Your constitution is special; through dual "
@@ -80,11 +78,11 @@ msgstr ""
 
 #. sect.csv: SECT_7_NAME
 msgid "SECT_7_NAME"
-msgstr "Sumeru Zen Temple"
+msgstr "Tu Di Thiền Tự"
 
 #. sect.csv: SECT_7_DESC
 msgid "SECT_7_DESC"
-msgstr ""
+msgstr "Mô tả Tông môn 7"
 "A Buddhist holy land and major body cultivation sect. Suppressing worldly "
 "evils with a Vajra body. [Golden Body Arhat] You practice body protection "
 "divine skills, possessing extremely strong physical defense and damage "
@@ -92,11 +90,11 @@ msgstr ""
 
 #. sect.csv: SECT_8_NAME
 msgid "SECT_8_NAME"
-msgstr "Shadow Fiend Hall"
+msgstr "Ảnh Ma Điện"
 
 #. sect.csv: SECT_8_DESC
 msgid "SECT_8_DESC"
-msgstr ""
+msgstr "Mô tả Tông môn 8"
 "The sect's core manual is the 'Shadow Killing True Scripture'. Based on Earth "
 "Fiend Yin Qi. [Follow Like a Shadow] You are extremely good at movement and "
 "escape techniques, always able to retreat safely from danger, and can also "
@@ -104,11 +102,11 @@ msgstr ""
 
 #. sect.csv: SECT_9_NAME
 msgid "SECT_9_NAME"
-msgstr "Myriad Treasures Alliance"
+msgstr "Vạn Bảo Minh"
 
 #. sect.csv: SECT_9_DESC
 msgid "SECT_9_DESC"
-msgstr ""
+msgstr "Mô tả Tông môn 9"
 "A massive power developed from a chamber of commerce. Possesses the 'Flowing "
 "Cloud Flying Boat' caravan, wealthy beyond measure. [Wealth Reaches Gods] You "
 "are well-versed in artifact refining and business; nurturing weapons often "
@@ -116,11 +114,11 @@ msgstr ""
 
 #. sect.csv: SECT_10_NAME
 msgid "SECT_10_NAME"
-msgstr "Soul-Seizing Sound Sect"
+msgstr "Nhiếp Hồn Âm Tông"
 
 #. sect.csv: SECT_10_DESC
 msgid "SECT_10_DESC"
-msgstr ""
+msgstr "Môn phái cổ xưa chuyên tu luyện thân thể, lấy sức mạnh thể phách xưng bá thiên hạ."
 "Specializes in Heavenly Demon music and mental control, with treacherous and "
 "feminine techniques, using invisible demonic sounds to disturb people's minds. "
 "[Demonic Sound Soul Seizing] You are good at disturbing people's minds with "
@@ -129,11 +127,11 @@ msgstr ""
 
 #. sect.csv: SECT_11_NAME
 msgid "SECT_11_NAME"
-msgstr "Heavenly Deduction Sect"
+msgstr "Thiên Diễn Tông"
 
 #. sect.csv: SECT_11_DESC
 msgid "SECT_11_DESC"
-msgstr ""
+msgstr "Ẩn mình trong mây núi, chuyên nghiên cứu thuật pháp huyền diệu, sở trường phong ấn và khống chế vạn vật."
 "The world's number one array sect, focusing on heavenly deduction, using all "
 "things as chess pieces and mountains and rivers as arrays. [Array Divinity] "
 "You are good at using arrays to assist cultivation, able to gather heaven "
@@ -142,11 +140,11 @@ msgstr ""
 
 #. sect.csv: SECT_12_NAME
 msgid "SECT_12_NAME"
-msgstr "Everlasting Bright Palace"
+msgstr "Trường Quang Cung"
 
 #. sect.csv: SECT_12_DESC
 msgid "SECT_12_DESC"
-msgstr ""
+msgstr "Nơi quy tụ Luyện Dược Sư và Luyện Khí Sư tài ba, chế tạo vô số đan dược cùng pháp bảo trân quý."
 "Practicing the 'Great Bright Golden Body', believing in inextinguishable light. "
 "Entering the Dao through martial arts, sanctifying the flesh. Possesses extremely strong life secret arts. "
 "[Glorious Longevity] Your vitality is extremely tenacious, healing effects are doubled, "
@@ -154,11 +152,11 @@ msgstr ""
 
 #. sect.csv: SECT_13_NAME
 msgid "SECT_13_NAME"
-msgstr "Haoran Academy"
+msgstr "Hạo Nhiên Thư Viện"
 
 #. sect.csv: SECT_13_DESC
 msgid "SECT_13_DESC"
-msgstr ""
+msgstr "Môn phái Kiếm tu trứ danh, lấy kiếm làm đạo, kiếm ý ngút trời, một kiếm khai sơn đoạn thủy."
 "Confucian orthodoxy, cultivating Haoran Qi. Acting openly and righteously, "
 "firm and decisive, with strong restraint against evil and unorthodox ways. "
 "[I Cultivate Qi] You nurture Haoran Qi, with long qi pulses; when facing "
@@ -166,11 +164,11 @@ msgstr ""
 
 #. sect.csv: SECT_14_NAME
 msgid "SECT_14_NAME"
-msgstr "Rakshasa Blood Sect"
+msgstr "La Sát Huyết Tông"
 
 #. sect.csv: SECT_14_DESC
 msgid "SECT_14_DESC"
-msgstr ""
+msgstr "Môn phái bí ẩn nắm giữ những bí thuật cổ xưa, có khả năng thôi diễn thiên cơ, nhìn thấu vận mệnh chúng sinh."
 "The number one demonic sect in the Cultivation World, acting overbearingly "
 "and cruelly, advocating 'survival of the fittest', improving cultivation "
 "through plunder and blood sacrifice. [Monstrous Blood Sea] You admire strength "

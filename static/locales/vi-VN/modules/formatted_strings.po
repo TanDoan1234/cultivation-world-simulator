@@ -1,38 +1,28 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cultivation-world-simulator 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 00:00+0000\n"
-"PO-Revision-Date: 2024-01-20 00:00+0000\n"
-"Last-Translator: \n"
-"Language-Team: English\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 # Formatted Strings
 msgid "{weapon_name}, Proficiency: {proficiency}%"
-msgstr "{weapon_name}, Proficiency: {proficiency}%"
+msgstr "{weapon_name}, Tinh thông: {proficiency}%"
 
 msgid "{name}, Realm: {realm}"
-msgstr "{name}, Realm: {realm}"
+msgstr "{name}, Cảnh giới: {realm}"
 
 msgid "Performing {action}"
-msgstr "Performing {action}"
+msgstr "Đang thi triển {action}"
 
 msgid "Contains elements: {elements}"
-msgstr "Contains elements: {elements}"
+msgstr "Hàm chứa thuộc tính: {elements}"
 
 msgid "【{name}】 {gender} {age} years old"
-msgstr "【{name}】 {gender} {age} years old"
+msgstr "【{name}】 {gender}, {age} tuổi"
 
 msgid "Realm: {realm}"
-msgstr "Realm: {realm}"
+msgstr "Cảnh giới: {realm}"
 
 msgid "Identity: {identity}"
-msgstr "Identity: {identity}"
+msgstr "Thân phận: {identity}"
 
 msgid ""
 "\n"
@@ -42,7 +32,7 @@ msgstr ""
 "--- Current Effects Detail ---"
 
 msgid "No additional effects"
-msgstr "No additional effects"
+msgstr "Không có thêm hiệu ứng"
 
 # Complex Formatted String (get_other_avatar_info)
 msgid ""
@@ -50,6 +40,3 @@ msgid ""
 "{sect}, Alignment: {alignment}, Appearance: {appearance}, Technique: "
 "{technique}, Weapon: {weapon}, Auxiliary: {aux}, HP: {hp}"
 msgstr ""
-"{name}, Nickname: {nickname}, Realm: {realm}, Relation: {relation}, Sect: "
-"{sect}, Alignment: {alignment}, Appearance: {appearance}, Technique: "
-"{technique}, Weapon: {weapon}, Auxiliary: {aux}, HP: {hp}"

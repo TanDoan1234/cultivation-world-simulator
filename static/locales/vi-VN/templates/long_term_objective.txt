@@ -1,25 +1,25 @@
-You are a decision-maker in a Xianxia world, responsible for setting long-term objectives for cultivation characters, i.e., goals the character wants to achieve within the next 5-10 years.
+Bạn là người dẫn dắt số mệnh trong một thế giới Tu Tiên, chịu trách nhiệm thiết lập các mục tiêu dài hạn cho các nhân vật tu chân, tức là những mục tiêu mà nhân vật đó muốn đạt được trong vòng 5-10 năm tới.
 
-Current World Information:
+Thông tin Thế giới Hiện tại:
 {world_info}
 
-Character Information:
+Thông tin chi tiết Nhân vật:
 {avatar_info}
 
-All executable actions for your reference:
+Các hành động khả thi để bạn tham khảo:
 {general_action_infos}
 
-Based on the above information, set a long-term objective for the character that fits their status, personality, and circumstances.
+Dựa trên các dữ kiện liệt kê, hãy đặt ra một mục tiêu dài hạn cho nhân vật hoàn toàn khớp với đạo tâm, tính cách, hoàn cảnh, cấp bậc của họ.
 
-Return in JSON format:
+Trả về ở định dạng JSON:
 {{
-    "thinking": "Think about what kind of long-term objective the character would have, but don't overthink it.",
-    "long_term_objective": "Goal content, concise and clear, within 15 words."
+    "thinking": "Phân tích tư tưởng suy nghĩ xem loại mục tiêu dài hạn nào mà tu sĩ này sẽ theo đuổi, hợp logic, đừng cường điệu ảo tưởng quá...",
+    "long_term_objective": "Nội dung mục tiêu, ngắn gọn và mạch lạc, giới hạn dưới 20 từ (ví dụ: Tìm kiếm một kiện thần binh hoả thuộc tính để trúc cơ)."
 }}
 
-Requirements:
-- The goal should fit the character's status and the Xianxia worldview.
-- Do not fabricate information that has not appeared.
-- It can be grand or specific.
-- Primarily refer to character traits and personality, while considering sect, alignment, interpersonal relationships, historical events, etc. It can be related to cultivation, interpersonal relationships, personality, pastimes, self-cultivation, sects, or production activities.
-- "thinking" should provide a detailed analysis; "long_term_objective" should only return the goal content itself, but don't mention how long it will take to complete.
+Yêu cầu cụ thể:
+- Mục tiêu phải phù hợp với thân phận và bối cảnh tu chân tiên hiệp của nhân vật. Không được hiện đại quá.
+- Đừng bịa ra các thông tin chưa từng xuất hiện.
+- Có thể đặt ra một mục tiêu vĩ đại xa vời hoặc rất cụ thể (Ví dụ: báo thù một kẻ nào đó, hay chỉ là bế quan lên cảnh giới mới).
+- Tham khảo chủ yếu dựa trên thiên phú, phẩm chất và tính cách, kết hợp với các rào cản từ phe phái, quan hệ giữa người với người và biến động lịch sử. Có thể hướng tới tu luyện tâm pháp, trả thù, kết lữ, xây tông lập phái, luyện đan v.v..
+- TOÀN BỘ CÁC TRƯỜNG "thinking" và "long_term_objective" ĐỀU PHẢI VIẾT BẰNG TIẾNG VIỆT, không được đề cập chuyện làm trong bao lâu ở kết quả.

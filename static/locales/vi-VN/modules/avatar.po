@@ -1,107 +1,97 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cultivation-world-simulator 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 00:00+0000\n"
-"PO-Revision-Date: 2024-01-20 00:00+0000\n"
-"Last-Translator: \n"
-"Language-Team: English\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 # ============================================================================
 # Avatar System
 # ============================================================================
 # Field Labels (info_dict keys)
 msgid "Origin"
-msgstr "Origin"
+msgstr "Xuất thân"
 
 msgid "Origin: {origin}"
-msgstr "Origin: {origin}"
+msgstr "Xuất thân: {origin}"
 
 msgid "Name"
-msgstr "Name"
+msgstr "Danh xưng"
 
 msgid "Gender"
-msgstr "Gender"
+msgstr "Giới tính"
 
 msgid "Age"
-msgstr "Age"
+msgstr "Niên kỷ"
 
 msgid "HP"
-msgstr "HP"
+msgstr "Sinh lực"
 
 msgid "Spirit Stones"
-msgstr "Spirit Stones"
+msgstr "Linh Thạch"
 
 msgid "Relations"
-msgstr "Relations"
+msgstr "Quan hệ"
 
 msgid "Sect"
-msgstr "Sect"
+msgstr "Tông môn"
 
 msgid "Alignment"
-msgstr "Alignment"
+msgstr "Thiên Hướng"
 
 msgid "Region"
-msgstr "Region"
+msgstr "Vực"
 
 msgid "Technique"
-msgstr "Technique"
+msgstr "Công Pháp"
 
 msgid "Realm"
-msgstr "Realm"
+msgstr "Cảnh Giới"
 
 msgid "Traits"
-msgstr "Traits"
+msgstr "Đặc Tính"
 
 msgid "Materials"
-msgstr "Materials"
+msgstr "Linh Tài"
 
 msgid "Appearance"
-msgstr "Appearance"
+msgstr "Dung Mạo"
 
 msgid "Weapon"
-msgstr "Weapon"
+msgstr "Pháp Bảo"
 
 msgid "Auxiliary"
-msgstr "Auxiliary"
+msgstr "Phụ Trợ"
 
 msgid "Emotion"
-msgstr "Emotion"
+msgstr "Tâm Tình"
 
 msgid "Long-term Goal"
-msgstr "Long-term Goal"
+msgstr "Đại Đạo Chí Hướng"
 
 msgid "Short-term Goal"
-msgstr "Short-term Goal"
+msgstr "Tiểu Đạo Chí Hướng"
 
 msgid "Current Effects"
-msgstr "Current Effects"
+msgstr "Đương Kim Chi Biến Động"
 
 msgid "Nickname"
-msgstr "Nickname"
+msgstr "Đạo Hiệu"
 
 msgid "Spirit Animal"
-msgstr "Spirit Animal"
+msgstr "Bản Mệnh Linh Thú"
 
 msgid "Nearby Avatars"
-msgstr "Nearby Avatars"
+msgstr "Cận Kề Hóa Thân"
 
 msgid "Major Events"
-msgstr "Major Events"
+msgstr "Thiên Hạ Đại Sự"
 
 msgid "Recent Events"
-msgstr "Recent Events"
+msgstr "Cận Nhật Diễn Biến"
 
 msgid "Orthodoxy"
-msgstr "Orthodoxy"
+msgstr "Chính Đạo"
 
 msgid "A rogue cultivator {name} has appeared in the world."
-msgstr "A rogue cultivator {name} has appeared in the world."
+msgstr "Một gã tán tu {name} đã xuất thế."
 
 msgid ""
 "{name} has awakened their spiritual roots and embarked on the path of "

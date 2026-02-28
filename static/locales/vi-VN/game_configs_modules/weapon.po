@@ -1,410 +1,408 @@
 #
 msgid ""
 msgstr ""
-"Language: en_US\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 
 #. weapon.csv: 练气剑
 msgid "WEAPON_1001_NAME"
-msgstr "Qi Refinement Sword"
+msgstr "Luyện Khí Kiếm"
 
 #. weapon.csv: 市井铁匠铺打造的铁剑，勉强能用。...
 msgid "WEAPON_1001_DESC"
-msgstr "An iron sword forged by a local blacksmith, barely usable."
+msgstr "Một thanh thiết kiếm do thợ rèn phàm tục địa phương rèn đúc, chỉ có thể miễn cưỡng sử dụng."
 
 #. weapon.csv: 练气刀
 msgid "WEAPON_1002_NAME"
-msgstr "Qi Refinement Saber"
+msgstr "Luyện Khí Đao"
 
 #. weapon.csv: 厚背砍刀，寻常武夫的最爱。...
 msgid "WEAPON_1002_DESC"
-msgstr "A thick-backed chopper, a favorite of ordinary martial artists."
+msgstr "Một thanh đao lưng dày, vũ khí ưa thích của phàm nhân võ giả."
 
 #. weapon.csv: 练气枪
 msgid "WEAPON_1003_NAME"
-msgstr "Qi Refinement Spear"
+msgstr "Luyện Khí Thương"
 
 #. weapon.csv: 白蜡杆制成，枪头挂着红缨。...
 msgid "WEAPON_1003_DESC"
-msgstr "Made of white wax wood, with a red tassel on the spearhead."
+msgstr "Chế tạo từ gỗ bạch lạp, đầu thương kết hồng thùy."
 
 #. weapon.csv: 练气棍
 msgid "WEAPON_1004_NAME"
-msgstr "Qi Refinement Staff"
+msgstr "Luyện Khí Côn"
 
 #. weapon.csv: 普通的硬木棍，长与眉齐。...
 msgid "WEAPON_1004_DESC"
-msgstr "A common hardwood staff, as long as the eyebrows."
+msgstr "Một cây côn gỗ cứng thông thường, dài bằng lông mày."
 
 #. weapon.csv: 练气扇
 msgid "WEAPON_1005_NAME"
-msgstr "Qi Refinement Fan"
+msgstr "Luyện Khí Phiến"
 
 #. weapon.csv: 文人雅士常用的折扇，附庸风雅。...
 msgid "WEAPON_1005_DESC"
-msgstr "A folding fan commonly used by scholars and literati for elegance."
+msgstr "Một chiếc quạt xếp thường được văn nhân mặc khách sử dụng để tăng thêm phần phong nhã."
 
 #. weapon.csv: 练气鞭
 msgid "WEAPON_1006_NAME"
-msgstr "Qi Refinement Whip"
+msgstr "Luyện Khí Tiên"
 
 #. weapon.csv: 普通的皮鞭，多用于赶车或刑罚。...
 msgid "WEAPON_1006_DESC"
-msgstr "A common leather whip, mostly used for driving carts or punishment."
+msgstr "Một cây roi da thông thường, chuyên dùng để điều khiển ngựa xe hoặc thi hành trừng giới."
 
 #. weapon.csv: 练气琴
 msgid "WEAPON_1007_NAME"
-msgstr "Qi Refinement Zither"
+msgstr "Luyện Khí Cầm"
 
 #. weapon.csv: 桐木制成的古琴，音色尚可。...
 msgid "WEAPON_1007_DESC"
-msgstr "An ancient zither made of paulownia wood, with fair sound quality."
+msgstr "Một cây cổ cầm chế tác từ gỗ ngô đồng, âm sắc tương đối thanh nhã."
 
 #. weapon.csv: 练气笛
 msgid "WEAPON_1008_NAME"
-msgstr "Qi Refinement Flute"
+msgstr "Luyện Khí Tiêu"
 
 #. weapon.csv: 紫竹削制，声音清脆。...
 msgid "WEAPON_1008_DESC"
-msgstr "Carved from purple bamboo, with a crisp sound."
+msgstr "Tạc từ tử trúc, thanh âm thanh thúy."
 
 #. weapon.csv: 练气暗器
 msgid "WEAPON_1009_NAME"
-msgstr "Qi Refinement Hidden Weapon"
+msgstr "Ám Khí Luyện Khí."
 
 #. weapon.csv: 随处可见的铁制暗器。...
 msgid "WEAPON_1009_DESC"
-msgstr "Commonly seen iron hidden weapons."
+msgstr "Phổ thông thiết ám khí."
 
 #. weapon.csv: 青霜剑
 msgid "WEAPON_1021_NAME"
-msgstr "Azure Frost Sword"
+msgstr "Bích Sương Kiếm."
 
 #. weapon.csv: 剑气森寒。...
 msgid "WEAPON_1021_DESC"
-msgstr "The sword qi is bone-chillingly cold."
+msgstr "Kiếm khí hàn băng thấu cốt."
 
 #. weapon.csv: 井中月
 msgid "WEAPON_1022_NAME"
-msgstr "Water Moon Saber"
+msgstr "Thủy Nguyệt Đao."
 
 #. weapon.csv: 刀光如井中映月，虚实难测。...
 msgid "WEAPON_1022_DESC"
-msgstr "The blade is like water, reflecting the moon without a trace. It is hard to distinguish between reality and illusion, making it unpredictable for opponents."
+msgstr "Đao phong tự thủy, ánh nguyệt vô tung. Thật hư khó biện, khiến địch thủ khó lòng lường được."
 
 #. weapon.csv: 火尖枪
 msgid "WEAPON_1023_NAME"
-msgstr "Fire Tipped Spear"
+msgstr "Hỏa Tiêm Thương."
 
 #. weapon.csv: 枪头隐有火光，能引动凡火。...
 msgid "WEAPON_1023_DESC"
-msgstr "Faint fire light on the spearhead, able to trigger common fire."
+msgstr "Thương tiêm hỏa quang mờ nhạt, có thể khơi dậy phổ thông hỏa diễm."
 
 #. weapon.csv: 囚龙棒
 msgid "WEAPON_1024_NAME"
-msgstr "Dragon Capturing Rod"
+msgstr "Cầm Long Bổng."
 
 #. weapon.csv: 精铁铸造，重达千斤，力大者可用。...
 msgid "WEAPON_1024_DESC"
-msgstr ""
+msgstr "Mô Tả Pháp Bảo 1024"
 "Forged from refined iron, weighing a thousand jin, usable by those with "
 "great strength."
 
 #. weapon.csv: 桃花扇
 msgid "WEAPON_1025_NAME"
-msgstr "Crimson Flower Fan"
+msgstr "Xích Hoa Phiến."
 
 #. weapon.csv: 桃花影落飞神剑，扇面绘有桃花，暗藏杀机。...
 msgid "WEAPON_1025_DESC"
-msgstr "The fan is painted with crimson petals. The flower shadows are blurred, hiding murderous intent, making it impossible to guard against."
+msgstr "Phiến diện điểm xuyết xích hoa cánh. Hoa ảnh mờ ảo, ẩn tàng sát cơ, khiến địch thủ khó bề phòng bị."
 
 #. weapon.csv: 打神鞭
 msgid "WEAPON_1026_NAME"
-msgstr "God Striking Whip"
+msgstr "Tru Thần Tiên."
 
 #. weapon.csv: 仿品，虽无打神之能，却可伤人神魂。...
 msgid "WEAPON_1026_DESC"
-msgstr ""
+msgstr "Mô Tả Pháp Bảo 1026"
 "An imitation; although lacking the power to strike gods, it can wound the "
 "soul."
 
 #. weapon.csv: 天魔琴
 msgid "WEAPON_1027_NAME"
-msgstr "Heavenly Demonic Zither"
+msgstr "Thiên Ma Cầm."
 
 #. weapon.csv: 琴音魔性，扰乱心智。...
 msgid "WEAPON_1027_DESC"
-msgstr "The zither sound is demonic, disturbing the mind."
+msgstr "Cầm âm yêu dị, nhiễu loạn tâm thần."
 
 #. weapon.csv: 鬼笛陈情
 msgid "WEAPON_1028_NAME"
-msgstr "Spirit Controlling Flute"
+msgstr "Ngự Hồn Tiêu"
 
 #. weapon.csv: 据说能以此笛操控尸傀。...
 msgid "WEAPON_1028_DESC"
-msgstr "The sound of the flute is shrill and can control corpses, making people turn pale at the sound."
+msgstr "Tiếng tiêu the thé, có thể ngự trị cương thi, khiến chúng sinh nghe mà biến sắc."
 
 #. weapon.csv: 无影针
 msgid "WEAPON_1029_NAME"
-msgstr "Shadowless Needle"
+msgstr "Vô Ảnh Châm"
 
 #. weapon.csv: 细若牛毛，来去无影，防不胜防。...
 msgid "WEAPON_1029_DESC"
-msgstr ""
+msgstr "Mô Tả Pháp Bảo 1029"
 "Fine as a cow's hair, coming and going without a trace, impossible to guard "
 "against."
 
 #. weapon.csv: 万兽笛
 msgid "WEAPON_1030_NAME"
-msgstr "Ten Thousand Beasts Flute"
+msgstr "Vạn Thú Tiêu"
 
 #. weapon.csv: 百兽宗秘制，笛声可安抚或激怒野兽。...
 msgid "WEAPON_1030_DESC"
-msgstr ""
+msgstr "Mô Tả Pháp Bảo 1030"
 "Specially made by the Baishou Sect; the flute sound can soothe or provoke "
 "beasts."
 
 #. weapon.csv: 血饮狂刀
 msgid "WEAPON_1031_NAME"
-msgstr "Bloodthirsty Saber"
+msgstr "Huyết Khát Đao"
 
 #. weapon.csv: 刀身赤红，似渴望饮血。...
 msgid "WEAPON_1031_DESC"
-msgstr "The blade is crimson, seemingly thirsting for blood. It has a heavy killing intent and cannot be used by those with weak will."
+msgstr "Lưỡi đao huyết sắc, tựa như khát máu. Sát khí trầm trọng, kẻ ý chí bạc nhược khó lòng chấp chưởng."
 
 #. weapon.csv: 玄铁重剑
 msgid "WEAPON_1032_NAME"
-msgstr "Meteor Heavy Sword"
+msgstr "Lưu Tinh Trọng Kiếm"
 
 #. weapon.csv: 重剑无锋，大巧不工，独孤求败。...
 msgid "WEAPON_1032_DESC"
-msgstr "Cast from extraterrestrial meteoric iron. The heavy sword has no sharp edge, but great skill requires no workmanship. It can break all techniques with force."
+msgstr "Đúc từ Thiên Ngoại Lưu Tinh Thiết. Trọng kiếm vô phong, đại xảo vô công, có thể nhất lực phá vạn pháp."
 
 #. weapon.csv: 紫薇软剑
 msgid "WEAPON_1033_NAME"
-msgstr "Spirit Snake Soft Sword"
+msgstr "Linh Xà Nhuyễn Kiếm"
 
 #. weapon.csv: 软若束带，动若灵蛇。...
 msgid "WEAPON_1033_DESC"
-msgstr "The sword is as soft as silk, but when infused with spiritual energy, it moves like a spirit snake, strange and unpredictable."
+msgstr "Kiếm thân mềm mại như tơ lụa, nhưng khi linh khí quán chú, nó uyển chuyển như linh xà, biến ảo khôn lường."
 
 #. weapon.csv: 水火囚龙棍
 msgid "WEAPON_1034_NAME"
-msgstr "Water and Fire Dragon Capturing Staff"
+msgstr "Thủy Hỏa Phục Long Trượng"
 
 #. weapon.csv: 镇魂宗制式兵器，水火相济，困敌锁魂。...
 msgid "WEAPON_1034_DESC"
-msgstr ""
+msgstr "Mô Tả Pháp Bảo 1034"
 "A standard weapon of the Zhenhun Sect, combining water and fire to trap "
 "enemies and lock souls."
 
 #. weapon.csv: 青竹蜂云剑
 msgid "WEAPON_1051_NAME"
-msgstr "Heavenly Thunder Bamboo Sword"
+msgstr "Thiên Lôi Trúc Kiếm"
 
 #. weapon.csv: 成套飞剑，内蕴辟邪神雷，克制天下邪祟。...
 msgid "WEAPON_1051_DESC"
-msgstr "A set of flying swords refined from Heavenly Thunder Bamboo, containing the Evil-Warding Divine Thunder to suppress all evil in the world."
+msgstr "Một bộ phi kiếm luyện chế từ Thiên Lôi Trúc, ẩn chứa Trấn Tà Thần Lôi, dùng để trấn áp vạn tà trong thiên hạ."
 
 #. weapon.csv: 随心铁杆兵
 msgid "WEAPON_1052_NAME"
-msgstr "As-You-Will Iron Rod"
+msgstr "Như Ý Thiết Bổng"
 
 #. weapon.csv: 六耳猕猴的兵器，随心变化，大小如意。...
 msgid "WEAPON_1052_DESC"
-msgstr ""
+msgstr "Mô Tả Pháp Bảo 1052"
 "The weapon of the Six-Eared Macaque, changing as desired, as large or small "
 "as one wishes."
 
 #. weapon.csv: 五火七禽扇
 msgid "WEAPON_1053_NAME"
-msgstr "Five Fires Seven Poultry Fan"
+msgstr "Ngũ Hỏa Thất Cầm Phiến"
 
 #. weapon.csv: 扇面有空中火、石中火、木中火等五火，一扇...
 msgid "WEAPON_1053_DESC"
-msgstr ""
+msgstr "Mô Tả Pháp Bảo 1053"
 "The fan surface features five fires including air fire, stone fire, and wood"
 " fire, turning things to ashes in one wave."
 
 #. weapon.csv: 弑神枪
 msgid "WEAPON_1054_NAME"
-msgstr "God Killer Spear"
+msgstr "Tru Thần Thương"
 
 #. weapon.csv: 杀气滔天，曾染魔神之血，枪出无回。...
 msgid "WEAPON_1054_DESC"
-msgstr ""
+msgstr "Mô Tả Pháp Bảo 1054"
 "Surging killing intent, once stained with the blood of demon gods; the spear"
 " never returns once thrown."
 
 #. weapon.csv: 赤锋矛
 msgid "WEAPON_1055_NAME"
-msgstr "Crimson Blood War Spear"
+msgstr "Xích Huyết Chiến Thương"
 
 #. weapon.csv: 赤锋矛，不朽盾，斩尽仙王灭九天。...
 msgid "WEAPON_1055_DESC"
-msgstr "Crimson throughout, with overwhelming fighting spirit. It has been stained with the blood of countless strong men, and the spear strikes without regret."
+msgstr "Thân thương xích hồng, chiến ý ngút trời. Từng nhuộm máu vô số cường giả, mỗi kích thương đều vô hối."
 
 #. weapon.csv: 斩仙飞刀
 msgid "WEAPON_1056_NAME"
-msgstr "Immortal Slaying Flying Dagger"
+msgstr "Tru Tiên Phi Đao"
 
 #. weapon.csv: 红葫芦内藏一线毫光，有眉有目。请宝贝转身...
 msgid "WEAPON_1056_DESC"
-msgstr ""
+msgstr "Mô Tả Pháp Bảo 1056"
 "A trace of light hidden in a red gourd, with eyebrows and eyes. Please turn "
 "around, treasure, for gods and ghosts cannot escape."
 
 #. weapon.csv: 诛仙剑
 msgid "WEAPON_1057_NAME"
-msgstr "Immortal Slaying Sword"
+msgstr "Tru Tiên Kiếm"
 
 #. weapon.csv: 非铜非铁亦非钢，曾在须弥山下藏。利气直透...
 msgid "WEAPON_1057_DESC"
-msgstr ""
+msgstr "Một linh khí thô sơ, được cường hóa bằng linh thạch cấp thấp, thích hợp cho người mới chập chững bước vào con đường tu chân."
 "Neither copper, iron, nor steel, once hidden under Mount Sumeru. Sharp qi "
 "pierces directly into the nine heavens."
 
 #. weapon.csv: 干将莫邪
 msgid "WEAPON_1058_NAME"
-msgstr "Gan Jiang and Mo Ye"
+msgstr "Can Tương Mạc Gia"
 
 #. weapon.csv: 挚情之剑，一雌一雄，分则为杀，合则为情。...
 msgid "WEAPON_1058_DESC"
-msgstr ""
+msgstr "Thanh đoản kiếm rèn từ Hàn Thiết Vạn Niên, ẩn chứa phong mang sắc bén, có thể chém rách Hộ Thể Chân Nguyên của kẻ địch."
 "Swords of true love, one female and one male, killing when separated, "
 "amorous when together."
 
 #. weapon.csv: 芭蕉扇
 msgid "WEAPON_1059_NAME"
-msgstr "Plantain Fan"
+msgstr "Ba Tiêu Phiến"
 
 #. weapon.csv: 太阴之精叶，一扇息火，二扇生风，三扇下雨...
 msgid "WEAPON_1059_DESC"
-msgstr ""
+msgstr "Pháp khí hình Bát Quái, được khắc trận đồ cổ xưa, mỗi lần kích hoạt đều triệu hồi nguyên tố ngũ hành, công thủ vẹn toàn."
 "Essence leaf of Taiyin; one wave stops fire, two waves create wind, three "
 "waves bring rain."
 
 #. weapon.csv: 紫金降魔杵
 msgid "WEAPON_1060_NAME"
-msgstr "Purple Gold Demon Subduing Pestle"
+msgstr "Tử Kim Hàng Ma Xử"
 
 #. weapon.csv: 韦护的兵器，虽然轻灵，打在人身却重如泰山...
 msgid "WEAPON_1060_DESC"
-msgstr ""
+msgstr "Một bảo vật thần bí, không rõ lai lịch, chỉ biết nó xuất hiện cùng với một thiên tượng dị thường, mang theo khí tức Hồng Hoang."
 "Wei Hu's weapon; although light and agile, it hits with the weight of Mount "
 "Tai."
 
 #. weapon.csv: 九环金背刀
 msgid "WEAPON_1061_NAME"
-msgstr "Nine-Ring Golden Saber"
+msgstr "Cửu Hoàn Kim Đao"
 
 #. weapon.csv: 刀背嵌入九个金环，挥舞时金环碰撞，声若雷...
 msgid "WEAPON_1061_DESC"
-msgstr ""
+msgstr "Cây trượng Mộc Linh, thân gậy là cành cây thế giới, vung lên có thể ban sự sống cho cây cỏ, hoặc biến chúng thành vũ khí công kích."
 "The back of the saber is embedded with nine golden rings. When waved, the "
 "rings collide with a thunderous sound that strikes fear into the heart."
 
 #. weapon.csv: 寒铁银枪
 msgid "WEAPON_1062_NAME"
-msgstr "Cold Iron Silver Spear"
+msgstr "Hàn Thiết Ngân Thương"
 
 #. weapon.csv: 通体由万年寒铁打造，枪身银白，触之冰冷刺...
 msgid "WEAPON_1062_DESC"
-msgstr ""
+msgstr "Thanh trường đao Huyết Lân, từng uống máu của Vạn Thú Chí Tôn, mỗi đao vung ra mang theo thú hồn rít gào, khiến địch táng đảm."
 "Made entirely of ten-thousand-year-old cold iron, the spear body is silvery "
 "white and bone-chilling to the touch."
 
 #. weapon.csv: 七节紫竹鞭
 msgid "WEAPON_1063_NAME"
-msgstr "Seven-Section Purple Bamboo Whip"
+msgstr "Thất Tiết Tử Trúc Tiên"
 
 #. weapon.csv: 采自南海紫竹林，共七节，坚韧异常，不仅能...
 msgid "WEAPON_1063_DESC"
-msgstr ""
+msgstr "Chiếc nhẫn Giới Tử, bên trong là một không gian độc lập rộng lớn, có thể chứa đựng vạn vật, tiện lợi cho việc du hành vạn dặm."
 "Harvested from the Purple Bamboo Forest in the South Sea, it has seven "
 "sections and is exceptionally tough. It can wound enemies and bind demons."
 
 #. weapon.csv: 玉琵琶
 msgid "WEAPON_1064_NAME"
-msgstr "Jade Pipa"
+msgstr "Ngọc Tỳ Bà"
 
 #. weapon.csv: 白玉雕琢而成，弹奏时有金石之声，能洗涤心...
 msgid "WEAPON_1064_DESC"
-msgstr ""
+msgstr "Linh Lung Tháp Cửu Tầng, từng trấn áp ma đầu viễn cổ, phát ra uy áp khủng khiếp, khiến yêu ma quỷ quái đều phải quỳ lạy."
 "Carved from white jade, it produces the sound of metal and stone when "
 "played, cleansing inner demons."
 
 #. weapon.csv: 碧海潮生笛
 msgid "WEAPON_1065_NAME"
-msgstr "Ocean Dragon Flute"
+msgstr "Hải Long Tiêu"
 
 #. weapon.csv: 东海龙宫流出的宝物，吹奏时如闻海潮之声，...
 msgid "WEAPON_1065_DESC"
-msgstr "Made of deep-sea cold jade. When played, it sounds like a dragon chanting in the ocean, shaking the surroundings."
+msgstr "Được chế tác từ hàn ngọc thâm hải. Khi thổi, tiếng rồng ngâm biển cả, chấn động tứ phương."
 
 #. weapon.csv: 虎魄
 msgid "WEAPON_1071_NAME"
-msgstr "Fierce Tiger Evil Blade"
+msgstr "Mãnh Hổ Tà Đao"
 
 #. weapon.csv: 上古凶兵，内封白虎战魂，出鞘必饮血，不仅...
 msgid "WEAPON_1071_DESC"
-msgstr "An ancient ominous weapon sealing the fierce soul of a White Tiger. It must drink blood when unsheathed and may backlash against its master."
+msgstr "Một kiện hung khí cổ xưa, phong ấn hung hồn Bạch Hổ. Khi rút khỏi vỏ ắt phải nhuốm máu tươi, bằng không sẽ phản phệ chủ nhân."
 
 #. weapon.csv: 擎天白玉柱
 msgid "WEAPON_1072_NAME"
-msgstr "Sky Optimus Pillar"
+msgstr "Thiên Khung Trụ"
 
 #. weapon.csv: 疑似上古天庭的柱石残片炼制，重如山岳，非...
 msgid "WEAPON_1072_DESC"
-msgstr ""
+msgstr "Phù Chương Thái Cổ, khắc họa những ký tự tiên cổ đã thất truyền, khi được kích hoạt có thể triệu hồi sức mạnh từ Tam Thiên Đại Đạo."
 "Refined from fragments of pillars suspected to be from the Ancient Heavenly "
 "Court. It is as heavy as a mountain and cannot be wielded by those without "
 "great power."
 
 #. weapon.csv: 阴阳扇
 msgid "WEAPON_1073_NAME"
-msgstr "Yin Yang Fan"
+msgstr "Âm Dương Phiến"
 
 #. weapon.csv: 一面纯白主生，一面漆黑主死。扇动间阴阳逆...
 msgid "WEAPON_1073_DESC"
-msgstr ""
+msgstr "Chân Khí Hộ Thân Quyển, không phải vũ khí công kích, mà là pháp bảo phòng ngự tối thượng, có thể chống lại đòn đánh từ cường giả Đại Thừa Kỳ."
 "One side is pure white for life, the other pitch black for death. Waving it "
 "reverses Yin and Yang, shrinking the earth to inches."
 
 #. weapon.csv: 龙骨鞭
 msgid "WEAPON_1074_NAME"
-msgstr "Dragon Spine Whip"
+msgstr "Long Cốt Tiên"
 
 #. weapon.csv: 以上古真龙之脊骨炼制，挥动时隐有龙吟，对...
 msgid "WEAPON_1074_DESC"
-msgstr ""
+msgstr "{'WEAPON_1074_DESC': 'Thanh kiếm ẩn chứa linh khí hỗn độn từ thuở khai thiên, mỗi nhát vung đều xé rách hư không, chém đứt nhân quả. Là chí bảo mà vạn linh đều khao khát.'}"
 "Refined from the spine of an ancient true dragon. When waved, there is a "
 "faint dragon roar, naturally suppressing lower-level beings."
 
 #. weapon.csv: 伏羲琴
 msgid "WEAPON_1075_NAME"
-msgstr "Fuxi Zither"
+msgstr "Phục Hy Cầm"
 
 #. weapon.csv: 上古十大神器之一的仿品，拥有支配万物心灵...
 msgid "WEAPON_1075_DESC"
-msgstr ""
+msgstr "{'WEAPON_1075_DESC': 'Trường kích trấn áp cửu thiên thập địa, thân đúc từ Cửu U Huyền Thiết, hấp thụ vô số oán khí và sát khí, có thể xuyên phá mọi phòng ngự, định đoạt sinh tử vạn linh. Kẻ chạm vào đều hóa thành tro bụi.'}"
 "An imitation of one of the Ten Great Ancient Artifacts, possessing the "
 "mysterious power to dominate the minds of all things."
 
 #. weapon.csv: 唤魔笛
 msgid "WEAPON_1076_NAME"
-msgstr "Demon Calling Flute"
+msgstr "Chiêu Yêu Địch"
 
 #. weapon.csv: 魔界至宝，笛声诡谲，能驱使魔物与凶兽为己...
 msgid "WEAPON_1076_DESC"
-msgstr ""
+msgstr "{'WEAPON_1076_DESC': 'Kim Hoàn Trấn Thiên, ngưng tụ tinh hoa Nhật Nguyệt, phong ấn cấm thuật vô thượng. Khi kích hoạt, linh quang vạn trượng sẽ thiêu rụi tà niệm, hóa giải vạn pháp, bảo hộ chủ nhân thoát khỏi mọi kiếp nạn sinh tử.'}"
 "A supreme treasure of the Demon Realm. The flute sound is treacherous and "
 "can drive monsters and fierce beasts for one's own use."
 
 #. weapon.csv: 孔雀翎
 msgid "WEAPON_1077_NAME"
-msgstr "Seven-Color Sparrow Feather"
+msgstr "Thất Sắc Tước Vũ"
 
 #. weapon.csv: 虽然只是暗器，但其美艳不可方物。当它绽放...
 msgid "WEAPON_1077_DESC"
-msgstr "Beautiful beyond words, but hidden under the brilliant light is a fatal murderous intent."
+msgstr "Vẻ đẹp thoát tục, không bút mực nào tả xiết, song ẩn dưới vầng hào quang chói lọi lại là sát cơ đoạt mệnh."

@@ -1,35 +1,35 @@
-You are a creator of a Xianxia world. I will provide you with an original world background and a piece of history.
-Based on the world background and this history, you need to modify the sect information and their corresponding base information existing in this world.
+Bạn là Đấng Sáng Tạo của một thế giới Tu Tiên. Tôi sẽ cung cấp cho bạn một bối cảnh thế giới ban đầu và một đoạn lịch sử.
+Dựa trên bối cảnh thế giới và đoạn lịch sử này, bạn cần sửa đổi thông tin của các Tông Môn (Sect) và các Tổng đàn (Sect Region) tương ứng.
 
-World Background:
+Bối cảnh Thế giới:
 {world_info}
 
-History Text:
+Đoạn Lịch Sử:
 {history_str}
 
-Sect Information:
+Thông tin Tông Môn:
 {sects}
 
-Sect Region Information:
+Thông tin Các Khu Vực Tổng Đàn Tông Môn:
 {sect_regions}
 
-Based on the above information, analyze and return modification suggestions.
+Dựa trên các thông tin hiển thị, hãy chắt lọc các biến số từ dòng lịch sử và đưa ra sửa đổi.
 
-Return in JSON format:
+Trả về duy nhất dưới định dạng JSON:
 {{
-    "thinking": "Analyze what kind of modifications should be made",
+    "thinking": "Phân tích bằng tiếng Việt xem Tông môn kia suy tàn hay hưng vượng, thay đổi như thế nào",
     "sects_change": 
         {{
-            "id": {{ // original id
-                "name": str // new name
-                "desc": desc // new desc
+            "id": {{ // id gốc
+                "name": "tên tôn chỉ mới (tiếng Việt)",
+                "desc": "mô tả mới (tiếng Việt)"
             }}
         }},
-    "sect_regions_change": {{}} // dict, structure as above, for sect regions
+    "sect_regions_change": {{}} // dict, cấu trúc giống trên cho tổng đàn
 }}
 
-Requirements:
-1. "thinking" is your thought process; please provide a detailed analysis.
-2. Modifications should be based on the content of the history and be logically sound.
-3. If an item has no modifications, return an empty dictionary {{}}.
-4. For items to be modified, only return "name" and "desc", and no other keys.
+Yêu cầu:
+1. "thinking" là quá trình suy nghĩ của bạn; vui lòng phân tích chi tiết bằng Tiếng Việt.
+2. Đặc tả sự kiện Tông môn phải dựa trên lịch sử một cách có logic. Tên tông phái phải rất tiên hiệp.
+3. Nếu Sect không có biến động, thả rỗng {{}}.
+4. Tiếng Việt phải được sử dụng hoàn toàn cho "name" và "desc".

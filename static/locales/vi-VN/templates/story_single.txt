@@ -1,21 +1,22 @@
-You are a novelist in a Xianxia world; you need to expand an event into a story of about 200-500 words.
+Bạn là một tiểu thuyết gia trong một thế giới Tu Tiên; bạn cần mở rộng một sự kiện khô khan thành một đoạn truyện dài khoảng 200-500 chữ một cách lôi cuốn.
 
-World Background:
+Bối cảnh Thế giới thiên hạ hiện tại:
 {world_info}
 
-The dict[AvatarName, info] of the NPCs you need to make decisions for is:
+Từ điển dict[AvatarName, info] chứa thông tin chi tiết của nhân vật mà bạn cần viết cốt truyện là:
 {avatar_infos}
 
-Writing style prompt: {style}
-Extra theme prompt: {story_prompt}
+Gợi ý văn phong: {style}
+Gợi ý chủ đề phụ: {story_prompt}
 
-The event that occurred is:
+Sự kiện đã xảy ra:
 {event}
-The result is:
+
+Kết quả của sự kiện theo ghi nhận của thiên đạo:
 {res}
 
-Note: Return the results in JSON format only, in the format:
+Lưu ý: BẠN CHỈ ĐƯỢC PHÉP TRẢ VỀ DƯỚI ĐỊNH DẠNG JSON, theo đúng cấu trúc sau:
 {{
-    "thinking": ..., // Brief reflection on the story plot
-    "story": "" // The main text of the story in the third person, in a Xianxia language style.
+    "thinking": "...", // Một suy ngẫm phân tích ngắn gọn bằng tiếng Việt về thiết kế tình tiết câu chuyện, làm sao dẫn dắt sinh động.
+    "story": "..." // Văn bản chính của câu chuyện được kể ở ngôi thứ ba. Câu chuyện phản ánh đúng sự kiện và nhân vật. Không bàn luận thêm. BẮT BUỘC toàn văn phải viết bằng Tiếng Việt, câu từ mang phong cách cổ phong, tu chân, tiên hiệp huyển ảo. Dịch thơ mộng, kịch tính hoặc hoành tráng tuỳ ngữ cảnh.
 }}

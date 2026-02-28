@@ -1,39 +1,39 @@
-You are a creator of a Xianxia world. I will provide you with an original world background and a piece of history.
-Based on the world background and this history, you need to modify the information of techniques, weapons, and auxiliary equipment existing in this world.
+Bạn là Đấng Sáng Tạo của một thế giới Tu Tiên. Tôi sẽ cung cấp cho bạn một bối cảnh thế giới ban đầu và một đoạn lịch sử.
+Dựa trên bối cảnh thế giới và đoạn lịch sử này, bạn cần sửa đổi thông tin của các loại công pháp (techniques), vũ khí (weapons), và pháp bảo phụ trợ (auxiliary) tồn tại trong thế giới này.
 
-World Background:
+Bối cảnh Thế giới:
 {world_info}
 
-History Text:
+Đoạn Lịch Sử:
 {history_str}
 
-Technique Information:
+Thông tin Công pháp:
 {techniques}
 
-Weapon Information:
+Thông tin Vũ khí:
 {weapons}
 
-Auxiliary Equipment Information:
+Thông tin Pháp bảo:
 {auxiliarys}
 
-Based on the above information, analyze and return modification suggestions.
+Dựa trên các thông tin trên, hãy phân tích và trả về các đề xuất sửa đổi vật phẩm đặng tương thích với lịch sử.
 
-Return in JSON format:
+Trả về duy nhất dưới định dạng JSON:
 {{
-    "thinking": "Analyze what kind of modifications should be made",
+    "thinking": "Phân tích bằng tiếng Việt xem nên thực hiện những sửa đổi nào",
     "techniques_change": 
         {{
-            "id": {{ // original id
-                "name": str // new name
-                "desc": desc // new desc
+            "id": {{ // id gốc
+                "name": "tên mới (tiếng Việt)",
+                "desc": "mô tả mới (hiệu ứng, tiểu sử, tiếng Việt)"
             }}
         }},
-    "weapons_change": {{}}, // dict, structure as above
-    "auxiliarys_change": {{}} // dict, structure as above
+    "weapons_change": {{}}, // cấu trúc giống dict ở trên
+    "auxiliarys_change": {{}} // cấu trúc giống dict ở trên
 }}
 
-Requirements:
-1. "thinking" is your thought process; please provide a detailed analysis.
-2. Modifications should be based on the content of the history and be logically sound.
-3. If an item has no modifications, return an empty dictionary {{}}.
-4. For items to be modified, only return "name" and "desc", and no other keys.
+Yêu cầu:
+1. "thinking" là quá trình suy nghĩ của bạn; vui lòng phân tích chi tiết bằng Tiếng Việt.
+2. Việc sửa đổi phải dựa trên nội dung lịch sử mang đậm chất tiên hiệp và hợp lý.
+3. Nếu một vật phẩm không cần đổi, trả về dictionary rỗng {{}}.
+4. Lưu ý: Tiếng Việt bắt buộc được sử dụng cho cả thuộc tính "name" và "desc". Không trả thêm các từ khóa ngoài cấu trúc.

@@ -1,24 +1,12 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cultivation-world-simulator 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 00:00+0000\n"
-"PO-Revision-Date: 2024-01-20 00:00+0000\n"
-"Last-Translator: \n"
-"Language-Team: English\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 # Story Styles
 msgid ""
 "Plain narration: Restrained language, minimal embellishment, recording like "
 "a bystander."
 msgstr ""
-"Plain narration: Restrained language, minimal embellishment, recording like "
-"a bystander."
 
 msgid ""
 "Emotion in scenery: Expressing emotion through scenery, blending feelings "
@@ -124,40 +112,40 @@ msgstr ""
 " to convey spirit, real and delicate."
 
 msgid "grand_parent"
-msgstr "Grandparent"
+msgstr "Tổ Bối"
 
 msgid "grand_child"
-msgstr "Grandchild"
+msgstr "Tổ Tôn"
 
 msgid "martial_grandmaster"
-msgstr "Martial Grandmaster"
+msgstr "Sư Tôn"
 
 msgid "martial_grandchild"
-msgstr "Martial Grandchild"
+msgstr "Đồ Tôn"
 
 msgid "martial_sibling"
-msgstr "Martial Sibling"
+msgstr "Sư Huynh Đệ"
 
 msgid "relation_grandfather"
-msgstr "Grandfather"
+msgstr "Tổ Phụ"
 
 msgid "relation_grandmother"
-msgstr "Grandmother"
+msgstr "Tổ Mẫu"
 
 msgid "relation_grandson"
-msgstr "Grandson"
+msgstr "Tôn Nhi"
 
 msgid "relation_granddaughter"
-msgstr "Granddaughter"
+msgstr "Tôn Nữ"
 
 msgid "relation_martial_older_brother"
-msgstr "Senior Martial Brother"
+msgstr "Sư Huynh"
 
 msgid "relation_martial_younger_brother"
-msgstr "Junior Martial Brother"
+msgstr "Sư Đệ"
 
 msgid "relation_martial_older_sister"
-msgstr "Senior Martial Sister"
+msgstr "Sư Tỷ"
 
 msgid "relation_martial_younger_sister"
-msgstr "Junior Martial Sister"
+msgstr "Sư Muội"

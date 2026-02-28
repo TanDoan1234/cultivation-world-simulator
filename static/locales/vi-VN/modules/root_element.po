@@ -1,105 +1,95 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cultivation-world-simulator 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 00:00+0000\n"
-"PO-Revision-Date: 2024-01-20 00:00+0000\n"
-"Last-Translator: \n"
-"Language-Team: English\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 # Root Element
 msgid "gold_element"
-msgstr "Gold"
+msgstr "Kim"
 
 msgid "wood_element"
-msgstr "Wood"
+msgstr "Mộc"
 
 msgid "water_element"
-msgstr "Water"
+msgstr "Thủy"
 
 msgid "fire_element"
-msgstr "Fire"
+msgstr "Hỏa"
 
 msgid "earth_element"
-msgstr "Earth"
+msgstr "Thổ"
 
 # Root Keys
 msgid "root_gold"
-msgstr "Gold Root"
+msgstr "Kim Linh Căn"
 
 msgid "root_wood"
-msgstr "Wood Root"
+msgstr "Mộc Linh Căn"
 
 msgid "root_water"
-msgstr "Water Root"
+msgstr "Thủy Linh Căn"
 
 msgid "root_fire"
-msgstr "Fire Root"
+msgstr "Hỏa Linh Căn"
 
 msgid "root_earth"
-msgstr "Earth Root"
+msgstr "Thổ Linh Căn"
 
 msgid "root_thunder"
-msgstr "Thunder Root"
+msgstr "Lôi Linh Căn"
 
 msgid "root_ice"
-msgstr "Ice Root"
+msgstr "Băng Linh Căn"
 
 msgid "root_wind"
-msgstr "Wind Root"
+msgstr "Phong Linh Căn"
 
 msgid "root_dark"
-msgstr "Dark Root"
+msgstr "Ám Linh Căn"
 
 msgid "root_heaven"
-msgstr "Heaven Root"
+msgstr "Thiên Linh Căn"
 
 # ============================================================================
 # Additional (New)
 # ============================================================================
 msgid "action_thinking"
-msgstr "Thinking"
+msgstr "Trầm Tư"
 
 msgid "{alignment}: {description}"
-msgstr "{alignment}: {description}"
+msgstr "{Phẩm chất}: {miêu tả}"
 
 msgid "{name} ({realm})"
-msgstr "{name} ({realm})"
+msgstr "{tên} ({cảnh giới})"
 
 msgid "{name}: {desc} ({realm})"
-msgstr "{name}: {desc} ({realm})"
+msgstr "{tên}: {miêu tả} ({cảnh giới})"
 
 msgid "{realm} {stage} (Level {level}) {status}"
-msgstr "{realm} {stage} (Level {level}) {status}"
+msgstr "{cảnh giới} {giai đoạn} (Cấp {cấp độ}) {trạng thái}"
 
 msgid "{realm} {stage} (Level {level}). At bottleneck: {status}"
-msgstr "{realm} {stage} (Level {level}). At bottleneck: {status}"
+msgstr "{cảnh giới} {giai đoạn} (Cấp {cấp độ}). Đang ở bình cảnh: {trạng thái}"
 
 msgid "Unknown character"
-msgstr "Unknown character"
+msgstr "Thân phận bất minh"
 
 msgid "{name} ({desc}{effect})"
-msgstr "{name} ({desc}{effect})"
+msgstr "{tên} ({miêu tả}{hiệu ứng})"
 
 msgid "{name} has ascended to a cultivator."
-msgstr "{name} has ascended to a cultivator."
+msgstr "{tên} đã bước chân vào tu đạo."
 
 msgid "old_age"
-msgstr "Old Age"
+msgstr "Niên Lão"
 
 msgid "battle"
-msgstr "Battle"
+msgstr "Giao Tranh"
 
 msgid "serious_injury"
-msgstr "Serious Injury"
+msgstr "Trọng Thương"
 
 msgid "(Unknown technique)"
-msgstr "(Unknown technique)"
+msgstr "(Vô danh thần thông)"
 
 msgid ""
 "(Alignment: {alignment}, Style: {style}, Headquarters: {hq_name}){effect}"
@@ -107,93 +97,93 @@ msgstr ""
 "(Alignment: {alignment}, Style: {style}, Headquarters: {hq_name}){effect}"
 
 msgid "Drops: {materials}"
-msgstr "Drops: {materials}"
+msgstr "Chiến Lợi Phẩm: {nguyên liệu}"
 
 msgid "[{name}] ({realm})"
-msgstr "[{name}] ({realm})"
+msgstr "[{Tên}] ({Cảnh Giới})"
 
 msgid "{name} ({attribute}) {grade}"
-msgstr "{name} ({attribute}) {grade}"
+msgstr "{Tên} ({Thuộc Tính}) {Phẩm Cấp}"
 
 msgid "{name} ({attribute}) {grade} {desc}{effect}"
-msgstr "{name} ({attribute}) {grade} {desc}{effect}"
+msgstr "{Tên} ({Thuộc Tính}) {Phẩm Cấp} {Mô Tả}{Hiệu Ứng}"
 
 msgid "{name} ({attribute}·{grade})"
-msgstr "{name} ({attribute}·{grade})"
+msgstr "{Tên} ({Thuộc Tính}·{Phẩm Cấp})"
 
 msgid "{name} ({type}·{realm}, {desc}){effect}"
-msgstr "{name} ({type}·{realm}, {desc}){effect}"
+msgstr "{Tên} ({Chủng Loại}·{Cảnh Giới}, {Mô Tả}){Hiệu Ứng}"
 
 msgid "date_format_year_month"
-msgstr "Year {year} Month {month}"
+msgstr "Tuế thứ {year}, Nguyệt {month}"
 
 msgid "sect_headquarters_desc_format"
-msgstr "({sect_name} HQ)"
+msgstr "({sect_name} Tổng Đàn)"
 
 msgid "Current World Phenomenon"
-msgstr "Current World Phenomenon"
+msgstr "Thiên Địa Kỳ Tượng Hiện Thời"
 
 msgid "phenomenon_format"
 msgstr "{name}: {desc}"
 
 msgid "Wilderness"
-msgstr "Wilderness"
+msgstr "Man Hoang"
 
 msgid "relation_rule_establish_title"
-msgstr "[Establish Relation Rules]"
+msgstr "[Lập Giao Quan Hệ]"
 
 msgid "relation_rule_cancel_title"
-msgstr "[Cancel Relation Rules]"
+msgstr "[Đoạn Tuyệt Quan Hệ]"
 
 msgid "relation_rule_lovers_add"
-msgstr ""
+msgstr "Luật Lệ Quan Hệ: Kết Đạo Lữ"
 "[Dao Companion] Requires opposite genders. Must be mutual deep recognition "
 "and affection."
 
 msgid "relation_rule_friend_add"
-msgstr ""
+msgstr "Luật Lệ Quan Hệ: Kết Giao Đạo Hữu"
 "[Friend] Friendly interactions (chat, spar without killing, heal). No "
 "substantial conflict of interest."
 
 msgid "relation_rule_enemy_add"
-msgstr ""
+msgstr "Thiết lập Quy tắc: Thêm Cừu Địch"
 "[Enemy] Substantial harm occurred (injury, theft, humiliation). Single "
 "severe harm or multiple minor frictions."
 
 msgid "relation_rule_master_add"
-msgstr ""
+msgstr "Thiết lập Quy tắc: Kết bái Sư Tôn"
 "[Master] Realm must be significantly higher than apprentice (e.g. Golden "
 "Core vs Qi Refinement)."
 
 msgid "relation_rule_apprentice_add"
-msgstr ""
+msgstr "Thiết lập Quy tắc: Thu nhận Đệ Tử"
 "[Apprentice] Relative to Master, usually established automatically with "
 "Master relation."
 
 msgid "relation_rule_lovers_cancel"
-msgstr "[Break Up] Conflict, emotional breakdown, severe betrayal."
+msgstr "[Đoạn Tuyệt Tình Duyên] Mâu thuẫn, tâm cảnh tan vỡ, phản bội thâm độc."
 
 msgid "relation_rule_friend_cancel"
-msgstr ""
+msgstr "Thiết lập Quy tắc: Hủy bỏ Kết giao Bằng hữu"
 "[Break Off] Conflict of interest, betrayal, or estrangement due to lack of "
 "interaction."
 
 msgid "relation_rule_enemy_cancel"
-msgstr ""
+msgstr "Thiết lập Quy tắc: Hóa giải Cừu Địch"
 "[Reconcile] One side initiates kindness and is accepted, or shared life-and-"
 "death experience, or hatred fades."
 
 msgid "relation_rule_master_cancel"
-msgstr "[Expel/Betray] Apprentice is rebellious or Master is unable to teach."
+msgstr "[Khai Trừ/Phản Bội] Đệ tử bất tuân sư mệnh, hoặc Sư tôn vô pháp dạy dỗ."
 
 msgid "relation_rule_apprentice_cancel"
-msgstr "[End Apprenticeship] Same as above."
+msgstr "[Kết Thúc Sư Đồ Quan Hệ] Như đã nêu trên."
 
 msgid "History"
-msgstr "History"
+msgstr "Sử Ký"
 
 msgid "When alignment is {align}"
-msgstr "When alignment is {align}"
+msgstr "Khi Đạo tâm là {align}"
 
 msgid "When using {weapon_type}"
-msgstr "When using {weapon_type}"
+msgstr "Khi sử dụng {loại binh khí}"

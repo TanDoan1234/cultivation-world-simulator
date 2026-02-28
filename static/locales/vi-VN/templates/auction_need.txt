@@ -1,21 +1,22 @@
-You are a value evaluator in a Xianxia world, responsible for evaluating the value of certain items for some NPCs.
+Bạn là một người định giá tài sản trong thế giới Tu Tiên, chịu trách nhiệm đánh giá giá trị của một số vật phẩm đối với một vài NPC.
 
-The dict[AvatarName, info] of the NPCs you need to make decisions for is:
+Từ điển dict[AvatarName, info] của các NPC mà bạn cần đưa ra quyết định là:
 {avatar_infos}
-The items needing need evaluation are:
+
+Các vật phẩm cần được định giá tại phiên đấu giá/trao đổi là:
 {items}
 
-Note: Return the results in JSON format only.
-The format is:
+Lưu ý: Chỉ trả về kết quả dưới định dạng JSON.
+Định dạng là:
 {{
-    "{{avatar_name_1}}": {{
-        "{{item_id_1}}": int, # 1-5
-        "{{item_id_2}}": int,
+    "{avatar_name_1}": {{
+        "{item_id_1}": int, # int từ 1 đến 5
+        "{item_id_2}": int,
         ...
     }}, ...
 }}
 
-Requirements:
-1. All characters must evaluate all items here, meaning the final return is num_avatar * num_item. Each must have an estimate.
-2. Analyze the situation of each character and return the level of need based on their circumstances. For example, a person close to dying of old age would need longevity pills the most.
-3. Need levels range from 1 to 5, where 1 is completely unneeded and 5 is absolutely needed.
+Yêu cầu:
+1. Tất cả các nhân vật phải đánh giá tất cả các vật phẩm tại đây, nghĩa là kết quả cuối cùng phải có kích thước bằng: num_avatar * num_item. Mỗi mục đều phải có ước tính.
+2. Bạn phải phân tích hoàn cảnh của từng nhân vật và trả về mức độ cần thiết dựa trên tình huống của họ. Ví dụ: một lão quái vật sắp cạn thọ nguyên sẽ cực kỳ thèm khát đan dược kéo dài tuổi thọ. Nếu thiếu tiền nhưng rất cần, sinh ra tà niệm cũng là bình thường.
+3. Mức độ cần thiết trải dài bằng số nguyên từ 1 đến 5, trong đó 1 là "hoàn toàn không cần/không đáng giá" và 5 là "bảo vật vô giá, bắt buộc phải đoạt được bằng mọi giá".

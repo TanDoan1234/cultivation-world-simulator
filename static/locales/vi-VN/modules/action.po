@@ -1,74 +1,64 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cultivation-world-simulator 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 00:00+0000\n"
-"PO-Revision-Date: 2024-01-20 00:00+0000\n"
-"Last-Translator: \n"
-"Language-Team: English\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 # Action: Assassinate
 msgid "assassinate_action_name"
-msgstr "Assassinate"
+msgstr "Thích Sát"
 
 msgid "assassinate_description"
-msgstr "Assassinate the target; if failed, turns into combat"
+msgstr "Thích sát đối thủ. Nếu ám toán không thành, liền chuyển thành giao chiến trực diện."
 
 msgid "assassinate_requirements"
-msgstr "No restrictions; cooldown required"
+msgstr "Vô điều kiện hạn chế; yêu cầu thời gian dưỡng chiêu."
 
 msgid "assassinate_story_prompt_success"
-msgstr ""
+msgstr "ám sát_câu chuyện_thành công"
 "This is about a successful assassination. No need to describe the combat "
 "process, focus on how the assassin lurked, approached, and delivered the "
 "fatal, silent strike. The target didn't even have time to react before "
 "perishing."
 
 msgid "assassinate_story_prompt_fail"
-msgstr ""
+msgstr "ám sát_câu chuyện_thất bại"
 "This is about a failed assassination. The assassin attempted to kill the "
 "target, but was keenly detected. Both sides then erupted into fierce direct "
 "confrontation. Do not mention specific HP values."
 
 msgid "{avatar} lurks in the shadows, attempting to assassinate {target}..."
-msgstr "{avatar} lurks in the shadows, attempting to assassinate {target}..."
+msgstr "{avatar} ẩn mình nơi u ám, âm mưu ám sát {target}..."
 
 msgid "{avatar} assassinated successfully! {target} fell without any defense."
-msgstr ""
+msgstr "{avatar} đã ám sát thành công! {target} gục ngã không chút phòng bị."
 "{avatar} assassinated successfully! {target} fell without any defense."
 
 msgid "Assassination failed! Both sides engaged in fierce battle."
-msgstr "Assassination failed! Both sides engaged in fierce battle."
+msgstr "Ám sát thất bại! Song phương giao chiến ác liệt."
 
 # Action: Attack
 msgid "attack_action_name"
-msgstr "Initiate Battle"
+msgstr "Khai Chiến"
 
 msgid "attack_description"
-msgstr "Attack the target and engage in combat"
+msgstr "Tấn công đối thủ, lập tức giao chiến."
 
 msgid "attack_requirements"
-msgstr "No restrictions"
+msgstr "Vô điều kiện."
 
 msgid "attack_story_prompt"
-msgstr ""
+msgstr "tấn công_câu chuyện_mở đầu"
 "Do not mention specific HP, damage points, or any numerical expressions. The"
 " battle should reflect both sides' techniques, cultivation realms, "
 "equipment, etc."
 
 msgid "Missing target parameter"
-msgstr "Missing target parameter"
+msgstr "Thiếu mục tiêu chỉ định."
 
 msgid "Target does not exist"
-msgstr "Target does not exist"
+msgstr "Mục tiêu không tồn tại."
 
 msgid "Target is already dead"
-msgstr "Target is already dead"
+msgstr "Mục tiêu đã vẫn lạc."
 
 msgid ""
 "{attacker} initiates battle against {target} (Power: {attacker} {att_power} "
@@ -79,251 +69,251 @@ msgstr ""
 
 # Action: Breakthrough
 msgid "breakthrough_action_name"
-msgstr "Breakthrough"
+msgstr "Đột Phá"
 
 msgid "breakthrough_description"
-msgstr ""
+msgstr "Diễn giải Đột phá"
 "Attempt to breakthrough realm (success increases max lifespan, failure "
 "reduces it; higher realm, lower success rate)"
 
 msgid "breakthrough_requirements"
-msgstr "Character must be at bottleneck; cannot execute consecutively"
+msgstr "Người thi triển phải đạt tới bình cảnh; không thể liên tục thi triển."
 
 msgid "Not at bottleneck, cannot breakthrough"
-msgstr "Not at bottleneck, cannot breakthrough"
+msgstr "Chưa tới bình cảnh, không thể đột phá."
 
 msgid "{avatar} begins attempting breakthrough"
-msgstr "{avatar} begins attempting breakthrough"
+msgstr "{avatar} bắt đầu xung kích đột phá."
 
 msgid "Breakthrough succeeded"
-msgstr "Breakthrough succeeded"
+msgstr "Đột phá thành công."
 
 msgid "Breakthrough failed"
-msgstr "Breakthrough failed"
+msgstr "Đột phá thất bại."
 
 msgid "{avatar} breakthrough result: {result}"
-msgstr "{avatar} breakthrough result: {result}"
+msgstr "{avatar} kết quả đột phá: {result}"
 
 msgid "succeeded"
-msgstr "succeeded"
+msgstr "thành công"
 
 msgid "failed"
-msgstr "failed"
+msgstr "thất bại"
 
 msgid "{avatar} encountered {calamity} tribulation, breakthrough {result}"
-msgstr "{avatar} encountered {calamity} tribulation, breakthrough {result}"
+msgstr "{avatar} tao ngộ {calamity} thiên kiếp, đột phá {result}"
 
 # Action: Respire
 msgid "respire_action_name"
-msgstr "Respire"
+msgstr "Điều Tức"
 
 msgid "respire_description"
-msgstr ""
+msgstr "Diễn giải Điều tức"
 "Conform to the Heavenly Dao and respire Qi. The higher the spiritual energy density, the better the effect."
 
 msgid "respire_requirements"
-msgstr "Requires Daoist orthodoxy or Rogue cultivator status"
+msgstr "Yêu cầu là Đạo môn chính tông hoặc Tán tu."
 
 msgid "Your orthodoxy does not support Qi Respiration."
-msgstr "Your orthodoxy does not support Qi Respiration."
+msgstr "Công pháp của ngươi không tương thích với Thổ nạp linh khí."
 
 msgid "This cave dwelling has been occupied by {name}, cannot respire"
-msgstr "This cave dwelling has been occupied by {name}, cannot respire"
+msgstr "Động phủ này đã bị {name} chiếm giữ, không thể Thổ nạp."
 
 msgid "{avatar} begins respiring at {location}, {efficiency}"
-msgstr "{avatar} begins respiring at {location}, {efficiency}"
+msgstr "{avatar} tiến hành Thổ nạp tại {location}, đạt hiệu quả {efficiency}."
 
 msgid "Cultivation has reached bottleneck, cannot continue cultivating"
-msgstr "Cultivation has reached bottleneck, cannot continue cultivating"
+msgstr "Tu vi đã chạm bình cảnh, không thể tiếp tục tu luyện."
 
 msgid "excellent progress"
-msgstr "excellent progress"
+msgstr "Tiến triển vượt bậc."
 
 msgid "slow progress (essence mismatch)"
-msgstr "slow progress (essence mismatch)"
+msgstr "Tiến triển chậm chạp (nguyên khí bất hòa)."
 
 msgid "slow progress (sparse essence)"
-msgstr "slow progress (sparse essence)"
+msgstr "Tiến triển chậm chạp (Linh khí thưa thớt)."
 
 msgid "action_respire_short_name"
-msgstr "Respire"
+msgstr "Điều Tức"
 
 # Action: Escape
 msgid "escape_action_name"
-msgstr "Escape"
+msgstr "Đào Thoát"
 
 msgid "escape_description"
-msgstr "Escape from opponent (success rate based)"
+msgstr "Thoát ly khỏi truy đuổi của đối thủ (tỷ lệ thành công tùy thuộc vào cơ duyên)."
 
 msgid "escape_requirements"
-msgstr "No restrictions"
+msgstr "Vô điều kiện."
 
 msgid "{avatar} attempted to escape from {target}: {result}"
-msgstr "{avatar} attempted to escape from {target}: {result}"
+msgstr "{avatar} mưu đồ tẩu thoát khỏi {target}: {result}."
 
 msgid "{avatar} attempts to escape from {target}"
-msgstr "{avatar} attempts to escape from {target}"
+msgstr "{avatar} đang mưu đồ tẩu thoát khỏi {target}."
 
 # Action: SelfHeal
 msgid "self_heal_action_name"
-msgstr "Self Heal"
+msgstr "Tự Liệu"
 
 msgid "self_heal_description"
-msgstr ""
+msgstr "Mô tả Tự Phục Hồi."
 "Heal injuries through meditation; can fully recover at sect headquarters"
 
 msgid "self_heal_requirements"
-msgstr "Current HP not full"
+msgstr "Khí huyết chưa viên mãn"
 
 msgid "Missing HP information"
-msgstr "Missing HP information"
+msgstr "Sinh lực tin tức khiếm khuyết."
 
 msgid "Current HP is full"
-msgstr "Current HP is full"
+msgstr "Đương kim Sinh lực viên mãn."
 
 msgid "wilderness"
-msgstr "wilderness"
+msgstr "Man hoang chi địa."
 
 msgid "{avatar} begins resting and healing at {location}"
-msgstr "{avatar} begins resting and healing at {location}"
+msgstr "{avatar} tại {location} khởi đả tọa điều tức."
 
 msgid "{avatar} healing completed (recovered {amount} HP, current HP {hp})"
-msgstr "{avatar} healing completed (recovered {amount} HP, current HP {hp})"
+msgstr "{avatar} dưỡng thương viên mãn (phục hồi {amount} Sinh lực, đương kim Sinh lực {hp})."
 
 # Action: Buy
 msgid "buy_action_name"
-msgstr "Buy"
+msgstr "Thỉnh vật"
 
 msgid "buy_description"
-msgstr "Buy items/equipment/elixirs in town"
+msgstr "Tại thành đô, thỉnh mua Pháp Khí, Bảo Vật, hoặc Linh Đan Diệu Dược"
 
 msgid "buy_requirements"
-msgstr "In town and have enough money"
+msgstr "Đang tại thành đô, kim tệ dư dả"
 
 msgid "Can only execute in city areas"
-msgstr "Can only execute in city areas"
+msgstr "Chỉ khả tại thành trì chi địa thi triển."
 
 msgid "Unknown item: {name}"
-msgstr "Unknown item: {name}"
+msgstr "Vô danh chi vật: {name}."
 
 msgid "{region} does not sell {item}"
-msgstr "{region} does not sell {item}"
+msgstr "{region} bất xuất thụ {item}."
 
 msgid "This area has no shop"
-msgstr "This area has no shop"
+msgstr "Nơi đây vô thương điếm."
 
 msgid "bought"
-msgstr "bought"
+msgstr "Đã thu mua."
 
 msgid "bought and consumed"
-msgstr "bought and consumed"
+msgstr "Đã thỉnh mua và hấp thụ"
 
 msgid "bought and equipped"
-msgstr "bought and equipped"
+msgstr "Đã thỉnh mua và trang bị"
 
 msgid " (and sold old {item} at reduced price)"
-msgstr " (and sold old {item} at reduced price)"
+msgstr " (và đã bán đi {item} cũ với giá hạ thấp)"
 
 msgid "{avatar} spent {price} spirit stones in town, {action} {item}{suffix}"
-msgstr "{avatar} spent {price} spirit stones in town, {action} {item}{suffix}"
+msgstr "{avatar} đã tiêu tốn {price} linh thạch tại trấn nhỏ, {action} {item}{suffix}"
 
 # Action: Sell
 msgid "sell_action_name"
-msgstr "Sell"
+msgstr "Xuất thủ"
 
 msgid "sell_description"
-msgstr ""
+msgstr "Mô tả_bán"
 "Sell all possessed items of a certain type, or current equipment in town"
 
 msgid "sell_requirements"
-msgstr "In town and possess sellable items/equipment"
+msgstr "Đang tại thành đô, và cất giữ vật phẩm/pháp khí có thể xuất thủ"
 
 msgid "Do not possess item/equipment: {name}"
-msgstr "Do not possess item/equipment: {name}"
+msgstr "Chưa sở hữu vật phẩm/trang bị: {name}"
 
 msgid "Do not possess material: {name}"
-msgstr "Do not possess material: {name}"
+msgstr "Chưa sở hữu linh liệu: {name}"
 
 msgid "Do not possess equipment: {name}"
-msgstr "Do not possess equipment: {name}"
+msgstr "Chưa sở hữu trang bị: {name}"
 
 msgid "Cannot sell this type: {name}"
-msgstr "Cannot sell this type: {name}"
+msgstr "Không thể rao bán loại này: {name}"
 
 msgid "{avatar} sold {item} in town"
-msgstr "{avatar} sold {item} in town"
+msgstr "{avatar} đã rao bán {item} tại trấn nhỏ"
 
 # Action: Harvest
 msgid "harvest_action_name"
-msgstr "Harvest"
+msgstr "Thu hoạch"
 
 msgid "harvest_description"
-msgstr "Harvest plants in current area to obtain plant materials"
+msgstr "Thu hoạch Linh Thảo tại khu vực này để đắc được Dược Liệu"
 
 msgid "harvest_requirements"
-msgstr ""
+msgstr "Yếu Quyết Thu Thập"
 "In normal area with plants, and avatar's realm must be greater than or equal"
 " to plant's realm"
 
 msgid "{avatar} begins harvesting at {location}"
-msgstr "{avatar} begins harvesting at {location}"
+msgstr "{avatar} khai thủy thu thập tại {location}"
 
 msgid "{avatar} finished harvesting, obtained: {materials}"
-msgstr "{avatar} finished harvesting, obtained: {materials}"
+msgstr "{avatar} hoàn thành thu thập, đắc được: {materials}"
 
 # Action: Mine
 msgid "mine_action_name"
-msgstr "Mine"
+msgstr "Khai thác"
 
 msgid "mine_description"
-msgstr "Mine ore veins in current area to obtain ore materials"
+msgstr "Khai thác Khoáng Mạch tại khu vực này để đắc được Khoáng Vật"
 
 msgid "mine_requirements"
-msgstr ""
+msgstr "Yếu Quyết Khai Khoáng"
 "In normal area with ore veins, and avatar's realm must be greater than or "
 "equal to vein's realm"
 
 msgid "{avatar} begins mining at {location}"
-msgstr "{avatar} begins mining at {location}"
+msgstr "{avatar} khai thủy khai khoáng tại {location}"
 
 msgid "{avatar} finished mining, obtained: {materials}"
-msgstr "{avatar} finished mining, obtained: {materials}"
+msgstr "{avatar} hoàn thành khai khoáng, đắc được: {materials}"
 
 # Action: Hunt
 msgid "hunt_action_name"
-msgstr "Hunt"
+msgstr "Liệp sát"
 
 msgid "hunt_description"
-msgstr "Hunt animals in current area to obtain animal materials"
+msgstr "Liệp sát Yêu Thú tại khu vực này để đắc được Yêu Thú Tài"
 
 msgid "hunt_requirements"
-msgstr ""
+msgstr "Yếu Quyết Liệp Sát"
 "In normal area with animals, and avatar's realm must be greater than or "
 "equal to animal's realm"
 
 msgid "{avatar} begins hunting at {location}"
-msgstr "{avatar} begins hunting at {location}"
+msgstr "{avatar} khai thủy liệp sát tại {location}"
 
 msgid "{avatar} finished hunting, obtained: {materials}"
-msgstr "{avatar} finished hunting, obtained: {materials}"
+msgstr "{avatar} hoàn thành liệp sát, đắc được: {materials}"
 
 # Action: Refine
 msgid "refine_action_name"
-msgstr "Refine Elixir"
+msgstr "Luyện chế Linh Đan"
 
 msgid "refine_description"
-msgstr ""
+msgstr "Mô Tả Luyện Hóa"
 "Consume materials to attempt refining elixirs (target_realm: QI_REFINEMENT, "
 "FOUNDATION_ESTABLISHMENT, CORE_FORMATION, NASCENT_SOUL)"
 
 msgid "refine_requirements"
-msgstr "Possess 3 materials of the same realm"
+msgstr "Sở hữu ba loại nguyên liệu cùng phẩm cấp"
 
 msgid "Target realm not specified"
-msgstr "Target realm not specified"
+msgstr "Vị diện mục tiêu chưa xác định."
 
 msgid "Invalid realm: {realm}"
-msgstr "Invalid realm: {realm}"
+msgstr "Vị diện {realm} không hợp lệ."
 
 msgid ""
 "Insufficient materials, need {cost} {realm}-tier materials, currently have "
@@ -333,7 +323,7 @@ msgstr ""
 "{count}"
 
 msgid "{avatar} begins attempting to refine {realm}-tier elixir"
-msgstr "{avatar} begins attempting to refine {realm}-tier elixir"
+msgstr "{avatar} bắt đầu tiến hành luyện chế đan dược phẩm giai {realm}."
 
 msgid ""
 "{avatar} failed to refine {realm}-tier elixir, all materials turned to ash"
@@ -341,25 +331,25 @@ msgstr ""
 "{avatar} failed to refine {realm}-tier elixir, all materials turned to ash"
 
 msgid "Refining succeeded! Obtained {realm} elixir '{item}'"
-msgstr "Refining succeeded! Obtained {realm} elixir '{item}'"
+msgstr "Luyện chế thành công! Thu được đan dược phẩm giai {realm} '{item}'."
 
 msgid "{avatar} successfully refined {realm}-tier elixir '{item}'"
-msgstr "{avatar} successfully refined {realm}-tier elixir '{item}'"
+msgstr "{avatar} thành công ngưng luyện đan dược phẩm giai {realm} '{item}'."
 
 # Action: Cast
 msgid "cast_action_name"
-msgstr "Cast Treasure"
+msgstr "Thi triển Pháp Bảo"
 
 msgid "cast_description"
-msgstr ""
+msgstr "mô_tả_ngưng_đúc"
 "Consume materials to attempt casting treasures (target_realm: QI_REFINEMENT,"
 " FOUNDATION_ESTABLISHMENT, CORE_FORMATION, NASCENT_SOUL)"
 
 msgid "cast_requirements"
-msgstr "Possess 5 materials of the same realm"
+msgstr "Sở hữu đủ năm linh tài cùng cảnh giới"
 
 msgid "{avatar} begins attempting to cast {realm}-tier treasure"
-msgstr "{avatar} begins attempting to cast {realm}-tier treasure"
+msgstr "{avatar} bắt đầu tiến hành ngưng đúc pháp bảo phẩm giai {realm}."
 
 msgid ""
 "{avatar} failed to cast {realm}-tier treasure, all materials turned to ash"
@@ -367,55 +357,55 @@ msgstr ""
 "{avatar} failed to cast {realm}-tier treasure, all materials turned to ash"
 
 msgid "Casting succeeded! Obtained {realm} {label} '{item}'"
-msgstr "Casting succeeded! Obtained {realm} {label} '{item}'"
+msgstr "Ngưng đúc thành công! Thu được {label} phẩm giai {realm} '{item}'."
 
 msgid "{avatar} successfully cast {realm}-tier {label} '{item}'"
-msgstr "{avatar} successfully cast {realm}-tier {label} '{item}'"
+msgstr "{avatar} thành công ngưng đúc {label} phẩm giai {realm} '{item}'."
 
 # Action: HelpPeople
 msgid "help_people_action_name"
-msgstr "Help People"
+msgstr "Hành thiện giúp người"
 
 msgid "help_people_description"
-msgstr "Help people in town, consumes small amount of spirit stones"
+msgstr "Trợ giúp dân chúng trong trấn, tiêu tốn chút linh thạch"
 
 msgid "help_people_requirements"
-msgstr "Only in city areas, and have enough spirit stones"
+msgstr "Chỉ thi hành tại khu vực thành trấn, và yêu cầu đủ linh thạch"
 
 msgid "Only righteous alignment can execute"
-msgstr "Only righteous alignment can execute"
+msgstr "Chỉ chính đạo mới có thể thi hành."
 
 msgid "Insufficient spirit stones"
-msgstr "Insufficient spirit stones"
+msgstr "Linh thạch bất túc"
 
 msgid "{avatar} begins helping people in town"
-msgstr "{avatar} begins aiding people in town"
+msgstr "{avatar} bắt đầu hành thiện trợ giúp dân chúng trong trấn"
 
 # Action: PlunderPeople
 msgid "plunder_people_action_name"
-msgstr "Plunder People"
+msgstr "Cướp đoạt tài vật"
 
 msgid "plunder_people_description"
-msgstr "Plunder people in town to obtain small amount of spirit stones"
+msgstr "Cướp đoạt tài vật từ dân chúng trong trấn, thu về chút linh thạch"
 
 msgid "plunder_people_requirements"
-msgstr "Only in city areas, and character alignment must be 'evil'"
+msgstr "Chỉ thi hành tại khu vực thành trấn, và phẩm tính nhân vật phải là 'tà ác'"
 
 msgid "Only evil alignment can execute"
-msgstr "Only evil alignment can execute"
+msgstr "Duy ma tu phương có thể thi triển"
 
 msgid "{avatar} begins plundering people in town"
-msgstr "{avatar} begins plundering people in town"
+msgstr "{avatar} bắt đầu cướp đoạt chúng sinh phàm tục trong trấn"
 
 # Action: DevourPeople
 msgid "devour_people_action_name"
-msgstr "Devour People"
+msgstr "Thôn phệ chúng sinh"
 
 msgid "devour_people_description"
-msgstr "Devour people to significantly increase combat power"
+msgstr "Thôn phệ chúng sinh, tăng phúc chiến lực vượt bậc"
 
 msgid "devour_people_requirements"
-msgstr "Possess Ten Thousand Souls Banner"
+msgstr "Sở hữu Vạn Hồn Phiên"
 
 msgid ""
 "Forbidden illegal action (missing Ten Thousand Souls Banner or permission)"
@@ -423,30 +413,30 @@ msgstr ""
 "Forbidden illegal action (missing Ten Thousand Souls Banner or permission)"
 
 msgid "{avatar} begins devouring people in town"
-msgstr "{avatar} begins devouring people in town"
+msgstr "{avatar} bắt đầu thôn phệ sinh linh phàm tục trong trấn"
 
 # Action: Play
 msgid "play_action_name"
-msgstr "Leisure"
+msgstr "Hưu nhàn tiêu dao"
 
 msgid "play_description"
-msgstr "Leisure activities to relax body and mind"
+msgstr "Hoạt động hưu nhàn, thư giãn thả lỏng thân tâm"
 
 msgid "play_requirements"
-msgstr "Target within interaction range"
+msgstr "Mục tiêu trong tầm tương tác"
 
 msgid "{avatar} begins leisure activities"
-msgstr "{avatar} begins leisure activities"
+msgstr "{avatar} bắt đầu tiêu khiển"
 
 # Action: NurtureWeapon
 msgid "nurture_weapon_action_name"
-msgstr "Nurture Weapon"
+msgstr "Bồi dưỡng Pháp bảo"
 
 msgid "nurture_weapon_description"
-msgstr "Nurture weapon to increase weapon proficiency"
+msgstr "Bồi dưỡng thần binh, tăng cường binh khí tạo nghệ."
 
 msgid "nurture_weapon_requirements"
-msgstr "No restrictions"
+msgstr "Vô cấm kỵ."
 
 msgid ""
 "{avatar} nurturing {old_weapon}, the weapon's spirituality greatly "
@@ -456,7 +446,7 @@ msgstr ""
 "increased, evolved into {new_weapon}!"
 
 msgid "{avatar} begins nurturing {weapon}"
-msgstr "{avatar} begins nurturing {weapon}"
+msgstr "{avatar} bắt đầu ôn dưỡng {weapon}"
 
 msgid ""
 "{avatar} finished nurturing {weapon}, proficiency increased to "
@@ -467,32 +457,32 @@ msgstr ""
 
 # Action: Catch
 msgid "catch_action_name"
-msgstr "Tame Beast"
+msgstr "Thuần hóa yêu thú."
 
 msgid "catch_description"
-msgstr ""
+msgstr "Miêu tả việc bắt giữ"
 "Attempt to tame a spirit beast to become your own. Can only have one spirit "
 "beast, but can replace lower grade with higher grade"
 
 msgid "catch_requirements"
-msgstr ""
+msgstr "Điều kiện bắt giữ"
 "Only Hundred Beasts Sect; in normal area with animals; target animal realm "
 "not higher than character"
 
 msgid "Not currently in normal area"
-msgstr "Not currently in normal area"
+msgstr "Không ở chốn phàm tục"
 
 msgid "Current area {region} has no animals"
-msgstr "Current area {region} has no animals"
+msgstr "Khu vực {region} hiện tại không có phàm thú"
 
 msgid "Animal realms in current area exceed character realm"
-msgstr "Animal realms in current area exceed character realm"
+msgstr "Cảnh giới linh thú tại phương vực hiện tại đã vượt quá tu vi cảnh giới của bản thân."
 
 msgid "{avatar} attempts to tame spirit beast at {location}"
-msgstr "{avatar} attempts to tame spirit beast at {location}"
+msgstr "{avatar} nếm thử thu phục linh thú tại {location}"
 
 msgid "{avatar} failed to tame spirit beast"
-msgstr "{avatar} failed to tame spirit beast"
+msgstr "{avatar} thu phục linh thú bất thành"
 
 msgid ""
 "{avatar} successfully tamed spirit beast, {realm} realm {beast} became their"
@@ -503,35 +493,35 @@ msgstr ""
 
 # Action: MoveToDirection
 msgid "move_to_direction_action_name"
-msgstr "Move & Explore"
+msgstr "Phiêu du thám hiểm."
 
 msgid "move_to_direction_description"
-msgstr "Explore unknown areas in a direction"
+msgstr "Thám hiểm cảnh giới vô danh theo một phương vị."
 
 msgid "move_to_direction_requirements"
-msgstr "No restrictions"
+msgstr "Vô cấm kỵ."
 
 msgid "Invalid direction: {direction}"
-msgstr "Invalid direction: {direction}"
+msgstr "Phương hướng {direction} bất hợp lệ"
 
 msgid "{avatar} begins moving toward {direction}"
-msgstr "{avatar} begins moving toward {direction}"
+msgstr "{avatar} khởi hành về hướng {direction}"
 
 msgid "{avatar} finished moving toward {direction}"
-msgstr "{avatar} finished moving toward {direction}"
+msgstr "{avatar} đã hoàn tất việc di chuyển về hướng {direction}"
 
 # Action: MoveToRegion
 msgid "move_to_region_action_name"
-msgstr "Move to Region"
+msgstr "Tiến nhập cảnh giới."
 
 msgid "move_to_region_description"
-msgstr "Move to a specific region"
+msgstr "Tiến nhập vào cảnh giới đã định."
 
 msgid "move_to_region_requirements"
-msgstr "No restrictions"
+msgstr "Vô cấm kỵ."
 
 msgid "Cannot resolve region: {region}"
-msgstr "Cannot resolve region: {region}"
+msgstr "Không thể xác định địa vực: {region}"
 
 msgid ""
 "[{region}] is another sect's territory, you are not a disciple of that sect"
@@ -539,206 +529,206 @@ msgstr ""
 "[{region}] is another sect's territory, you are not a disciple of that sect"
 
 msgid "{avatar} begins moving toward {region}"
-msgstr "{avatar} begins moving toward {region}"
+msgstr "{avatar} khởi hành tiến về địa vực {region}"
 
 msgid "{avatar} attempted to move but target is invalid"
-msgstr "{avatar} attempted to move but target is invalid"
+msgstr "{avatar} nếm thử di chuyển, nhưng mục tiêu lại bất hợp lệ"
 
 # Action: MoveToAvatar
 msgid "move_to_avatar_action_name"
-msgstr "Move to Character"
+msgstr "Tiến tới chỗ vị đạo hữu."
 
 msgid "move_to_avatar_description"
-msgstr "Move to a specific character's location"
+msgstr "Tìm đến vị trí của vị đạo hữu đã định."
 
 msgid "move_to_avatar_requirements"
-msgstr "No restrictions"
+msgstr "Vô cấm kỵ."
 
 msgid "{avatar} begins moving toward {target}"
-msgstr "{avatar} begins moving toward {target}"
+msgstr "{avatar} khởi hành tiến về {target}"
 
 # Action: MoveAwayFromAvatar
 msgid "move_away_from_avatar_action_name"
-msgstr "Move Away from Character"
+msgstr "Rời xa vị đạo hữu."
 
 msgid "move_away_from_avatar_description"
-msgstr "Continuously move away from specified character"
+msgstr "Liên tục tránh xa khỏi vị đạo hữu đã định."
 
 msgid "move_away_from_avatar_requirements"
-msgstr "No restrictions"
+msgstr "Vô cấm kỵ."
 
 msgid "{avatar} begins moving away from {target}"
-msgstr "{avatar} begins moving away from {target}"
+msgstr "{avatar} cất bước lìa xa {target}"
 
 # Action: MoveAwayFromRegion
 msgid "move_away_from_region_action_name"
-msgstr "Leave Region"
+msgstr "Rời Ly Vực"
 
 msgid "move_away_from_region_description"
-msgstr "Leave specified region"
+msgstr "Rời Ly Vực đã định"
 
 msgid "move_away_from_region_requirements"
-msgstr "No restrictions"
+msgstr "Vô câu thúc"
 
 msgid "{avatar} begins leaving {region}"
-msgstr "{avatar} begins leaving {region}"
+msgstr "{avatar} bắt đầu ly khai {region}"
 
 # Action: Move (Base)
 msgid "move_action_name"
-msgstr "Move"
+msgstr "Dịch chuyển"
 
 msgid "move_description"
-msgstr "Move to a relative position"
+msgstr "Dịch chuyển tương đối"
 
 # Action: DualCultivation
 msgid "dual_cultivation_action_name"
-msgstr "Dual Cultivation"
+msgstr "Song Tu"
 
 msgid "dual_cultivation_description"
-msgstr "Cultivation through intimacy, target can accept or reject"
+msgstr "Song Tu nhờ hoan ái, đối phương có thể thuận theo hoặc cự tuyệt"
 
 msgid "dual_cultivation_requirements"
-msgstr "Target within interaction range; cannot execute consecutively"
+msgstr "Đối phương trong tầm tương giao; không thể thi hành liên tục"
 
 msgid "dual_cultivation_story_prompt"
-msgstr ""
+msgstr "Gợi ý cốt truyện song tu"
 "Two cultivators develop feelings during dual cultivation. Describe an "
 "elegant and subtle dual cultivation experience with implied romance, "
 "reflecting their personalities, realm differences, and sweet romantic "
 "moments. Do not mention numerical experience values."
 
 msgid "{initiator} invites {target} for dual cultivation"
-msgstr "{initiator} invites {target} for dual cultivation"
+msgstr "{initiator} ngỏ lời mời {target} cùng song tu"
 
 # Action Short Names (for legal_actions)
 msgid "action_dualcultivation_short_name"
-msgstr "Dual Cultivation"
+msgstr "Song Tu"
 
 msgid "action_devourpeople_short_name"
-msgstr "Devour People"
+msgstr "Thôn Phệ Nhân Tộc"
 
 # Action: Play Extended
 msgid "action_reading"
-msgstr "Reading"
+msgstr "Đọc Kinh Thư"
 
 msgid "action_tea_tasting"
-msgstr "Tea Tasting"
+msgstr "Thưởng Trà"
 
 msgid "action_traveling"
-msgstr "Traveling"
+msgstr "Du Hành"
 
 msgid "action_zither_playing"
-msgstr "Playing Zither"
+msgstr "Tấu Cầm"
 
 msgid "action_tea_party"
-msgstr "Tea Party"
+msgstr "Trà Hội"
 
 msgid "action_chess"
-msgstr "Chess"
+msgstr "Kỳ Đạo"
 
 msgid "{avatar} starts {action}"
-msgstr "{avatar} starts {action}"
+msgstr "{avatar} bắt đầu tiến hành {action}"
 
 msgid "{avatar} finished {action}."
-msgstr "{avatar} finished {action}."
+msgstr "{avatar} đã hoàn tất {action}."
 
 msgid "gained {val} cultivation"
-msgstr "Gained {val} cultivation."
+msgstr "Tu vi tăng trưởng {val}."
 
 msgid "breakthrough probability increased by {val:.1%}"
-msgstr "Breakthrough probability increased by {val:.1%}."
+msgstr "Khả năng đột phá cảnh giới tăng thêm {val:.1%}."
 
 # Automatically added missing keys
 msgid "appearance_1_name"
-msgstr "Hideous"
+msgstr "Gớm Ghiếc"
 
 msgid "appearance_1_desc_male"
-msgstr "You are very ugly, with discordant features, often drawing stares."
+msgstr "Ngươi dung mạo cực kỳ xấu xí, ngũ quan lệch lạc, thường khiến chúng sinh ngoái nhìn."
 
 msgid "appearance_1_desc_female"
-msgstr "You are very ugly, with discordant features, making people avoid you."
+msgstr "Ngươi dung mạo cực kỳ xấu xí, ngũ quan lệch lạc, khiến chúng sinh tránh xa."
 
 msgid "appearance_2_name"
-msgstr "Ugly"
+msgstr "Xú Tướng"
 
 msgid "appearance_2_desc_male"
-msgstr "Your appearance is crude, with some features appearing quite abrupt."
+msgstr "Dung mạo ngươi thô kệch, vài nét trên gương mặt có vẻ đột ngột, khó coi."
 
 msgid "appearance_2_desc_female"
-msgstr "Your appearance is crude, with some features appearing quite abrupt."
+msgstr "Dung mạo ngươi thô kệch, vài nét trên gương mặt có vẻ đột ngột, khó coi."
 
 msgid "appearance_3_name"
-msgstr "Coarse"
+msgstr "Thô Kệch"
 
 msgid "appearance_3_desc_male"
-msgstr "Your appearance is mediocre and not very pleasant to look at."
+msgstr "Dung mạo ngươi tầm thường, không lấy gì làm ưa nhìn."
 
 msgid "appearance_3_desc_female"
-msgstr "Your appearance is mediocre and not very pleasant to look at."
+msgstr "Dung mạo ngươi tầm thường, không lấy gì làm ưa nhìn."
 
 msgid "appearance_4_name"
-msgstr "Plain"
+msgstr "Bình Phàm"
 
 msgid "appearance_4_desc_male"
-msgstr "You look very ordinary, easily lost in a crowd."
+msgstr "Dung mạo ngươi vô cùng bình phàm, dễ dàng chìm lẫn giữa biển người."
 
 msgid "appearance_4_desc_female"
-msgstr "You look very ordinary, easily lost in a crowd."
+msgstr "Dung mạo ngươi vô cùng bình phàm, dễ dàng chìm lẫn giữa biển người."
 
 msgid "appearance_5_name"
-msgstr "Delicate"
+msgstr "Thanh tú"
 
 msgid "appearance_5_desc_male"
-msgstr "You have delicate features and are quite pleasant to look at."
+msgstr "Ngươi dung mạo thanh tú, dễ nhìn làm sao."
 
 msgid "appearance_5_desc_female"
-msgstr "You have delicate features and are quite pleasant to look at."
+msgstr "Ngươi dung mạo thanh tú, dễ nhìn làm sao."
 
 msgid "appearance_6_name"
-msgstr "Elegant"
+msgstr "Ưu nhã"
 
 msgid "appearance_6_desc_male"
-msgstr "You have regular features and look very energetic."
+msgstr "Ngươi dung mạo đoan chính, khí chất tràn đầy sức sống."
 
 msgid "appearance_6_desc_female"
-msgstr "You have regular features and look very energetic."
+msgstr "Ngươi dung mạo đoan chính, khí chất tràn đầy sức sống."
 
 msgid "appearance_7_name"
-msgstr "Handsome/Beautiful"
+msgstr "Tuấn tú/Mỹ lệ"
 
 msgid "appearance_7_desc_male"
-msgstr "You are very handsome, with a high head-turning rate."
+msgstr "Ngươi thập phần tuấn tú, khiến người qua đường không khỏi ngoái đầu nhìn lại."
 
 msgid "appearance_7_desc_female"
-msgstr "You are very beautiful and eye-catching."
+msgstr "Ngươi dung mạo tuyệt mỹ, thật khiến người khác khó mà rời mắt."
 
 msgid "appearance_8_name"
-msgstr "Stunning"
+msgstr "Kinh diễm"
 
 msgid "appearance_8_desc_male"
-msgstr ""
+msgstr "Miêu tả phong thái nam tử [dạng 8]"
 "You have an outstanding appearance and are eye-catching wherever you go."
 
 msgid "appearance_8_desc_female"
-msgstr "You are so beautiful that it's stunning."
+msgstr "Nhan sắc của ngươi tuyệt mỹ đến mức kinh diễm cả thiên hạ."
 
 msgid "appearance_9_name"
-msgstr "Exquisite"
+msgstr "Tuyệt xảo"
 
 msgid "appearance_9_desc_male"
-msgstr "Both your looks and aura are top-tier, often attracting side glances."
+msgstr "Dung mạo và khí chất của ngươi đều đạt đến cảnh giới tuyệt đỉnh, khiến người khác không khỏi liếc mắt đưa tình."
 
 msgid "appearance_9_desc_female"
-msgstr "Your beauty is breathtaking, almost unforgettable at first sight."
+msgstr "Nhan sắc của ngươi tuyệt mỹ đến mức khiến người ta phải nín thở, nhất kiến nan vong."
 
 msgid "appearance_10_name"
-msgstr "Breathtaking"
+msgstr "Tuyệt mỹ kinh nhân"
 
 msgid "appearance_10_desc_male"
-msgstr "You are so beautiful that you seem otherworldly."
+msgstr "Ngươi dung nhan khuynh thành, tựa tiên tử giáng trần."
 
 msgid "appearance_10_desc_female"
-msgstr ""
+msgstr "Miêu tả dung nhan nữ tử [dạng 10]"
 "Your beauty is so breathtaking that one remembers you at a single glance."
 
 msgid "comma_separator"
@@ -751,58 +741,58 @@ msgid "{label}: {names}"
 msgstr "{label}: {names}"
 
 msgid "{root_name} ({elements})"
-msgstr "{root_name} ({elements})"
+msgstr "{root_name} (Hệ {elements})"
 
 msgid "{sect} {rank}"
-msgstr "{sect} {rank}"
+msgstr "{Tông môn} {Phẩm cấp}"
 
 msgid "action_reading_desc"
-msgstr "Read ancient books to gain knowledge."
+msgstr "Nghiên tầm cổ tịch, lĩnh hội tri thức."
 
 msgid "action_tea_tasting_desc"
-msgstr "Taste fine tea and cultivate a peaceful mind."
+msgstr "Phẩm trà danh phẩm, tĩnh tâm dưỡng tính."
 
 msgid "action_traveling_desc"
-msgstr "Travel around to experience the world."
+msgstr "Du sơn ngoạn thủy, thể nghiệm hồng trần."
 
 msgid "action_zither_playing_desc"
-msgstr "Play the zither and nurture your temperament."
+msgstr "Gảy cổ cầm, tu dưỡng khí chất."
 
 msgid "action_tea_party_desc"
-msgstr "Share tea with friends."
+msgstr "Cùng bằng hữu thưởng trà."
 
 msgid "action_chess_desc"
-msgstr "Play chess to sharpen your mind."
+msgstr "Đối dịch kỳ nghệ, minh tâm khai trí."
 
 msgid "action_tea_party_story_prompt"
-msgstr "Two people are holding an elegant tea party."
+msgstr "Song nhân đối ẩm, trà hội tao nhã."
 
 msgid "action_chess_story_prompt"
-msgstr "Two people are playing chess."
+msgstr "Song nhân đối dịch."
 
 msgid "action_educate_short_name"
-msgstr "Educate"
+msgstr "Truyền thụ."
 
 msgid "action_meditate_short_name"
-msgstr "Meditate"
+msgstr "Đả tọa."
 
 # Action: Meditate
 msgid "meditate_action_name"
-msgstr "Meditate"
+msgstr "Đả tọa."
 
 msgid "meditate_description"
-msgstr ""
+msgstr "Mô tả Tọa thiền"
 "Buddhist cultivation. Calm the mind through Zen meditation, with a chance of"
 " epiphany for massive cultivation gain."
 
 msgid "meditate_requirements"
-msgstr "Requires Buddhist orthodoxy"
+msgstr "Yêu cầu Phật môn chính tông."
 
 msgid "Your orthodoxy does not support Zen Meditation."
-msgstr "Your orthodoxy does not support Zen Meditation."
+msgstr "Đạo thống của ngươi không chấp thuận Thiền Tông Tọa thiền."
 
 msgid "{avatar} begins Zen Meditation."
-msgstr "{avatar} begins Zen Meditation."
+msgstr "{avatar} tiến hành Thiền Tông Tọa thiền."
 
 msgid ""
 "{avatar} had an epiphany during meditation! Cultivation increased "
@@ -812,52 +802,52 @@ msgstr ""
 "significantly (+{exp})."
 
 msgid "{avatar} completed meditation with a peaceful mind."
-msgstr "{avatar} completed meditation with a peaceful mind."
+msgstr "{avatar} hoàn thành tọa thiền, tâm thần an tịnh."
 
 # Action: Educate
 msgid "educate_action_name"
-msgstr "Educate"
+msgstr "Truyền thụ."
 
 msgid "educate_description"
-msgstr ""
+msgstr "Mô tả Giảng đạo"
 "Confucian cultivation. Educate people in the city to accumulate merit and "
 "luck."
 
 msgid "educate_requirements"
-msgstr "Requires Confucian orthodoxy and being in a City"
+msgstr "Yêu cầu Nho gia chính thống, thân cư đô thành"
 
 msgid "Your orthodoxy does not support Confucian Education."
-msgstr "Your orthodoxy does not support Confucian Education."
+msgstr "Đạo thống của ngươi không tương thích với Nho gia Giảng đạo."
 
 msgid "Must be in a City to educate people."
-msgstr "Must be in a City to educate people."
+msgstr "Cần ở trong thành trì mới có thể khai hóa bá tánh."
 
 msgid "{avatar} begins educating people in {city}."
-msgstr "{avatar} begins educating people in {city}."
+msgstr "{avatar} bắt đầu khai hóa bá tánh tại {city}."
 
 msgid "{avatar} finished educating people. Merit accumulated (+{exp})."
-msgstr "{avatar} finished educating people. Merit accumulated (+{exp})."
+msgstr "{avatar} đã khai hóa xong bá tánh. Công đức tích lũy (+{exp})."
 
 msgid "The prosperity of {city} has increased due to {avatar}'s teachings."
-msgstr "The prosperity of {city} has increased due to {avatar}'s teachings."
+msgstr "Sự phồn thịnh của {thành trì} đã thăng hoa nhờ vào đạo pháp của {avatar}."
 
 # Action: Temper
 msgid "temper_action_name"
-msgstr "Temper"
+msgstr "Tôi luyện"
 
 msgid "temper_description"
-msgstr ""
+msgstr "Mô tả tôi luyện."
 "Tempering body strength through extreme exercise, seeking nothing from the "
 "outside, consuming no spiritual energy."
 
 msgid "temper_requirements"
-msgstr "Requires Martial Orthodoxy"
+msgstr "Yêu cầu Võ học chính tông"
 
 msgid "Your orthodoxy does not support Body Tempering."
-msgstr "Your orthodoxy does not support Body Tempering."
+msgstr "Đạo thống của ngươi không dung nạp Luyện Thể."
 
 msgid "{avatar} begins tempering body strength"
-msgstr "{avatar} begins tempering body strength"
+msgstr "{avatar} khai thủy tôi luyện thể phách."
 
 msgid "action_temper_short_name"
-msgstr "Temper"
+msgstr "Tôi luyện"

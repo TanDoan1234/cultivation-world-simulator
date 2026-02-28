@@ -1,35 +1,25 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cultivation-world-simulator 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 00:00+0000\n"
-"PO-Revision-Date: 2024-01-20 00:00+0000\n"
-"Last-Translator: \n"
-"Language-Team: English\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 # ============================================================================
 # Cultivation System - Realm
 # ============================================================================
 # Realm Status
 msgid "Needs breakthrough"
-msgstr "Needs breakthrough"
+msgstr "Cần Đột Phá"
 
 msgid "Not at bottleneck, no breakthrough needed"
-msgstr "Not at bottleneck, no breakthrough needed"
+msgstr "Chưa Đạt Bình Cảnh, Vô Nhu Đột Phá"
 
 msgid "{realm}{stage}(Level {level}){status}"
-msgstr "{realm}{stage}(Level {level}){status}"
+msgstr "{realm}{kỳ}(Cấp {level}){status}"
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "Có"
 
 msgid "No"
-msgstr "No"
+msgstr "Không"
 
 msgid "{realm}{stage}(Level {level}). At bottleneck: {status}"
-msgstr "{realm}{stage}(Level {level}). At bottleneck: {status}"
+msgstr "{realm}{kỳ}(Cấp {level}). Bình cảnh: {status}"

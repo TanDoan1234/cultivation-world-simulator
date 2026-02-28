@@ -4,38 +4,38 @@ msgstr ""
 
 # Dao (Daoism)
 msgid "ORTHODOXY_DAO_NAME"
-msgstr "Dao"
+msgstr "Đạo"
 
 msgid "ORTHODOXY_DAO_DESC"
-msgstr "Conform to the Heavenly Dao, breathe in spiritual energy (Qi), and improve cultivation realm through practice."
+msgstr "Thuận theo Thiên Đạo, hấp nạp linh khí, nâng cao cảnh giới tu luyện."
 
 # Buddhism
 msgid "ORTHODOXY_BUDDHISM_NAME"
-msgstr "Buddhism"
+msgstr "Phật Môn"
 
 msgid "ORTHODOXY_BUDDHISM_DESC"
-msgstr "Save all sentient beings, and improve cultivation realm through meditation and sudden enlightenment."
+msgstr "Phổ độ chúng sinh, nâng cao cảnh giới tu luyện thông qua thiền định và đốn ngộ."
 
 # Confucianism
 msgid "ORTHODOXY_CONFUCIANISM_NAME"
-msgstr "Confucianism"
+msgstr "Nho Giáo"
 
 msgid "ORTHODOXY_CONFUCIANISM_DESC"
-msgstr "Educate the common people, cultivate the Noble Spirit (Haoran Qi), and the realm will increase accordingly."
+msgstr "Giáo hóa bách tính, bồi dưỡng Hạo Nhiên Chính Khí, cảnh giới tự nhiên tăng trưởng."
 
 # Nature (Sanxiu)
 msgid "ORTHODOXY_SANXIU_NAME"
-msgstr "Nature"
+msgstr "Thiên Địa Tự Nhiên"
 
 msgid "ORTHODOXY_SANXIU_DESC"
-msgstr "Take Heaven and Earth as teacher, follow the Way of Nature."
+msgstr "Lấy Thiên Địa làm sư, thuận theo Đạo Tự Nhiên."
 
 msgid "Orthodoxy [{name}]"
-msgstr "Orthodoxy [{name}]"
+msgstr "Chính Thống [{name}]"
 
 # Martial (Wu)
 msgid "ORTHODOXY_WU_NAME"
-msgstr "Martial"
+msgstr "Võ Đạo"
 
 msgid "ORTHODOXY_WU_DESC"
-msgstr "Entering the Dao through martial arts, tempering the body. Although progress is slow, the foundation is solid, and breaking through bottlenecks is as easy as eating and drinking."
+msgstr "Dĩ võ nhập Đạo, đoán tạo nhục thân. Tuy tiến cảnh chậm chạp, nhưng căn cơ kiên cố, đột phá bình cảnh dễ như trở bàn tay."

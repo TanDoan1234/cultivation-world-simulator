@@ -1,35 +1,25 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cultivation-world-simulator 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 00:00+0000\n"
-"PO-Revision-Date: 2024-01-20 00:00+0000\n"
-"Last-Translator: \n"
-"Language-Team: English\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 # Sect Rank
 msgid "patriarch"
-msgstr "Patriarch"
+msgstr "Lão Tổ"
 
 msgid "elder"
-msgstr "Elder"
+msgstr "Trưởng Lão"
 
 msgid "inner_disciple"
-msgstr "Inner Disciple"
+msgstr "Nội Môn Đệ Tử"
 
 msgid "outer_disciple"
-msgstr "Outer Disciple"
+msgstr "Ngoại Môn Đệ Tử"
 
 # ============================================================================
 # Sect System - Sects
 # ============================================================================
 msgid "{sect_name} (Alignment: {alignment}, Headquarters: {hq_name})"
-msgstr "{sect_name} (Alignment: {alignment}, Headquarters: {hq_name})"
+msgstr "{sect_name} (Lập trường: {alignment}, Đạo tràng: {hq_name})"
 
 msgid ""
 "{sect_name} (Alignment: {alignment}, Style: {style}, Headquarters: "
@@ -42,186 +32,186 @@ msgstr ""
 # Relation & Root & Appearance & Sect (Refined)
 # ============================================================================
 msgid "Unknown reason"
-msgstr "Unknown reason"
+msgstr "Nguyên nhân chưa tường"
 
 msgid "{name} (Deceased: {reason})"
-msgstr "{name} (Deceased: {reason})"
+msgstr "{name} (Vẫn lạc: {reason})"
 
 msgid "SECT_1_STYLE"
-msgstr ""
+msgstr "Phong cách Tông môn 1"
 "Clear-minded and self-disciplined, actions matching words. Valuing both "
 "sword and heart, emphasizing understanding one's true nature."
 
 msgid "SECT_2_STYLE"
-msgstr ""
+msgstr "Phong cách Tông môn 2"
 "Direct in speech, valuing strength and bloodlines, worshipping hunting and "
 "combat."
 
 msgid "SECT_2_RANK_PATRIARCH"
-msgstr "Valley Master"
+msgstr "Cốc Chủ"
 
 msgid "SECT_2_RANK_ELDER"
-msgstr "Grand Elder"
+msgstr "Đại Trưởng Lão"
 
 msgid "SECT_2_RANK_INNER"
-msgstr "Beast Tamer"
+msgstr "Ngự Thú Sư"
 
 msgid "SECT_2_RANK_OUTER"
-msgstr "Retainer"
+msgstr "Môn Khách"
 
 msgid "SECT_3_STYLE"
-msgstr ""
+msgstr "Phong cách Tông môn 3"
 "Calm and tactful, preferring softness to overcome hardness, skilled in "
 "borrowing force and counter-control."
 
 msgid "SECT_3_RANK_PATRIARCH"
-msgstr "Mirror Master"
+msgstr "Kính Chủ"
 
 msgid "SECT_3_RANK_ELDER"
-msgstr "Mirror Holder"
+msgstr "Thủ Kính Giả"
 
 msgid "SECT_3_RANK_INNER"
-msgstr "Successor"
+msgstr "Truyền Nhân"
 
 msgid "SECT_3_RANK_OUTER"
-msgstr "Mirror Attendant"
+msgstr "Kính Thị"
 
 msgid "SECT_4_STYLE"
-msgstr ""
+msgstr "Phong cách Tông môn 4"
 "Cold and emotionless in speech, revering karma but fearless in slaughter, "
 "favoring efficiency and results."
 
 msgid "SECT_4_RANK_PATRIARCH"
-msgstr "Hall Master"
+msgstr "Điện Chủ"
 
 msgid "SECT_4_RANK_ELDER"
-msgstr "Judge"
+msgstr "Thẩm Phán Giả"
 
 msgid "SECT_4_RANK_INNER"
-msgstr "Impermanence"
+msgstr "Vô Thường Sứ"
 
 msgid "SECT_4_RANK_OUTER"
-msgstr "Ghost Soldier"
+msgstr "Âm Binh"
 
 msgid "SECT_5_STYLE"
-msgstr ""
+msgstr "Phong cách Tông môn 5"
 "Facing desires and costs directly, fearless of darkness, excelling in "
 "offensive warfare."
 
 msgid "SECT_5_RANK_PATRIARCH"
-msgstr "Tower Lord"
+msgstr "Tháp Chủ"
 
 msgid "SECT_5_RANK_ELDER"
-msgstr "Punishment Officer"
+msgstr "Trừng Giới Sứ"
 
 msgid "SECT_5_RANK_INNER"
-msgstr "Shadow Assassin"
+msgstr "Ảnh Sát Giả"
 
 msgid "SECT_5_RANK_OUTER"
-msgstr "Scout"
+msgstr "Thám Báo"
 
 msgid "SECT_6_STYLE"
-msgstr ""
+msgstr "Phong cách Tông môn 6"
 "Tactful in speech, skilled in manipulating desires and situations, "
 "overcoming hardness with softness."
 
 msgid "SECT_6_RANK_PATRIARCH"
-msgstr "Palace Master"
+msgstr "Cung Chủ"
 
 msgid "SECT_6_RANK_ELDER"
-msgstr "Protector"
+msgstr "Hộ Pháp"
 
 msgid "SECT_6_RANK_INNER"
-msgstr "Charming Immortal"
+msgstr "Mị Tiên"
 
 msgid "SECT_6_RANK_OUTER"
-msgstr "Attendant Boy"
+msgstr "Tiểu Đồng"
 
 msgid "SECT_7_STYLE"
-msgstr ""
+msgstr "Phong Cách Thất Môn"
 "Solemn and steady, focusing on soothing souls and suppressing evil, few "
 "words but decisive."
 
 msgid "SECT_7_RANK_PATRIARCH"
-msgstr "Abbot"
+msgstr "Phương Trượng"
 
 msgid "SECT_7_RANK_ELDER"
-msgstr "Chief Monk"
+msgstr "Thủ Tọa"
 
 msgid "SECT_7_RANK_INNER"
-msgstr "Walker"
+msgstr "Hành Giả"
 
 msgid "SECT_7_RANK_OUTER"
-msgstr "Layman"
+msgstr "Cư Sĩ"
 
 msgid "SECT_8_STYLE"
-msgstr ""
+msgstr "Phong Cách Bát Môn"
 "Secretive and decisive, valuing results over reputation, skilled in stealth "
 "and surprise attacks."
 
 msgid "SECT_8_RANK_PATRIARCH"
-msgstr "Sect Master"
+msgstr "Chưởng Môn"
 
 msgid "SECT_8_RANK_ELDER"
-msgstr "Protector"
+msgstr "Hộ Pháp"
 
 msgid "SECT_8_RANK_INNER"
-msgstr "Shadow Guard"
+msgstr "Ám Vệ"
 
 msgid "SECT_8_RANK_OUTER"
-msgstr "Scout"
+msgstr "Thám Vệ"
 
 msgid "SECT_9_STYLE"
-msgstr ""
+msgstr "Phong Cách Cửu Môn"
 "Pragmatic and shrewd, valuing trade and reputation, upholding rules and "
 "order."
 
 msgid "SECT_9_RANK_PATRIARCH"
-msgstr "City Lord"
+msgstr "Thành Chủ"
 
 msgid "SECT_9_RANK_ELDER"
-msgstr "Grand Elder"
+msgstr "Đại Trưởng Lão"
 
 msgid "SECT_9_RANK_INNER"
-msgstr "Deacon"
+msgstr "Chấp Sự"
 
 msgid "SECT_9_RANK_OUTER"
-msgstr "Apprentice"
+msgstr "Đệ Tử"
 
 msgid "SECT_10_STYLE"
-msgstr ""
+msgstr "Phong Cách Thập Môn"
 "Calculating beneath elegance, preferring to control situations with words "
 "and melody, killing without smoke and fire."
 
 msgid "SECT_11_STYLE"
-msgstr ""
+msgstr "Phong Cách Thập Nhất Môn"
 "Rigorous and meticulous, pursuing technical perfection, skilled in counter-"
 "attacking with formations, advancing step by step."
 
 msgid "SECT_12_STYLE"
-msgstr ""
+msgstr "Phong Cách Thập Nhị Môn"
 "Resilient and tenacious, striving in adversity, open and aboveboard but far-"
 "sighted, extremely protective of their own."
 
 msgid "SECT_12_RANK_PATRIARCH"
-msgstr "City Lord"
+msgstr "Thành Chủ"
 
 msgid "SECT_12_RANK_ELDER"
-msgstr "Pavilion Elder"
+msgstr "Các Lão"
 
 msgid "SECT_12_RANK_INNER"
-msgstr "Commander"
+msgstr "Thống Lĩnh"
 
 msgid "SECT_12_RANK_OUTER"
-msgstr "Night Watchman"
+msgstr "Dạ Vệ"
 
 msgid "SECT_13_STYLE"
-msgstr ""
+msgstr "Phong Cách Thập Tam Môn"
 "Adhering to principles, stressing justice, leading in exorcising demons, "
 "rather break than bend."
 
 msgid "SECT_14_STYLE"
-msgstr ""
+msgstr "Phong Cách Thập Tứ Môn"
 "Might makes right, doing as one pleases, worshipping absolute power and "
 "slaughter, viewing all beings as food."
 

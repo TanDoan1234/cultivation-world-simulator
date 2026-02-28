@@ -1,146 +1,144 @@
 #
 msgid ""
 msgstr ""
-"Language: en_US\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 
 #. elixir.csv: 练气破境丹
 msgid "ELIXIR_3001_NAME"
-msgstr "Qi Refinement Breakthrough Pill"
+msgstr "Luyện Khí Đột Phá Đan"
 
 #. elixir.csv: 凝聚灵气，辅助练气期修士突破瓶颈的丹药（...
 msgid "ELIXIR_3001_DESC"
-msgstr ""
+msgstr "Linh Đan Hồi Khí: Bổ sung linh khí đã hao tổn, giúp tu sĩ nhanh chóng khôi phục trạng thái sung mãn, thích hợp dùng trong tu luyện hoặc sau giao tranh nhỏ."
 "A pill that condenses spiritual qi to help Qi Refinement stage cultivators "
 "break through bottlenecks (effect lasts 5 years)."
 
 #. elixir.csv: 筑基破境丹
 msgid "ELIXIR_3002_NAME"
-msgstr "Foundation Establishment Breakthrough Pill"
+msgstr "Trúc Cơ Đột Phá Đan"
 
 #. elixir.csv: 蕴含筑基真意，辅助筑基期修士突破瓶颈的灵...
 msgid "ELIXIR_3002_DESC"
-msgstr ""
+msgstr "Tiên Dược Tẩy Trần: Thanh tẩy tạp chất trong kinh mạch, loại bỏ ám khí, làm tinh khiết linh căn, đặt nền tảng vững chắc cho việc đột phá."
 "A spiritual pill containing the true intent of Foundation Establishment to "
 "help Foundation Establishment stage cultivators break through bottlenecks "
 "(effect lasts 5 years)."
 
 #. elixir.csv: 金丹破境丹
 msgid "ELIXIR_3003_NAME"
-msgstr "Core Formation Breakthrough Pill"
+msgstr "Kim Đan Đột Phá Đan"
 
 #. elixir.csv: 凝结金丹之气，辅助金丹期修士碎丹成婴（药...
 msgid "ELIXIR_3003_DESC"
-msgstr ""
+msgstr "Cường Thân Luyện Thể Đan: Củng cố nhục thể, tăng cường gân cốt và sức phòng ngự, khiến thân xác trở nên kiên cố, khó bị thương tổn bởi phép thuật hay binh khí thông thường."
 "Condenses the qi of Core Formation to help Core Formation stage cultivators "
 "shatter the core and form the soul (effect lasts 5 years)."
 
 #. elixir.csv: 练气长生丹
 msgid "ELIXIR_3005_NAME"
-msgstr "Qi Refinement Longevity Pill"
+msgstr "Luyện Khí Trường Sinh Đan"
 
 #. elixir.csv: 采用凡间珍草炼制，略微延缓衰老（限服一颗...
 msgid "ELIXIR_3005_DESC"
-msgstr "Refined using common precious herbs"
+msgstr "Luyện chế từ thông thường trân quý thảo dược"
 
 #. elixir.csv: 筑基长生丹
 msgid "ELIXIR_3006_NAME"
-msgstr "Foundation Establishment Longevity Pill"
+msgstr "Trúc Cơ Trường Sinh Đan"
 
 #. elixir.csv: 取天地灵草炼制，可延寿十载（限服一颗）。...
 msgid "ELIXIR_3006_DESC"
-msgstr "Refined from heavenly and earthly spiritual herbs"
+msgstr "Luyện chế từ Thiên Địa Linh Thảo"
 
 #. elixir.csv: 金丹长生丹
 msgid "ELIXIR_3007_NAME"
-msgstr "Core Formation Longevity Pill"
+msgstr "Kim Đan Trường Sinh Đan"
 
 #. elixir.csv: 夺天地造化，凡人服之立毙，金丹修士服之延...
 msgid "ELIXIR_3007_DESC"
-msgstr ""
+msgstr "Huyền Minh Phá Cảnh Đan: Chứa đựng huyền lực chí cao, giúp tu sĩ cảm ngộ thiên đạo, phá tan bình chướng cảnh giới, là vật báu hiếm có để tiến nhập tầng cao hơn của đại đạo."
 "Seizes the creation of heaven and earth; mortals die instantly upon "
 "consumption"
 
 #. elixir.csv: 元婴长生丹
 msgid "ELIXIR_3008_NAME"
-msgstr "Nascent Soul Longevity Pill"
+msgstr "Nguyên Anh Trường Sinh Đan"
 
 #. elixir.csv: 蕴含一丝长生之气，元婴老怪以此续命（限服...
 msgid "ELIXIR_3008_DESC"
-msgstr "Contains a trace of longevity qi"
+msgstr "Hàm chứa một tia Trường Sinh Khí"
 
 #. elixir.csv: 练气燃血丹
 msgid "ELIXIR_3009_NAME"
-msgstr "Qi Refinement Blood Burning Pill"
+msgstr "Luyện Khí Nhiên Huyết Đan"
 
 #. elixir.csv: 燃烧精血换取短暂爆发。3年内战力提升，但...
 msgid "ELIXIR_3009_DESC"
-msgstr ""
+msgstr "Ngưng Thần Bổ Hồn Dịch: An định thần hồn, khôi phục tinh thần lực, chữa lành các tổn thương vô hình nơi linh thức, giúp tâm trí tu sĩ luôn minh mẫn, kiên định."
 "Burns essence blood in exchange for a short burst of power. Combat power "
 "increases within 3 years, but meridians are damaged and combat power "
 "decreases within 10 years."
 
 #. elixir.csv: 筑基燃血丹
 msgid "ELIXIR_3010_NAME"
-msgstr "Foundation Establishment Blood Burning Pill"
+msgstr "Trúc Cơ Nhiên Huyết Đan"
 
 #. elixir.csv: 激发潜能的猛药。3年内战力大增，但10年...
 msgid "ELIXIR_3010_DESC"
-msgstr ""
+msgstr "Bách Độc Giải Đan: Khắc chế mọi loại kịch độc, hóa giải nguyền rủa và tà thuật, thanh lọc khí độc trong cơ thể, bảo vệ tu sĩ khỏi hiểm nguy từ các loại ám toán."
 "A potent medicine to stimulate potential. Combat power increases greatly "
 "within 3 years, but weakens within 10 years."
 
 #. elixir.csv: 金丹燃血丹
 msgid "ELIXIR_3011_NAME"
-msgstr "Core Formation Blood Burning Pill"
+msgstr "Kim Đan Nhiên Huyết Đan"
 
 #. elixir.csv: 金丹修士拼命时的选择。3年内战力暴涨，但...
 msgid "ELIXIR_3011_DESC"
-msgstr ""
+msgstr "Trường Xuân Vĩnh Thọ Đan: Nâng cao thọ nguyên, giữ gìn dung nhan bất lão, thậm chí có thể nghịch chuyển thời gian, trả lại tuổi xuân cho những kẻ gần kề cái chết."
 "The choice for Core Formation cultivators when fighting for their lives. "
 "Combat power surges within 3 years, but severe injury within 10 years."
 
 #. elixir.csv: 元婴燃血丹
 msgid "ELIXIR_3012_NAME"
-msgstr "Nascent Soul Blood Burning Pill"
+msgstr "Nguyên Anh Nhiên Huyết Đan"
 
 #. elixir.csv: 燃烧元婴本源。3年内获得毁天灭地的力量，...
 msgid "ELIXIR_3012_DESC"
-msgstr ""
+msgstr "Thiên Địa Phục Nguyên Đan: Phục hồi sinh cơ đã tận, hàn gắn thương thế trầm trọng, dù là đoạn chi tàn phế cũng có thể tái sinh, là bảo vật cứu mạng trong hiểm cảnh."
 "Burns the Nascent Soul origin. Gains world-destroying power within 3 years, "
 "but becomes almost a cripple within 10 years."
 
 #. elixir.csv: 练气回春丹
 msgid "ELIXIR_3013_NAME"
-msgstr "Qi Refinement Rejuvenation Pill"
+msgstr "Luyện Khí Hoàn Xuân Đan"
 
 #. elixir.csv: 普通的疗伤丹药，可恢复练气期修士的伤势（...
 msgid "ELIXIR_3013_DESC"
-msgstr ""
+msgstr "Huyết Tinh Bạo Phát Đan: Kích thích tiềm năng huyết mạch, tăng cường sức mạnh chiến đấu trong thời gian ngắn, giúp tu sĩ bộc phát uy lực kinh người, nhưng kèm theo di chứng nhất định."
 "A common healing pill that can restore the injuries of Qi Refinement stage "
 "cultivators (lasts 5 years)."
 
 #. elixir.csv: 筑基回春丹
 msgid "ELIXIR_3014_NAME"
-msgstr "Foundation Establishment Rejuvenation Pill"
+msgstr "Trúc Cơ Hồi Xuân Đan"
 
 #. elixir.csv: 药力温和醇厚，能快速愈合筑基期修士的肉身...
 msgid "ELIXIR_3014_DESC"
-msgstr "The medicinal power is gentle and mellow"
+msgstr "Dược lực ôn hòa thuần hậu"
 
 #. elixir.csv: 金丹回春丹
 msgid "ELIXIR_3015_NAME"
-msgstr "Core Formation Rejuvenation Pill"
+msgstr "Kim Đan Hồi Xuân Đan"
 
 #. elixir.csv: 蕴含生机之力，疗伤圣药（持续5年）。...
 msgid "ELIXIR_3015_DESC"
-msgstr ""
+msgstr "LINH_DƯỢC_3015_MIÊU_TẢ"
 "A supreme healing medicine containing the power of vitality (lasts 5 years)."
 
 #. elixir.csv: 元婴回春丹
 msgid "ELIXIR_3016_NAME"
-msgstr "Nascent Soul Rejuvenation Pill"
+msgstr "Nguyên Anh Hồi Xuân Đan"
 
 #. elixir.csv: 蕴含造化生机，肉身修复极快（持续5年）。...
 msgid "ELIXIR_3016_DESC"
-msgstr "Contains the creation of vitality"
+msgstr "Hàm chứa tạo hóa sinh cơ"

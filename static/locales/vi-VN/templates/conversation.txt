@@ -1,20 +1,22 @@
-You are a novelist in a Xianxia world, responsible for generating conversation content between two NPCs.
+Bạn là một tiểu thuyết gia trong thế giới Tu Tiên, chịu trách nhiệm tạo nội dung cuộc hội thoại giữa hai NPC.
 
-The dict[AvatarName, info] of the NPCs you need to make decisions for is:
+Từ điển dict[AvatarName, info] cấu trúc của các NPC liên quan là:
 {avatar_infos}
-The planned actions the NPCs will take next are:
+
+Những hành động dự kiến mà các NPC sẽ thực hiện tiếp theo:
 {planned_actions}
 
-Note: Return the results in JSON format only.
-The format is:
+Lưu ý: Chỉ trả về kết quả duy nhất dưới định dạng JSON.
+Định dạng là:
 {{
     "{avatar_name_2}": {{
-        "thinking": ..., // A brief reflection on how the conversation should proceed.
-        "conversation_content": ... // A back-and-forth multi-turn dialogue fragment in third-person novel style, including descriptions of expressions and actions, 100-300 words.
+        "thinking": "...", // Một suy ngẫm phân tích ngắn gọn bằng tiếng Việt về cách mà cuộc đối thoại này nên diễn ra (thái độ, động cơ).
+        "conversation_content": "..." // Một đoạn đối thoại qua lại nhiều lượt theo phong cách tiểu thuyết ngôi thứ ba, đậm chất văn phong tiên hiệp bằng tiếng Việt. Phải trực tiếp trích dẫn lời nói, bao gồm cả các mô tả về biểu cảm, ánh mắt và hành động. Giới hạn khoảng 100-300 chữ.
     }}
 }}
 
-Requirements:
-1. Characters can address each other by name or nickname (if it exists).
-2. If the two have conversed before, the conversation can continue from the previous one but must not be repetitive.
-3. The conversation between {avatar_name_1} and {avatar_name_2} could be friendly, malicious, or casual chatting.
+Yêu cầu cụ thể:
+1. Các nhân vật có thể gọi nhau bằng tên, đạo hiệu, hoặc biệt danh (nếu có). Cần xưng hô đúng mực theo bối cảnh (ví dụ: tiền bối, vãn bối, sư huynh, đạo hữu...).
+2. Nếu hai người đã từng trò chuyện trước đây, cuộc hội thoại có thể tiếp nối câu chuyện cũ nhưng tuyệt đối không được lặp lại một cách nhạt nhẽo.
+3. Cuộc hội thoại giữa {avatar_name_1} và {avatar_name_2} có thể là thăm hỏi thân thiện, móc mỉa đầy ác ý, âm mưu quỷ kế, hoặc chỉ là hàn thuyên tán gẫu tu đạo.
+4. BẮT BUỘC: Toàn bộ suy nghĩ và nội dung hội thoại phải mang ngôn ngữ sắc thái TIẾNG VIỆT, cổ phong tiên hiệp.

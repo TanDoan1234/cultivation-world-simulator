@@ -1,20 +1,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cultivation-world-simulator 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 00:00+0000\n"
-"PO-Revision-Date: 2024-01-20 00:00+0000\n"
-"Last-Translator: \n"
-"Language-Team: English\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 # Execution Results
 msgid "{avatar_name} {done} {grade} {label}『{item_name}』."
-msgstr "{avatar_name} {done} {grade} {label}『{item_name}』."
+msgstr "{avatar_name} đã {done} {grade} {label}『{item_name}』."
 
 msgid ""
 "{avatar_name} sold newly obtained {item_name}, gained {price} spirit stones."
@@ -22,64 +12,64 @@ msgstr ""
 "{avatar_name} sold newly obtained {item_name}, gained {price} spirit stones."
 
 msgid "{avatar_name} abandoned {item_name}."
-msgstr "{avatar_name} abandoned {item_name}."
+msgstr "{avatar_name} đã vứt bỏ {item_name}."
 
 # ============================================================================
 # Additional Missing Translations
 # ============================================================================
 msgid "Unsupported item type: {item_type}"
-msgstr "Unsupported item type: {item_type}"
+msgstr "Phẩm loại không được hỗ trợ: {item_type}"
 
 msgid "{avatar} gained cultivation experience +{exp} points"
-msgstr "{avatar} gained cultivation experience +{exp} points"
+msgstr "{avatar} đã thu được kinh nghiệm tu luyện +{exp} điểm"
 
 msgid "{winner} defeated {loser}"
-msgstr "{winner} defeated {loser}"
+msgstr "{winner} đã đánh bại {loser}"
 
 msgid "retreat_action_name"
-msgstr "Retreat"
+msgstr "Bế quan"
 
 msgid "retreat_desc"
-msgstr ""
+msgstr "Mô tả rút lui"
 "Retreat, to breakthrough self. Extremely risky, only for those with great "
 "perseverance."
 
 msgid "retreat_requirements"
-msgstr "No restrictions; cooldown required"
+msgstr "Vô câu vô thúc; cần thời gian dưỡng tức"
 
 msgid "retreat_start"
-msgstr "{avatar} begins retreat, breakthrough time unknown."
+msgstr "{avatar} đã tiến nhập bế quan, thời gian phá cảnh chưa định."
 
 msgid "retreat_success"
-msgstr ""
+msgstr "Rút lui thành công"
 "Retreat successfully completed! Cultivation improved, understanding of "
 "Heavenly Dao deepened."
 
 msgid "retreat_fail"
-msgstr ""
+msgstr "Rút lui thất bại"
 "Retreat failed! Vitality greatly damaged, lost {years} years of lifespan."
 
 msgid "retreat_death_append"
-msgstr ""
+msgstr "Kèm theo tử vong"
 " And exhausted the last trace of vitality during retreat, passed away."
 
 msgid "retreat_story_prompt_success"
-msgstr ""
+msgstr "Gợi nhắc cố sự: Bế quan viên mãn."
 "This is about a successful retreat. Describe how the cultivator overcame "
 "loneliness, comprehended the Heavenly Dao, and finally broke through the "
 "state of mind during the retreat. No combat description needed."
 
 msgid "retreat_story_prompt_fail"
-msgstr ""
+msgstr "Gợi nhắc cố sự: Bế quan thất bại."
 "This is about a failed retreat. Describe how the cultivator was troubled by "
 "inner demons, self-doubt, and finally suffered backlash during the retreat. "
 "No combat description needed."
 
 msgid "{avatar} finished retreat successfully."
-msgstr "{avatar} finished retreat successfully."
+msgstr "{avatar} đã viên mãn xuất quan."
 
 msgid "{avatar} failed retreat and lost {years} years of lifespan."
-msgstr "{avatar} failed retreat and lost {years} years of lifespan."
+msgstr "{avatar} bế quan thất bại, tổn hao {years} năm thọ nguyên."
 
 msgid "Retreat Bonus"
-msgstr "Retreat Insight"
+msgstr "Bế quan lĩnh ngộ"
