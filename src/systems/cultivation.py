@@ -5,32 +5,32 @@ from src.classes.color import Color
 
 @total_ordering
 class Realm(Enum):
-    Qi_Refinement = "QI_REFINEMENT"           # 练气
-    Foundation_Establishment = "FOUNDATION_ESTABLISHMENT"  # 筑基
-    Core_Formation = "CORE_FORMATION"        # 金丹
-    Nascent_Soul = "NASCENT_SOUL"            # 元婴
+    Qi_Refinement = "QI_REFINEMENT"           # Luyện Khí
+    Foundation_Establishment = "FOUNDATION_ESTABLISHMENT"  # Trúc Cơ
+    Core_Formation = "CORE_FORMATION"        # Kim Đan
+    Nascent_Soul = "NASCENT_SOUL"            # Nguyên Anh
 
     def __str__(self) -> str:
-        """返回境界的翻译名称"""
+        """Trả về tên hiển thị đã dịch của Cảnh giới"""
         from src.i18n import t
         return t(realm_msg_ids.get(self, self.value))
 
     @staticmethod
     def from_str(s: str) -> "Realm":
         s = str(s).strip().replace(" ", "_").upper()
-        # 建立映射以兼容多种输入格式
+        # Thiết lập ánh xạ để tương thích với nhiều định dạng đầu vào khác nhau
         mapping = {
-            "练气": "QI_REFINEMENT", "QI_REFINEMENT": "QI_REFINEMENT", "QI REFINEMENT": "QI_REFINEMENT",
-            "筑基": "FOUNDATION_ESTABLISHMENT", "FOUNDATION_ESTABLISHMENT": "FOUNDATION_ESTABLISHMENT", "FOUNDATION ESTABLISHMENT": "FOUNDATION_ESTABLISHMENT",
-            "金丹": "CORE_FORMATION", "CORE_FORMATION": "CORE_FORMATION", "CORE FORMATION": "CORE_FORMATION",
-            "元婴": "NASCENT_SOUL", "NASCENT_SOUL": "NASCENT_SOUL", "NASCENT SOUL": "NASCENT_SOUL"
+            "练气": "QI_REFINEMENT", "QI_REFINEMENT": "QI_REFINEMENT", "QI REFINEMENT": "QI_REFINEMENT", "LUYỆN_KHÍ": "QI_REFINEMENT",
+            "筑基": "FOUNDATION_ESTABLISHMENT", "FOUNDATION_ESTABLISHMENT": "FOUNDATION_ESTABLISHMENT", "FOUNDATION ESTABLISHMENT": "FOUNDATION_ESTABLISHMENT", "TRÚC_CƠ": "FOUNDATION_ESTABLISHMENT",
+            "金丹": "CORE_FORMATION", "CORE_FORMATION": "CORE_FORMATION", "CORE FORMATION": "CORE_FORMATION", "KIM_ĐAN": "CORE_FORMATION",
+            "元婴": "NASCENT_SOUL", "NASCENT_SOUL": "NASCENT_SOUL", "NASCENT SOUL": "NASCENT_SOUL", "NGUYÊN_ANH": "NASCENT_SOUL"
         }
         realm_id = mapping.get(s, "QI_REFINEMENT")
         return Realm(realm_id)
 
     @property
     def color_rgb(self) -> tuple[int, int, int]:
-        """返回境界对应的RGB颜色值"""
+        """Trả về giá trị màu RGB tương ứng với Cảnh giới"""
         color_map = {
             Realm.Qi_Refinement: Color.COMMON_WHITE,
             Realm.Foundation_Establishment: Color.UNCOMMON_GREEN,
@@ -69,12 +69,12 @@ class Realm(Enum):
 
 @total_ordering
 class Stage(Enum):
-    Early_Stage = "EARLY_STAGE"    # 前期
-    Middle_Stage = "MIDDLE_STAGE"  # 中期
-    Late_Stage = "LATE_STAGE"      # 后期
+    Early_Stage = "EARLY_STAGE"    # Sơ Kỳ
+    Middle_Stage = "MIDDLE_STAGE"  # Trung Kỳ
+    Late_Stage = "LATE_STAGE"      # Hậu Kỳ
 
     def __str__(self) -> str:
-        """返回阶段的翻译名称"""
+        """Trả về tên hiển thị đã dịch của Giai đoạn"""
         from src.i18n import t
         return t(stage_msg_ids.get(self, self.value))
 
@@ -82,9 +82,9 @@ class Stage(Enum):
     def from_str(s: str) -> "Stage":
         s = str(s).strip().replace(" ", "_").upper()
         mapping = {
-            "前期": "EARLY_STAGE", "EARLY_STAGE": "EARLY_STAGE", "EARLY STAGE": "EARLY_STAGE",
-            "中期": "MIDDLE_STAGE", "MIDDLE_STAGE": "MIDDLE_STAGE", "MIDDLE STAGE": "MIDDLE_STAGE",
-            "后期": "LATE_STAGE", "LATE_STAGE": "LATE_STAGE", "LATE STAGE": "LATE_STAGE"
+            "前期": "EARLY_STAGE", "EARLY_STAGE": "EARLY_STAGE", "EARLY STAGE": "EARLY_STAGE", "SƠ_KỲ": "EARLY_STAGE",
+            "中期": "MIDDLE_STAGE", "MIDDLE_STAGE": "MIDDLE_STAGE", "MIDDLE STAGE": "MIDDLE_STAGE", "TRUNG_KỲ": "MIDDLE_STAGE",
+            "后期": "LATE_STAGE", "LATE_STAGE": "LATE_STAGE", "LATE STAGE": "LATE_STAGE", "HẬU_KỲ": "LATE_STAGE"
         }
         stage_id = mapping.get(s, "EARLY_STAGE")
         return Stage(stage_id)
@@ -109,7 +109,7 @@ class Stage(Enum):
             return NotImplemented
         return STAGE_RANK[self] >= STAGE_RANK[other]
 
-# msgid映射
+# Ánh xạ msgid
 realm_msg_ids = {
     Realm.Qi_Refinement: "qi_refinement",
     Realm.Foundation_Establishment: "foundation_establishment",
@@ -123,7 +123,7 @@ stage_msg_ids = {
     Stage.Late_Stage: "late_stage",
 }
 
-# 统一的境界顺序与排名，避免重复定义
+# Thứ tự và xếp hạng Cảnh giới thống nhất, tránh định nghĩa lặp lại
 REALM_ORDER: tuple[Realm, ...] = (
     Realm.Qi_Refinement,
     Realm.Foundation_Establishment,
@@ -132,7 +132,7 @@ REALM_ORDER: tuple[Realm, ...] = (
 )
 REALM_RANK: dict[Realm, int] = {realm: idx for idx, realm in enumerate(REALM_ORDER)}
 
-# 统一的阶段顺序与排名，避免重复定义
+# Thứ tự và xếp hạng Giai đoạn thống nhất, tránh định nghĩa lặp lại
 STAGE_ORDER: tuple[Stage, ...] = (
     Stage.Early_Stage,
     Stage.Middle_Stage,
@@ -152,14 +152,14 @@ REALM_TO_MOVE_STEP = {
 
 class CultivationProgress:
     """
-    修仙进度(包含等级、境界和经验值)
-    目前一个四个大境界，每个境界分前期、中期、后期。每一期对应10级。
-    所以每一个境界对应30级。境界的级别满了之后，需要突破才能进入下一个境界与升级。
-    所以有：
-    练气(Qi Refinement)：前期(1-10)、中期(11-20)、后期(21-30)、突破(31)
-    筑基(Foundation Establishment)：前期(31-40)、中期(41-50)、后期(51-60)、突破(61)
-    金丹(Core Formation)：前期(61-70)、中期(71-80)、后期(81-90)、突破(91)
-    元婴(Nascent Soul)：前期(91-100)、中期(101-110)、后期(111-120)、突破(121)
+    Tiến độ tu tiên (bao gồm cấp độ, cảnh giới và kinh nghiệm)
+    Hiện tại có 4 đại cảnh giới, mỗi cảnh giới chia thành Sơ Kỳ, Trung Kỳ, Hậu Kỳ. Mỗi kỳ tương ứng 10 cấp.
+    Vì vậy mỗi đại cảnh giới tương ứng với 30 cấp. Khi cấp độ của cảnh giới đã đầy, tu sĩ sẽ rơi vào bình cảnh, cần phải đột phá mới có thể tiến vào cảnh giới tiếp theo và tăng cấp.
+    Cụ thể:
+    Luyện Khí (Qi Refinement): Sơ Kỳ (1-10), Trung Kỳ (11-20), Hậu Kỳ (21-30), Đột phá (31)
+    Trúc Cơ (Foundation Establishment): Sơ Kỳ (31-40), Trung Kỳ (41-50), Hậu Kỳ (51-60), Đột phá (61)
+    Kim Đan (Core Formation): Sơ Kỳ (61-70), Trung Kỳ (71-80), Hậu Kỳ (81-90), Đột phá (91)
+    Nguyên Anh (Nascent Soul): Sơ Kỳ (91-100), Trung Kỳ (101-110), Hậu Kỳ (111-120), Đột phá (121)
     """
 
     def __init__(self, level: int, exp: int = 0):
@@ -169,14 +169,14 @@ class CultivationProgress:
         self.stage = self.get_stage(level)
 
     def get_realm(self, level: int) -> Realm:
-        """获取境界（算术推导，不依赖映射表）"""
+        """Lấy Cảnh giới (suy luận toán học, không phụ thuộc bảng ánh xạ)"""
         if level <= 0:
             return Realm.Qi_Refinement
-        realm_index = (level - 1) // LEVELS_PER_REALM  # 0-based index
+        realm_index = (level - 1) // LEVELS_PER_REALM  # Chỉ số 0-based
         return REALM_ORDER[min(realm_index, len(REALM_ORDER) - 1)]
 
     def get_stage(self, level: int) -> Stage:
-        """获取阶段（算术推导：1-10前期，11-20中期，21-30后期）"""
+        """Lấy Giai đoạn (suy luận toán học: 1-10 Sơ Kỳ, 11-20 Trung Kỳ, 21-30 Hậu Kỳ)"""
         if level <= 0:
             return Stage.Early_Stage
         stage_index = ((level - 1) % LEVELS_PER_REALM) // LEVELS_PER_STAGE
@@ -184,11 +184,11 @@ class CultivationProgress:
 
     def get_move_step(self) -> int:
         """
-        每月能够移动的距离，
-        练气: 2
-        筑基: 3
-        金丹: 4
-        元婴: 5
+        Khoảng cách tối đa có thể di chuyển mỗi tháng:
+        Luyện Khí: 2
+        Trúc Cơ: 3
+        Kim Đan: 4
+        Nguyên Anh: 5
         """
         return REALM_TO_MOVE_STEP[self.realm]
 
@@ -205,24 +205,21 @@ class CultivationProgress:
 
     def get_exp_required(self) -> int:
         """
-        计算升级到指定等级需要的经验值
-        使用简单的代数加法：base_exp + (level - 1) * increment + realm_bonus
+        Tính toán điểm kinh nghiệm cần thiết để thăng lên cấp độ tiếp theo.
+        Sử dụng công thức đại số đơn giản: base_exp + (level - 1) * increment + realm_bonus
         
-        参数:
-            target_level: 目标等级
-        
-        返回:
-            需要的经验值
+        Trả về:
+            Kinh nghiệm cần thiết
         """
         next_level = self.level + 1
         
-        base_exp = 100  # 基础经验值
-        increment = 50   # 每级增加50点经验值
+        base_exp = 100  # Kinh nghiệm cơ bản
+        increment = 50   # Mỗi cấp tăng thêm 50 điểm kinh nghiệm
         
-        # 基础经验值计算
+        # Tính toán kinh nghiệm cơ sở
         exp_required = base_exp + (next_level - 1) * increment
         
-        # 境界加成：按 next_level 所处境界（延后入境界，算术推导）增加
+        # Thưởng cảnh giới: Tăng theo cấp bậc cảnh giới của next_level (suy luận toán học)
         realm_index = (max(1, next_level) - 1) // LEVELS_PER_REALM
         realm_bonus = realm_index * 1000
         
@@ -230,30 +227,30 @@ class CultivationProgress:
 
     def get_exp_progress(self) -> tuple[int, int]:
         """
-        获取当前经验值进度
+        Lấy tiến độ kinh nghiệm hiện tại
         
-        返回:
-            (当前经验值, 升级所需经验值)
+        Trả về:
+            (Kinh nghiệm hiện tại, Kinh nghiệm cần để thăng cấp)
         """
         required_exp = self.get_exp_required()
         return self.exp, required_exp
 
     def add_exp(self, exp_amount: int) -> bool:
         """
-        增加经验值
+        Tăng điểm kinh nghiệm
         
-        参数:
-            exp_amount: 要增加的经验值数量
+        Tham số:
+            exp_amount: Số lượng kinh nghiệm muốn thêm
         
-        返回:
-            如果升级了则返回True
+        Trả về:
+            True nếu thăng cấp, ngược lại False
         """
         self.exp += exp_amount
 
         leveled_up = False
-        # 支持多级升级，但在瓶颈（30/60/90…）停下，等待突破
+        # Hỗ trợ thăng nhiều cấp cùng lúc, nhưng sẽ dừng lại ở "bình cảnh" (30/60/90…) để chờ đột phá
         while True:
-            # 瓶颈位：level > 0 且 level % LEVELS_PER_REALM == 0
+            # Vị trí bình cảnh: level > 0 và level % LEVELS_PER_REALM == 0
             if self.is_in_bottleneck():
                 break
             if not self.is_level_up():
@@ -271,7 +268,7 @@ class CultivationProgress:
 
     def break_through(self):
         """
-        突破境界
+        Đột phá cảnh giới
         """
         self.level += 1
         self.realm = self.get_realm(self.level)
@@ -279,16 +276,16 @@ class CultivationProgress:
 
     def is_in_bottleneck(self) -> bool:
         """
-        是否处于瓶颈期。
-        处于每个大境界的第 30、60、90…级时（level > 0 且 level % LEVELS_PER_REALM == 0）。
+        Kiểm tra xem có đang ở trạng thái bình cảnh hay không.
+        Đang ở cấp 30, 60, 90… của mỗi đại cảnh giới (level > 0 và level % LEVELS_PER_REALM == 0).
         """
         return self.level > 0 and (self.level % LEVELS_PER_REALM == 0)
 
     def can_break_through(self) -> bool:
         """
-        检查是否可以突破
+        Kiểm tra xem có thể đột phá hay không
         """
-        # 动态检测目前最高级别的修为：如果已经是最高境界的最高等级，则不能突破
+        # Kiểm tra giới hạn tu vi cao nhất: nếu đã đạt đỉnh của cảnh giới cuối cùng thì không thể đột phá thêm
         max_level = len(REALM_ORDER) * LEVELS_PER_REALM
         if self.level >= max_level:
             return False
@@ -296,14 +293,14 @@ class CultivationProgress:
 
     def can_cultivate(self) -> bool:
         """
-        检查是否可以修炼
-        可以突破，说明到顶了，说明不能修炼了，必须突破后才能正常修炼。
+        Kiểm tra xem có thể tiếp tục tu luyện hay không.
+        Nếu gặp bình cảnh, nghĩa là tu vi đã viên mãn, không thể tu luyện thêm mà phải đột phá trước.
         """
         return not self.is_in_bottleneck()
 
     def is_level_up(self) -> bool:
         """
-        检查是否可以进入下一级
+        Kiểm tra xem kinh nghiệm hiện tại có đủ để lên cấp tiếp theo không
         """
         exp_required = self.get_exp_required()
         return self.exp >= exp_required
@@ -322,26 +319,26 @@ class CultivationProgress:
         return breakthrough_fail_reduce_lifespan_by_realm[self.realm]
     
     def to_dict(self) -> dict:
-        """转换为可序列化的字典"""
+        """Chuyển đổi thành dictionary có thể tuần tự hóa (serialize)"""
         return {
             "level": self.level,
             "exp": self.exp,
-            "realm": self.realm.name,  # 保存枚举的name
+            "realm": self.realm.name,  # Lưu tên định danh của enum
             "stage": self.stage.name
         }
     
     @classmethod
     def from_dict(cls, data: dict) -> "CultivationProgress":
-        """从字典重建CultivationProgress"""
+        """Tái thiết CultivationProgress từ dictionary"""
         return cls(level=data["level"], exp=data["exp"])
 
 
 
 breakthrough_success_rate_by_realm = {
-    Realm.Qi_Refinement: 0.8, # 练气，80%
-    Realm.Foundation_Establishment: 0.6, # 筑基，60%
-    Realm.Core_Formation: 0.4, # 金丹，40%
-    Realm.Nascent_Soul: 0.2, # 元婴，20%
+    Realm.Qi_Refinement: 0.8, # Luyện Khí, 80%
+    Realm.Foundation_Establishment: 0.6, # Trúc Cơ, 60%
+    Realm.Core_Formation: 0.4, # Kim Đan, 40%
+    Realm.Nascent_Soul: 0.2, # Nguyên Anh, 20%
 }
 
 breakthrough_fail_reduce_lifespan_by_realm = {

@@ -12,35 +12,38 @@ if TYPE_CHECKING:
     from src.classes.core.avatar import Avatar
 
 class Attack(InstantAction, TargetingMixin):
-    # 多语言 ID
+    # ID Đa ngôn ngữ
     ACTION_NAME_ID = "attack_action_name"
     DESC_ID = "attack_description"
     REQUIREMENTS_ID = "attack_requirements"
     STORY_PROMPT_ID = "attack_story_prompt"
     
-    # 不需要翻译的常量
+    # Các hằng số không cần dịch
     EMOJI = "⚔️"
     PARAMS = {"avatar_name": "AvatarName"}
     
-    # 战斗是大事（长期记忆）
+    # Chiến đấu là đại sự (ghi nhớ dài hạn)
     IS_MAJOR: bool = True
     
     @classmethod
     def get_story_prompt(cls) -> str:
-        """获取故事提示词的翻译"""
+        """Lấy gợi ý kể chuyện đã dịch"""
         return t(cls.STORY_PROMPT_ID)
 
     def _execute(self, avatar_name: str) -> None:
+        """
+        Thực hiện tấn công
+        """
         from src.classes.core.avatar import Avatar
         target = resolve_query(avatar_name, self.world, expected_types=[Avatar]).obj
         if target is None:
             return
         winner, loser, loser_damage, winner_damage = decide_battle(self.avatar, target)
-        # 应用双方伤害
+        # Áp dụng sát thương cho cả hai bên
         loser.hp.reduce(loser_damage)
         winner.hp.reduce(winner_damage)
         
-        # 增加双方兵器熟练度（战斗经验）
+        # Tăng độ thuần thục binh khí cho cả hai (kinh nghiệm chiến đấu)
         import random
         proficiency_gain = random.uniform(1.0, 3.0)
         self.avatar.increase_weapon_proficiency(proficiency_gain)
@@ -66,7 +69,7 @@ class Attack(InstantAction, TargetingMixin):
         from src.classes.core.avatar import Avatar
         target = resolve_query(avatar_name, self.world, expected_types=[Avatar]).obj
         target_name = target.name if target is not None else avatar_name
-        # 展示双方折算战斗力（基于对手、含克制）
+        # Hiển thị lực chiến quy đổi của hai bên (dựa trên đối thủ, bao gồm cả khắc chế)
         s_att, s_def = get_effective_strength_pair(self.avatar, target)
         rel_ids = [self.avatar.id]
         if target is not None:
@@ -78,11 +81,11 @@ class Attack(InstantAction, TargetingMixin):
                    attacker=self.avatar.name, target=target_name, 
                    att_power=int(s_att), def_power=int(s_def))
         event = Event(self.world.month_stamp, content, related_avatars=rel_ids, is_major=True)
-        # 记录开始事件内容，供故事生成使用
+        # Ghi lại nội dung sự kiện bắt đầu để dùng cho việc tạo cốt truyện
         self._start_event_content = event.content
         return event
 
-    # InstantAction 已实现 step 完成
+    # InstantAction đã triển khai xong step
 
     async def finish(self, avatar_name: str) -> list[Event]:
         res = self._last_result

@@ -19,56 +19,59 @@ if TYPE_CHECKING:
 
 @cooldown_action
 class Assassinate(InstantAction, TargetingMixin):
-    # 多语言 ID
+    # ID Đa ngôn ngữ
     ACTION_NAME_ID = "assassinate_action_name"
     DESC_ID = "assassinate_description"
     REQUIREMENTS_ID = "assassinate_requirements"
     
-    # 不需要翻译的常量
+    # Các hằng số không cần dịch
     EMOJI = "🗡️"
     PARAMS = {"avatar_name": "AvatarName"}
     ACTION_CD_MONTHS = 12
     
-    # LLM 提示词 ID
+    # ID gợi ý kể chuyện (LLM Prompt)
     STORY_PROMPT_SUCCESS_ID = "assassinate_story_prompt_success"
     STORY_PROMPT_FAIL_ID = "assassinate_story_prompt_fail"
     
-    # 暗杀是大事（长期记忆）
+    # Ám sát là đại sự (ghi nhớ dài hạn)
     IS_MAJOR: bool = True
     
     @classmethod
     def get_story_prompt_success(cls) -> str:
-        """获取成功提示词的翻译"""
+        """Lấy gợi ý kể chuyện khi thành công đã dịch"""
         return t(cls.STORY_PROMPT_SUCCESS_ID)
     
     @classmethod
     def get_story_prompt_fail(cls) -> str:
-        """获取失败提示词的翻译"""
+        """Lấy gợi ý kể chuyện khi thất bại đã dịch"""
         return t(cls.STORY_PROMPT_FAIL_ID)
 
     def _execute(self, avatar_name: str) -> None:
+        """
+        Thực hiện ám sát
+        """
         target = self.find_avatar_by_name(avatar_name)
         if target is None:
             return
             
-        # 判定暗杀是否成功
+        # Phán định ám sát có thành công hay không
         success_rate = get_assassination_success_rate(self.avatar, target)
         is_success = random.random() < success_rate
         
         self._is_assassinate_success = is_success
         
         if is_success:
-            # 暗杀成功，目标直接死亡
+            # Ám sát thành công, mục tiêu tử vong ngay lập tức
             target.hp.current = 0
-            self._last_result = None # 不需要战斗结果
+            self._last_result = None # Không cần kết quả chiến đấu
         else:
-            # 暗杀失败，转入正常战斗
+            # Ám sát thất bại, chuyển sang chiến đấu thông thường
             winner, loser, loser_damage, winner_damage = decide_battle(self.avatar, target)
-            # 应用双方伤害
+            # Áp dụng sát thương cho cả hai bên
             loser.hp.reduce(loser_damage)
             winner.hp.reduce(winner_damage)
             
-            # 增加熟练度（既然打起来了）
+            # Tăng độ thuần thục binh khí (vì đã nổ ra chiến đấu)
             proficiency_gain = random.uniform(1.0, 3.0)
             self.avatar.increase_weapon_proficiency(proficiency_gain)
             target.increase_weapon_proficiency(proficiency_gain)
@@ -76,7 +79,7 @@ class Assassinate(InstantAction, TargetingMixin):
             self._last_result = (winner, loser, loser_damage, winner_damage)
 
     def can_start(self, avatar_name: str) -> tuple[bool, str]:
-        # 注意：cooldown_action 装饰器会覆盖这个方法并在调用此方法前检查 CD
+        # Lưu ý: Decorator cooldown_action sẽ ghi đè phương thức này và kiểm tra CD trước khi gọi phương thức này
         _, ok, reason = self.validate_target_avatar(avatar_name)
         return ok, reason
 
@@ -98,17 +101,17 @@ class Assassinate(InstantAction, TargetingMixin):
         rel_ids = [self.avatar.id, target.id]
         
         if getattr(self, '_is_assassinate_success', False):
-            # --- 暗杀成功 ---
+            # --- Ám sát thành công ---
             result_text = t("{avatar} assassinated successfully! {target} fell without any defense.",
                            avatar=self.avatar.name, target=target.name)
             
-            # 杀人夺宝
+            # Giết người đoạt bảo (Kill and Grab)
             loot_text = await kill_and_grab(self.avatar, target)
             result_text += loot_text
             
             result_event = Event(self.world.month_stamp, result_text, related_avatars=rel_ids, is_major=True)
             
-            # 生成故事
+            # Tạo cốt truyện
             story = await StoryTeller.tell_story(
                 self._start_event_content, 
                 result_event.content, 
@@ -119,13 +122,13 @@ class Assassinate(InstantAction, TargetingMixin):
             )
             story_event = Event(self.world.month_stamp, story, related_avatars=rel_ids, is_story=True)
             
-            # 死亡清理
+            # Xử lý tử vong và dọn dẹp
             handle_death(self.world, target, DeathReason(DeathType.BATTLE, killer_name=self.avatar.name))
             
             return [result_event, story_event]
             
         else:
-            # --- 暗杀失败，转入战斗 ---
+            # --- Ám sát thất bại, chuyển sang chiến đấu ---
             res = getattr(self, '_last_result', None)
             if not (isinstance(res, tuple) and len(res) == 4):
                 return [] 
@@ -143,4 +146,3 @@ class Assassinate(InstantAction, TargetingMixin):
                 prefix=t("Assassination failed! Both sides engaged in fierce battle."),
                 check_loot=True
             )
-
