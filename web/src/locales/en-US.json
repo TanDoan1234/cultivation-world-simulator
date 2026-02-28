@@ -42,6 +42,7 @@
     "quick_save_desc": "Use auto-generated name",
     "empty": "No saves found",
     "game_time": "Game Time: {time}",
+    "game_time_parsed": "Game Time: Year {year} Month {month}",
     "avatar_count": "Characters: {alive}/{total}",
     "event_count": "{count} events",
     "load": "Load",

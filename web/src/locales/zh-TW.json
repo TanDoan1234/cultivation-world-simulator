@@ -42,6 +42,7 @@
     "quick_save_desc": "使用自動生成的名稱",
     "empty": "暫無存檔",
     "game_time": "遊戲時間: {time}",
+    "game_time_parsed": "遊戲時間: {year}年{month}月",
     "avatar_count": "角色: {alive}/{total}",
     "event_count": "{count} 條事件",
     "load": "載入",

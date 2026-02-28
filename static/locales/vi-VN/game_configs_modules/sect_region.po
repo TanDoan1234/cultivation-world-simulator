@@ -1,0 +1,173 @@
+#
+msgid ""
+msgstr ""
+"Language: en_US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. sect_region.csv: SECT_REGION_401_NAME
+msgid "SECT_REGION_401_NAME"
+msgstr "Jueyun Peak"
+
+#. sect_region.csv: SECT_REGION_401_DESC
+msgid "SECT_REGION_401_DESC"
+msgstr ""
+"Jueyun Peak towers into the clouds, surrounded by strong winds on all sides. "
+"Only sword cultivators can fly up with swords. There are places for disciples "
+"to cultivate on the mountain, with a tranquil environment."
+
+#. sect_region.csv: SECT_REGION_402_NAME
+msgid "SECT_REGION_402_NAME"
+msgstr "Ten Thousand Beasts Cave"
+
+#. sect_region.csv: SECT_REGION_402_DESC
+msgid "SECT_REGION_402_DESC"
+msgstr ""
+"Located in the hinterland of the One Hundred Thousand Mountains, the cave "
+"soars with demonic qi, and the roars of ten thousand beasts can be heard "
+"here. The interior is crisscrossed with ninety-nine layers of grotto-heavens, "
+"each housing different grades of spiritual and demonic beasts."
+
+#. sect_region.csv: SECT_REGION_403_NAME
+msgid "SECT_REGION_403_NAME"
+msgstr "Silent Sea Cliff"
+
+#. sect_region.csv: SECT_REGION_403_DESC
+msgid "SECT_REGION_403_DESC"
+msgstr ""
+"Listening Tide Pavilion hangs on the seaside cliff, listening to the tide all "
+"year round. The jade wall in the pavilion reflects the stars and the sea. "
+"The palaces and pavilions are built of cold ice spirit jade, transparent "
+"throughout, making it hard to distinguish reality from illusion."
+
+#. sect_region.csv: SECT_REGION_404_NAME
+msgid "SECT_REGION_404_NAME"
+msgstr "Dead Silence Sea"
+
+#. sect_region.csv: SECT_REGION_404_DESC
+msgid "SECT_REGION_404_DESC"
+msgstr ""
+"Nine Underworlds Dao is located on the Dead Silence Sea archipelago. The "
+"seawater is pitch black like ink, rising without wind. It is rumored that the "
+"bottom of the sea leads directly to the Nine Underworlds Yellow Springs. When "
+"the waves howl, ten thousand souls cry together, blotting out the sun."
+
+#. sect_region.csv: SECT_REGION_405_NAME
+msgid "SECT_REGION_405_NAME"
+msgstr "Thousand Mechanisms Valley"
+
+#. sect_region.csv: SECT_REGION_405_DESC
+msgid "SECT_REGION_405_DESC"
+msgstr ""
+"Thousand Mechanisms Valley is full of mechanisms and traps. It looks like an "
+"ordinary valley, but one wrong step means death without a burial place. The "
+"palaces and pavilions in the valley seem magnificent but hide killing intent "
+"everywhere."
+
+#. sect_region.csv: SECT_REGION_406_NAME
+msgid "SECT_REGION_406_NAME"
+msgstr "Gold-Squandering Cave"
+
+#. sect_region.csv: SECT_REGION_406_DESC
+msgid "SECT_REGION_406_DESC"
+msgstr ""
+"Drunken Dream Pavilion is built as an independent grotto-heaven in the bustling "
+"market, with singing and dancing, and an intoxicating fragrance that never "
+"dissipates. The sect buildings are extremely luxurious, with mist swirling "
+"between the palaces and pavilions, and pairs of disciples faintly visible "
+"cultivating within."
+
+#. sect_region.csv: SECT_REGION_407_NAME
+msgid "SECT_REGION_407_NAME"
+msgstr "Pudu Island"
+
+#. sect_region.csv: SECT_REGION_407_DESC
+msgid "SECT_REGION_407_DESC"
+msgstr ""
+"Located in the center of the sea storm, with golden light filling the sky. "
+"When the bell rings, the storm stops. The sect buildings stand on the island, "
+"centered around the Vajra Pagoda, whose bell sound can intimidate demonic "
+"souls within a thousand miles."
+
+#. sect_region.csv: SECT_REGION_408_NAME
+msgid "SECT_REGION_408_NAME"
+msgstr "Shadow Swamp"
+
+#. sect_region.csv: SECT_REGION_408_DESC
+msgid "SECT_REGION_408_DESC"
+msgstr ""
+"A poisonous swamp shrouded in mist all year round. There is no light here, "
+"only eyes hiding in the dark. Towering trees, entangling vines, and miasma "
+"floating all day long completely isolate this place from the outside world."
+
+#. sect_region.csv: SECT_REGION_409_NAME
+msgid "SECT_REGION_409_NAME"
+msgstr "Myriad Treasures Floating Island"
+
+#. sect_region.csv: SECT_REGION_409_DESC
+msgid "SECT_REGION_409_DESC"
+msgstr ""
+"Myriad Treasures Alliance is built on the Myriad Treasures Floating Island. "
+"The huge floating island group is connected by countless chains. Flying boats "
+"come and go like clouds, extremely prosperous. High towers stand in the city, "
+"each with an alchemy furnace fire that never goes out day or night."
+
+#. sect_region.csv: SECT_REGION_410_NAME
+msgid "SECT_REGION_410_NAME"
+msgstr "Echo Valley"
+
+#. sect_region.csv: SECT_REGION_410_DESC
+msgid "SECT_REGION_410_DESC"
+msgstr ""
+"The special valley structure makes the sound condense and not disperse. When "
+"the wind passes, it sounds like ghosts crying and gods howling. Pavilions and "
+"towers are scattered in the valley, and the sounds of silk and bamboo never "
+"cease all day long. It appears like a paradise on earth, but actually hides "
+"numerous sound-killing arrays."
+
+#. sect_region.csv: SECT_REGION_411_NAME
+msgid "SECT_REGION_411_NAME"
+msgstr "Maze Heaven"
+
+#. sect_region.csv: SECT_REGION_411_DESC
+msgid "SECT_REGION_411_DESC"
+msgstr ""
+"Seemingly just one mountain, it actually contains countless folded spaces. "
+"Those who do not understand arrays cannot move a single step. The entire "
+"mountain range is covered by numerous overlapping arrays; every step is a "
+"scene, every step a danger."
+
+#. sect_region.csv: SECT_REGION_412_NAME
+msgid "SECT_REGION_412_NAME"
+msgstr "Aurora Heaven Realm"
+
+#. sect_region.csv: SECT_REGION_412_DESC
+msgid "SECT_REGION_412_DESC"
+msgstr ""
+"Located in the extreme north eternal night land, but shrouded by the "
+"inextinguishable aurora of ten thousand years, bright as day. The city is "
+"cast from ten-thousand-year cold ice and black iron, shimmering under the "
+"vast aurora like a miracle."
+
+#. sect_region.csv: SECT_REGION_413_NAME
+msgid "SECT_REGION_413_NAME"
+msgstr "Sage Forest"
+
+#. sect_region.csv: SECT_REGION_413_DESC
+msgid "SECT_REGION_413_DESC"
+msgstr ""
+"Located in the center of the Cultivation World, with towering ancient trees "
+"and a forest of steles, each inscription containing the subtle righteous "
+"words of sages. The sound of reading in the forest can be heard for ten "
+"miles, the gathering place for the world's righteous spirit."
+
+#. sect_region.csv: SECT_REGION_414_NAME
+msgid "SECT_REGION_414_NAME"
+msgstr "Asura Blood Pool"
+
+#. sect_region.csv: SECT_REGION_414_DESC
+msgid "SECT_REGION_414_DESC"
+msgstr ""
+"The mountain body appears dark red, as if soaked in blood. The sect is built "
+"on a huge underground blood pool. Blood mist often fills the mountain, with "
+"rugged stones and desiccated animal bones sucked dry of essence and blood "
+"everywhere."

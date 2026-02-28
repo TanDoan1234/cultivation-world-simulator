@@ -20,7 +20,7 @@ export const useSettingStore = defineStore('setting', () => {
     localStorage.setItem('app_bgm_volume', String(volume));
   }
 
-  async function setLocale(lang: 'zh-CN' | 'zh-TW' | 'en-US') {
+  async function setLocale(lang: 'zh-CN' | 'zh-TW' | 'en-US' | 'vi-VN') {
     // 1. Optimistic UI update
     locale.value = lang;
     localStorage.setItem('app_locale', lang);
@@ -33,7 +33,8 @@ export const useSettingStore = defineStore('setting', () => {
     const langMap: Record<string, string> = {
       'zh-CN': 'zh-CN',
       'zh-TW': 'zh-TW',
-      'en-US': 'en'
+      'en-US': 'en',
+      'vi-VN': 'vi'
     };
     document.documentElement.lang = langMap[lang] || 'en';
 

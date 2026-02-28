@@ -1,0 +1,56 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cultivation-world-simulator 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-20 00:00+0000\n"
+"PO-Revision-Date: 2024-01-20 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# ============================================================================
+# Gathering System - Auction
+# ============================================================================
+# Status Text
+msgid "Auction is in progress..."
+msgstr "Auction is in progress..."
+
+# ============================================================================
+# Gathering System - Sect Teaching
+# ============================================================================
+msgid "sect_teaching_story_prompt"
+msgstr ""
+"Describe a sect teaching conference. Focus on the atmosphere, the profound "
+"Dao resonance of the teacher, and the varied reactions of the disciples. "
+"Please avoid mentioning specific experience point numbers."
+
+msgid "sect_teaching_gathering_info"
+msgstr "{sect_name} Teaching Conference"
+
+msgid "sect_teaching_event_desc"
+msgstr "{teacher_name} is taking the stage to preach."
+
+msgid "sect_teaching_context_prompt"
+msgstr ""
+"Sect: {sect_name}\n"
+"Style: {style}\n"
+"Teacher: {teacher_name} ({teacher_realm})\n"
+"{epiphany_text}\n"
+"Based on the sect and character settings, describe the teacher's understanding of Heaven, Earth, the World, and the Dao, and describe the different reactions of the disciples."
+
+msgid "sect_teaching_summary"
+msgstr ""
+"{sect_name} held a teaching conference hosted by {teacher_name}. "
+"Participants: {student_names}."
+
+msgid "sect_teaching_exp_gain"
+msgstr "{student_name} gained {exp} experience."
+
+msgid "epiphany_event_desc"
+msgstr ""
+"Special Event: Disciples {names} had an epiphany during the lecture and "
+"directly learned {tech_name}!\n"

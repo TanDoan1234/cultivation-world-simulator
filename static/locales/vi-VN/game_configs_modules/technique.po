@@ -1,0 +1,516 @@
+#
+msgid ""
+msgstr ""
+"Language: en_US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. technique.csv: 混元金身
+msgid "TECHNIQUE_1_NAME"
+msgstr "Primordial Golden Body"
+
+#. technique.csv: 佛门护教神功，浑身坚若金石，寻常兵刃难伤。
+msgid "TECHNIQUE_1_DESC"
+msgstr ""
+"A Buddhist guardian divine skill, the body is as hard as metal and stone, "
+"invulnerable to ordinary weapons."
+
+#. technique.csv: 金钟罩
+msgid "TECHNIQUE_2_NAME"
+msgstr "Golden Bell Shield"
+
+#. technique.csv: 运气成钟，护持周身，反震外力。...
+msgid "TECHNIQUE_2_DESC"
+msgstr ""
+"Gathers qi into a bell to protect the body and reflect external forces."
+
+#. technique.csv: 青元长生功
+msgid "TECHNIQUE_4_NAME"
+msgstr "Azure Origin Longevity Art"
+
+#. technique.csv: 木系基础功法，气息绵长，有驻颜延寿之效。
+msgid "TECHNIQUE_4_DESC"
+msgstr ""
+"Basic Wood-system cultivation method, with long breath and effects of "
+"maintaining youth and extending life."
+
+#. technique.csv: 太乙青木气
+msgid "TECHNIQUE_5_NAME"
+msgstr "Taiyi Azure Wood Qi"
+
+#. technique.csv: 汲取天地草木精气，生机浩荡，万木臣服。
+msgid "TECHNIQUE_5_DESC"
+msgstr ""
+"Absorbing the essence of heaven and earth's plants, with vast vitality, making "
+"all woods submit."
+
+#. technique.csv: 若水诀
+msgid "TECHNIQUE_7_NAME"
+msgstr "Ruoshui Formula"
+
+#. technique.csv: 上善若水，水利万物而不争，绵柔醇厚。...
+msgid "TECHNIQUE_7_DESC"
+msgstr ""
+"The highest good is like water, water benefits all things without competing,"
+" soft and mellow."
+
+#. technique.csv: 北冥玄水拳
+msgid "TECHNIQUE_8_NAME"
+msgstr "Northern Dark Mystic Water Fist"
+
+#. technique.csv: 驾驭滔滔黑水，重若千钧，拳意如深海暗流。
+msgid "TECHNIQUE_8_DESC"
+msgstr ""
+"Driving the surging black water, heavy as a thousand jun, with fist intent "
+"like deep sea undercurrents."
+
+#. technique.csv: 火灵诀
+msgid "TECHNIQUE_10_NAME"
+msgstr "Fire Spirit Formula"
+
+#. technique.csv: 最基础的法术，凝聚火炎伤敌，简单实用。...
+msgid "TECHNIQUE_10_DESC"
+msgstr ""
+"The most basic spell, gathering fire to hurt enemies, simple and practical."
+
+#. technique.csv: 纯阳真功
+msgid "TECHNIQUE_11_NAME"
+msgstr "Pure Yang True Art"
+
+#. technique.csv: 纯阳之气，刚猛无铸，克制阴邪。...
+msgid "TECHNIQUE_11_DESC"
+msgstr "Pure Yang qi, fierce and unyielding, restraining cold and evil."
+
+#. technique.csv: 搬山诀
+msgid "TECHNIQUE_13_NAME"
+msgstr "Mountain Moving Formula"
+
+#. technique.csv: 力能扛鼎，气力悠长，如下山猛虎。...
+msgid "TECHNIQUE_13_DESC"
+msgstr ""
+"Able to lift a tripod with strength, with long physical power, like a tiger "
+"coming down the mountain."
+
+#. technique.csv: 不动明王诀
+msgid "TECHNIQUE_14_NAME"
+msgstr "Immovable Wisdom King Formula"
+
+#. technique.csv: 不动如山，动如雷震，佛门护法神功。...
+msgid "TECHNIQUE_14_DESC"
+msgstr ""
+"Immovable as a mountain, moving like a thunderbolt, a Buddhist guardian "
+"divine skill."
+
+#. technique.csv: 凝神冰心诀
+msgid "TECHNIQUE_16_NAME"
+msgstr "Concentrating Ice Heart Formula"
+
+#. technique.csv: 心若冰清，天塌不惊，凝神静气。...
+msgid "TECHNIQUE_16_DESC"
+msgstr ""
+"The heart is clear as ice, heaven falling will not startle, focusing and "
+"calming the mind."
+
+#. technique.csv: 玄冰劲
+msgid "TECHNIQUE_17_NAME"
+msgstr "Profound Ice Power"
+
+#. technique.csv: 寒气透骨，冻结经脉，阴狠霸道。...
+msgid "TECHNIQUE_17_DESC"
+msgstr ""
+"Cold qi reaches the bone, freezing meridians, sinister and overbearing."
+
+#. technique.csv: 流云百变身
+msgid "TECHNIQUE_19_NAME"
+msgstr "Flowing Cloud Hundred Transformations Body"
+
+#. technique.csv: 身法灵动，变幻莫测，逃跑一流。...
+msgid "TECHNIQUE_19_DESC"
+msgstr "Agile movement, ever-changing, first-rate for escaping."
+
+#. technique.csv: 踏云步
+msgid "TECHNIQUE_20_NAME"
+msgstr "Cloud Treading Step"
+
+#. technique.csv: 借力腾空，左脚踩右脚，直上青云九霄。
+msgid "TECHNIQUE_20_DESC"
+msgstr ""
+"Borrowing force to soar, left foot stepping on the right foot, going straight "
+"up to the nine heavens."
+
+#. technique.csv: 敛息术
+msgid "TECHNIQUE_22_NAME"
+msgstr "Breath Concealment Technique"
+
+#. technique.csv: 收敛气息，如枯木死灰，令人难以察觉。...
+msgid "TECHNIQUE_22_DESC"
+msgstr ""
+"Concealing breath, like dead wood and cold ashes, making it difficult for "
+"others to detect."
+
+#. technique.csv: 幻影迷踪步
+msgid "TECHNIQUE_23_NAME"
+msgstr "Phantom Trace Step"
+
+#. technique.csv: 如鬼魅般难以捉摸，步法诡异，令人眼花缭乱。
+msgid "TECHNIQUE_23_DESC"
+msgstr "Elusive as a ghost, with mysterious steps, dazzling to the eye."
+
+#. technique.csv: 掌心雷
+msgid "TECHNIQUE_25_NAME"
+msgstr "Palm Lightning"
+
+#. technique.csv: 道家正宗法术，掌心发雷，震慑妖邪。...
+msgid "TECHNIQUE_25_DESC"
+msgstr ""
+"A righteous Daoist spell, lightning emitted from the palm, intimidating evil"
+" spirits."
+
+#. technique.csv: 五雷正法
+msgid "TECHNIQUE_26_NAME"
+msgstr "Five Thunders Orthodoxy"
+
+#. technique.csv: 役使五行之雷，刚猛霸道，无坚不摧。...
+msgid "TECHNIQUE_26_DESC"
+msgstr ""
+"Employing the five elements of thunder, fierce and overbearing, "
+"indestructible."
+
+#. technique.csv: 燃血爆元术
+msgid "TECHNIQUE_28_NAME"
+msgstr "Blood Burning Essence Explosion Art"
+
+#. technique.csv: 燃烧精血，短暂爆发实力，事后虚弱。...
+msgid "TECHNIQUE_28_DESC"
+msgstr ""
+"Burning essence blood for a short burst of strength, followed by weakness."
+
+#. technique.csv: 吞灵归元功
+msgid "TECHNIQUE_29_NAME"
+msgstr "Spirit Swallowing Origin Return Art"
+
+#. technique.csv: 强行吸取他人灵力为己用，霸道异常，常有反噬风险。
+msgid "TECHNIQUE_29_DESC"
+msgstr ""
+"Forcibly absorbing others' spiritual power for own use, extraordinarily "
+"overbearing, often with backlash risks."
+
+#. technique.csv: 斩星枯荣剑
+msgid "TECHNIQUE_30_NAME"
+msgstr "Star Slashing Withered Glory Sword"
+
+#. technique.csv: 一剑枯荣，斩尽日月星辰，乃剑道至高境界。
+msgid "TECHNIQUE_30_DESC"
+msgstr ""
+"One sword brings withering and glory, slashing through the sun, moon, and "
+"stars, the highest realm of the sword way."
+
+#. technique.csv: 九霄御雷术
+msgid "TECHNIQUE_31_NAME"
+msgstr "Nine Heavens Lightning Control Art"
+
+#. technique.csv: 引九天雷霆入剑，煌煌天威，荡尽群魔。...
+msgid "TECHNIQUE_31_DESC"
+msgstr ""
+"Guiding the lightning of the nine heavens into the sword, with grand heavenly "
+"majesty, wiping out all demons."
+
+#. technique.csv: 沧浪剑意
+msgid "TECHNIQUE_32_NAME"
+msgstr "Surging Waves Sword Intent"
+
+#. technique.csv: 君不见沧浪之水天上来，奔流到海不复回。...
+msgid "TECHNIQUE_32_DESC"
+msgstr ""
+"Don't you see the water of the surging waves coming from the sky, rushing to "
+"the sea and never returning."
+
+#. technique.csv: 乙木长生诀
+msgid "TECHNIQUE_33_NAME"
+msgstr "Yimu Longevity Formula"
+
+#. technique.csv: 上古木系至高功法，生生不息，枯木逢春。
+msgid "TECHNIQUE_33_DESC"
+msgstr ""
+"Ancient supreme Wood-system cultivation method, unending life, dead wood "
+"encountering spring."
+
+#. technique.csv: 龙象镇魔功
+msgid "TECHNIQUE_34_NAME"
+msgstr "Dragon Elephant Demon Suppressing Art"
+
+#. technique.csv: 以气引神，力若龙象，举手投足，镇压诸邪。
+msgid "TECHNIQUE_34_DESC"
+msgstr ""
+"Guiding spirit with qi, power like a dragon and elephant, every move "
+"suppresses all evils."
+
+#. technique.csv: 垂天阴阳翼
+msgid "TECHNIQUE_35_NAME"
+msgstr "Cloud Hanging Yin Yang Wings"
+
+#. technique.csv: 入海为鱼，扶摇为鸟。阴阳变化，极速与吞噬并存。
+msgid "TECHNIQUE_35_DESC"
+msgstr ""
+"Entering the sea as a fish, rising as a bird. Yin-Yang changes, coexisting "
+"extreme speed and devouring."
+
+#. technique.csv: 太虚行者录
+msgid "TECHNIQUE_36_NAME"
+msgstr "Void Walker Record"
+
+#. technique.csv: 以无限空间证道，掌控虚空，先天立于不败之地。
+msgid "TECHNIQUE_36_DESC"
+msgstr ""
+"Proving the Dao through infinite space, controlling the void, inherently "
+"invincible."
+
+#. technique.csv: 太上忘情篇
+msgid "TECHNIQUE_37_NAME"
+msgstr "Supreme Oblivion Chapter"
+
+#. technique.csv: 太上忘情，非无情，乃忘情。至公至正，威力...
+msgid "TECHNIQUE_37_DESC"
+msgstr ""
+"Supreme amorousness is not emotionless, but forgetting emotion. Utmost "
+"justice and fairness, with infinite power."
+
+#. technique.csv: 逍遥游
+msgid "TECHNIQUE_38_NAME"
+msgstr "Carefree Travel"
+
+#. technique.csv: 乘天地之正，而御六气之辩，以游无穷。...
+msgid "TECHNIQUE_38_DESC"
+msgstr ""
+"Riding the correctness of heaven and earth, and controlling the changes of "
+"the six qi to travel infinitely."
+
+#. technique.csv: 混沌噬灵诀
+msgid "TECHNIQUE_39_NAME"
+msgstr "Chaos Spirit Swallowing Art"
+
+#. technique.csv: 吞噬万千体质本源，以后天返先天，铸就混沌之躯。
+msgid "TECHNIQUE_39_DESC"
+msgstr ""
+"Devouring the origin of ten thousand constitutions, returning to the innate "
+"from the acquired, forging the Chaos Body."
+
+#. technique.csv: 罗刹魔典
+msgid "TECHNIQUE_40_NAME"
+msgstr "Rakshasa Demon Canon"
+
+#. technique.csv: 魔门至高宝典，包罗万象，直指破碎虚空之境。
+msgid "TECHNIQUE_40_DESC"
+msgstr ""
+"The highest treasure book of the demonic gate, all-encompassing, pointing "
+"directly to the realm of shattering the void."
+
+#. technique.csv: 血海不灭经
+msgid "TECHNIQUE_41_NAME"
+msgstr "Blood Sea Indestructible Scripture"
+
+#. technique.csv: 血海不枯，真身不死。演化亿万血神子...
+msgid "TECHNIQUE_41_DESC"
+msgstr ""
+"The blood sea never dries, the true body never dies. Evolving into hundreds "
+"of millions of blood god sons."
+
+#. technique.csv: 九转火源经
+msgid "TECHNIQUE_42_NAME"
+msgstr "Nine Turns Fire Source Scripture"
+
+#. technique.csv: 通过吞噬天地异火进化功法，潜力无限，号令万火...
+msgid "TECHNIQUE_42_DESC"
+msgstr ""
+"Evolving the technique by devouring the exotic flames of heaven and earth, "
+"with infinite potential, commanding all fires."
+
+#. technique.csv: 种魔夺天诀
+msgid "TECHNIQUE_43_NAME"
+msgstr "Demon Seeding Heaven Seizing Art"
+
+#. technique.csv: 以天地为炉鼎，种魔种，夺天地造化，死中求生。
+msgid "TECHNIQUE_43_DESC"
+msgstr ""
+"Using heaven and earth as a furnace, planting demonic seeds, seizing the "
+"creation of heaven and earth, seeking life in death."
+
+#. technique.csv: 千念分神术
+msgid "TECHNIQUE_44_NAME"
+msgstr "Thousand Thoughts Distraction Art"
+
+#. technique.csv: 专修神识，能分心多用，操控万千法器傀儡。...
+msgid "TECHNIQUE_44_DESC"
+msgstr ""
+"Specializing in divine sense, able to multitask and control ten thousand "
+"magical artifacts and puppets."
+
+#. technique.csv: 大乐赋
+msgid "TECHNIQUE_45_NAME"
+msgstr "Great Bliss Ode"
+
+#. technique.csv: 阴阳大道，极乐飞升。双修之至高法门。...
+msgid "TECHNIQUE_45_DESC"
+msgstr ""
+"The Great Dao of Yin and Yang, ascending in extreme bliss. The highest "
+"method of dual cultivation."
+
+#. technique.csv: 天魔舞
+msgid "TECHNIQUE_46_NAME"
+msgstr "Heavenly Demonic Dance"
+
+#. technique.csv: 域外天魔之舞，勾魂摄魄，乱人心智。...
+msgid "TECHNIQUE_46_DESC"
+msgstr ""
+"The dance of extraterrestrial demons, soul-hooking and mind-disturbing."
+
+#. technique.csv: 烟波渺步
+msgid "TECHNIQUE_47_NAME"
+msgstr "Misty Wave Step"
+
+#. technique.csv: 体迅飞凫，飘忽若神，动无常则，若危若安。
+msgid "TECHNIQUE_47_DESC"
+msgstr ""
+"Moving as fast as a flying duck, elusive as a god, moving without rule, "
+"seemingly dangerous but safe."
+
+#. technique.csv: 无量寂灭经
+msgid "TECHNIQUE_48_NAME"
+msgstr "Immeasurable Nirvana Scripture"
+
+#. technique.csv: 神魂不灭，超脱彼岸。修成无量法身，万劫不磨。
+msgid "TECHNIQUE_48_DESC"
+msgstr ""
+"The soul is indestructible, transcending to the other shore. Cultivating the "
+"immeasurable dharma body, eternal through ten thousand calamities."
+
+#. technique.csv: 大威德金刚雷
+msgid "TECHNIQUE_49_NAME"
+msgstr "Yamantaka Vajra Lightning"
+
+#. technique.csv: 佛门护法金刚之怒，如雷霆万钧，震慑一切邪魔，荡涤世间污秽。
+msgid "TECHNIQUE_49_DESC"
+msgstr ""
+"The wrath of the Buddhist Guardian Vajra, like a thunderbolt of ten thousand jun, "
+"intimidating all demons and cleansing the world's filth."
+
+#. technique.csv: 六字大明咒
+msgid "TECHNIQUE_50_NAME"
+msgstr "Six Syllable Mantra"
+
+#. technique.csv: 唵嘛呢叭咪吽。佛门至高咒语，蕴含无尽愿力，能净化世间一切罪业与灾厄。
+msgid "TECHNIQUE_50_DESC"
+msgstr ""
+"Om Mani Padme Hum. The supreme mantra of Buddhism, containing endless power of "
+"vows, capable of purifying all sins and calamities in the world."
+
+#. technique.csv: 幽冥玄阴爪
+msgid "TECHNIQUE_51_NAME"
+msgstr "Nether Mystic Yin Claw"
+
+#. technique.csv: 阴损毒辣，专破内家真气，触之即死。...
+msgid "TECHNIQUE_51_DESC"
+msgstr ""
+"Sinister and ruthless, specifically breaking internal true qi, death upon "
+"touch."
+
+#. technique.csv: 雷影瞬遁
+msgid "TECHNIQUE_52_NAME"
+msgstr "Lightning Shadow Flash"
+
+#. technique.csv: 身化雷霆，瞬息千里，原地只留残影重重。
+msgid "TECHNIQUE_52_DESC"
+msgstr ""
+"Body transforming into lightning, thousands of miles in an instant, leaving "
+"only heavy afterimages in place."
+
+#. technique.csv: 修罗血煞功
+msgid "TECHNIQUE_53_NAME"
+msgstr "Asura Blood Fiend Art"
+
+#. technique.csv: 以自身为皮，鲜血为墨。修炼者必先历经剥皮噬血之苦。
+msgid "TECHNIQUE_53_DESC"
+msgstr ""
+"Using one's own skin as paper, fresh blood as ink. Cultivators must first "
+"undergo the pain of skinning and devouring blood."
+
+#. technique.csv: 天工造物诀
+msgid "TECHNIQUE_54_NAME"
+msgstr "Heavenly Creation Art"
+
+#. technique.csv: 炼器极致，化腐朽为神奇，万物皆可随心炼化。
+msgid "TECHNIQUE_54_DESC"
+msgstr ""
+"The peak of artifact refining, turning decay into magic, everything can be "
+"refined at will."
+
+#. technique.csv: 万星飞仙阵
+msgid "TECHNIQUE_55_NAME"
+msgstr "Ten Thousand Stars Flying Immortal Array"
+
+#. technique.csv: 引周天星力，演化宇宙洪荒，攻防一体。...
+msgid "TECHNIQUE_55_DESC"
+msgstr ""
+"Attracting the stellar power of the sky, evolving the universe and "
+"wilderness, combining offense and defense."
+
+#. technique.csv: 金光遁法
+msgid "TECHNIQUE_56_NAME"
+msgstr "Golden Light Escape Method"
+
+#. technique.csv: 化作一道流金遁光，瞬息万里，乃逃生赶路之绝学。
+msgid "TECHNIQUE_56_DESC"
+msgstr ""
+"Transforming into a stream of golden light, thousands of miles in an instant, "
+"a supreme skill for escaping and traveling."
+
+#. technique.csv: 浩然正气歌
+msgid "TECHNIQUE_57_NAME"
+msgstr "Song of Righteousness"
+
+#. technique.csv: 天地有正气，杂然赋流形。养胸中浩然之气，诸邪不侵，万法不破。
+msgid "TECHNIQUE_57_DESC"
+msgstr ""
+"Heaven and earth possess righteousness, manifested in various forms. "
+"Cultivating the noble spirit within, evil cannot invade, and all laws cannot break it."
+
+#. technique.csv: 春秋笔法
+msgid "TECHNIQUE_58_NAME"
+msgstr "Spring and Autumn Brushwork"
+
+#. technique.csv: 笔落惊风雨，诗成泣鬼神。以圣人之言判春秋功过，一字千金。
+msgid "TECHNIQUE_58_DESC"
+msgstr ""
+"With a stroke of the pen, wind and rain are startled, poems make ghosts and gods weep. "
+"Using the words of sages to judge the merits and faults of history, one word is worth a thousand gold."
+
+#. technique.csv: 言出法随
+msgid "TECHNIQUE_59_NAME"
+msgstr "Law Follows Speech"
+
+#. technique.csv: 口含天宪，言出法随。以圣贤之语调动天地规则，令行禁止，莫敢不从。
+msgid "TECHNIQUE_59_DESC"
+msgstr "Speak the law. Mobilizing the rules of heaven and earth with the words of sages, orders are prohibited, and no one dares to disobey."
+
+#. technique.csv: Sun Tempering Art
+msgid "TECHNIQUE_60_NAME"
+msgstr "Sun Tempering Art"
+
+#. technique.csv: Draws the purple qi of the rising sun to temper the skin...
+msgid "TECHNIQUE_60_DESC"
+msgstr "Draws the purple qi of the rising sun to temper the skin, warming the body and filling it with vitality."
+
+#. technique.csv: Radiant Glass Body
+msgid "TECHNIQUE_61_NAME"
+msgstr "Radiant Glass Body"
+
+#. technique.csv: Body like glazed glass...
+msgid "TECHNIQUE_61_DESC"
+msgstr "Body like glazed glass, clear inside and out, invulnerable to evil and indestructible."
+
+#. technique.csv: Great Bright Golden Body
+msgid "TECHNIQUE_62_NAME"
+msgstr "Great Bright Golden Body"
+
+#. technique.csv: The supreme technique of the Eternal Bright Palace...
+msgid "TECHNIQUE_62_DESC"
+msgstr "The supreme technique of the Eternal Bright Palace. Sanctification of the flesh, an imperishable golden body that shines through the ages."

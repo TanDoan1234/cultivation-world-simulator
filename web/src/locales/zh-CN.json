@@ -42,6 +42,7 @@
     "quick_save_desc": "使用自动生成的名称",
     "empty": "暂无存档",
     "game_time": "游戏时间: {time}",
+    "game_time_parsed": "游戏时间: {year}年{month}月",
     "avatar_count": "角色: {alive}/{total}",
     "event_count": "{count} 条事件",
     "load": "加载",

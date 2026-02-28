@@ -67,7 +67,7 @@ export const useSocketStore = defineStore('socket', () => {
                localStorage.setItem('app_locale', language);
                
                // 更新 HTML lang 属性
-               document.documentElement.lang = language === 'zh-CN' ? 'zh-CN' : 'en';
+               document.documentElement.lang = language === 'zh-CN' ? 'zh-CN' : (language === 'vi-VN' ? 'vi' : 'en');
                
                console.log(`[Socket] Frontend language switched to ${language}`);
             }

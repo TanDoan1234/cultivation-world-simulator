@@ -114,7 +114,8 @@ def t(message: str, **kwargs) -> str:
         translated = message
     
     # Check for missing translation if not in English
-    if _get_current_lang() != "en-US" and translated == message and message.strip():
+    current_lang = _get_current_lang()
+    if current_lang not in ["en-US", "vi-VN"] and translated == message and message.strip():
         logger.warning(f"[i18n] Missing translation for msgid: '{message}'")
     
     if kwargs:
